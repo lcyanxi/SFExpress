@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.coolbhu.sfexpress.dao.proinfoMapper">
-  <resultMap id="BaseResultMap" type="cn.coolbhu.sfexpress.model.proinfo">
+<mapper namespace="cn.coolbhu.sfexpress.dao.ProinfoMapper">
+  <resultMap id="BaseResultMap" type="cn.coolbhu.sfexpress.model.Proinfo">
     <id column="ProInfoId" jdbcType="CHAR" property="proinfoid" />
     <result column="OrderId" jdbcType="CHAR" property="orderid" />
     <result column="ProId" jdbcType="CHAR" property="proid" />
@@ -12,13 +12,13 @@
     delete from proinfo
     where ProInfoId = #{proinfoid,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="cn.coolbhu.sfexpress.model.proinfo">
+  <insert id="insert" parameterType="cn.coolbhu.sfexpress.model.Proinfo">
     insert into proinfo (ProInfoId, OrderId, ProId, 
       ProInfoCreateTime, ProInfoMark)
     values (#{proinfoid,jdbcType=CHAR}, #{orderid,jdbcType=CHAR}, #{proid,jdbcType=CHAR}, 
       #{proinfocreatetime,jdbcType=TIMESTAMP}, #{proinfomark,jdbcType=INTEGER})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="cn.coolbhu.sfexpress.model.proinfo">
+  <update id="updateByPrimaryKey" parameterType="cn.coolbhu.sfexpress.model.Proinfo">
     update proinfo
     set OrderId = #{orderid,jdbcType=CHAR},
       ProId = #{proid,jdbcType=CHAR},

@@ -57,7 +57,7 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.enttax.dao"/>
+        <property name="basePackage" value="cn.coolbhu.sfexpress.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
