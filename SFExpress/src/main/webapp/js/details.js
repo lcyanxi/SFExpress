@@ -9,7 +9,7 @@ $(function(){
 			// 点击退出清空当前的cookie值
 			$(".quit").on("click",function(){
 				$.cookie("name",name,{expires:-1});
-				location = "login.html";
+				location = "../WEB-INF/login.html";
 			});
 		}
 	$(".list-list li").hover(function(){
@@ -62,7 +62,7 @@ $(function(){
 			$('.dmr-thr').append(html);
 			// 点击跳转页面
 			$('.dmrt-product').on('click',function(){
-				location.href = 'list.html'
+				location.href = '../WEB-INF/list.html'
 			})
 			// 点击加入到购物车
 			$(".append-car").click(function(){

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
 	<title>注册</title>
-	<link rel="stylesheet" type="text/css" href="css/register.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/register.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/register.css}" href="../css/register.css">
+	<script type="text/javascript" th:src="@{/js/jquery.js}" src="../js/jquery.js"></script>
+	<script type="text/javascript" th:src="@{/js/register.js}" src="../js/register.js"></script>
 </head>
 <body>
 	<!-- 遮罩层 -->
@@ -25,7 +26,7 @@
 	<!-- header -->
 	<div class="header">
 		<a href="#">
-			<img src="img/logo.png" alt="" />
+			<img src="../img/logo.png" alt="" />
 			<span>欢迎注册</span>
 		</a>
 	</div>

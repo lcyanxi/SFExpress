@@ -100,7 +100,7 @@ $(function(){
 						$(".zhezhao").show();
 						$(".register-success").show();
 						$("#successBtn").click(function(){
-							location = "login.html";
+							location = "../WEB-INF/login.html";
 						});
 					},
 					error:function(data){
@@ -111,11 +111,11 @@ $(function(){
 							$('.zhezhao').show();
 							$('.zhezhao2').show();
 							$('#re-login').click(function(){
-								location.href = 'login.html'
+								location.href = '../WEB-INF/login.html'
 							});
 						}else if(date.ResultCode == 200){
 							console.log('注册成功');
-							location.href = 'login.html';
+							location.href = '../WEB-INF/login.html';
 						}
 					}	
 				});
