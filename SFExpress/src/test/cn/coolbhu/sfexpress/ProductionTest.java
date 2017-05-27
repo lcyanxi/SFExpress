@@ -25,15 +25,15 @@ public class ProductionTest {
     public void productionTest() {
 
         //生成100个商品
-        for (int i = 0; i < 100; i++) {
+        for (int i = 1; i <= 8; i++) {
 
             //准备数据
             Prodution prodution = new Prodution();
             prodution.setProid(RandomUtils.randomId10());
             prodution.setProname("商品" + i);
-            prodution.setPrice(RandomUtils.random.nextDouble());
+            prodution.setPrice(Math.abs(RandomUtils.random.nextInt()%100000) / 100.0);
             prodution.setDetail("详情" + i);
-            prodution.setImg("/var/www/avatar/" + "production" + i);
+            prodution.setImg("friut" + i);
             prodution.setPromark(1);
 
             //添加
