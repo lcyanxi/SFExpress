@@ -105,7 +105,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `UserId` char(10) NOT NULL,
   `UserName` varchar(16) NOT NULL,
-  `Password` varchar(16) NOT NULL,
+  `Password` varchar(255) NOT NULL,
   `Email` varchar(255) DEFAULT NULL,
   `Phone` char(11) DEFAULT NULL,
   `Slead` int(11) DEFAULT NULL,

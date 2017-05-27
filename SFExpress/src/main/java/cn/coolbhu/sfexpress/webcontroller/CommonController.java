@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping(value = "/")
-public class CommonController {
+public class CommonController extends BaseController {
 
     @Autowired
     private ProductionService productionService;
@@ -26,12 +26,12 @@ public class CommonController {
     }
 
     @RequestMapping(value = "register")
-    public String toRegister(){
+    public String toRegister() {
         return "register";
     }
 
     @RequestMapping(value = "login")
-    public String toLogin(){
+    public String toLogin() {
         return "login";
     }
 }

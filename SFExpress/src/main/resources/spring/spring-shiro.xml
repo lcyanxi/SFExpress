@@ -102,9 +102,9 @@
     <!-- 基于Form表单的身份验证过滤器 -->
     <bean id="formAuthenticationFilter" class="org.apache.shiro.web.filter.authc.FormAuthenticationFilter">
 
-        <property name="usernameParam" value="sname"/>
-        <property name="passwordParam" value="spassword"/>
-        <property name="loginUrl" value="/staff/login"/>
+        <property name="usernameParam" value="name"/>
+        <property name="passwordParam" value="password"/>
+        <property name="loginUrl" value="/login"/>
 
         <property name="rememberMeParam" value="rememberme"/>
     </bean>
@@ -117,7 +117,7 @@
     <!-- Shiro的Web过滤器 -->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
-        <property name="loginUrl" value="/staff/login"/>
+        <property name="loginUrl" value="/login"/>
         <property name="unauthorizedUrl" value="/unauthorized"/>
         <property name="filters">
             <util:map>
@@ -127,7 +127,10 @@
         </property>
         <property name="filterChainDefinitions">
             <value>
-                / = ssl, user
+                /user/login=anon
+                /user/adduser=anon
+                /cart/** = user
+                / = anon
             </value>
         </property>
     </bean>

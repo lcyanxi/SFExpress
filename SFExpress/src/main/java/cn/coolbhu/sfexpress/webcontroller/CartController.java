@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping(value = "/cart")
-public class CartController {
+public class CartController extends BaseController {
 
     @Autowired
     private CartService cartService;

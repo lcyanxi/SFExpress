@@ -34,4 +34,24 @@ public interface Constant {
      * 失败
      */
     String FAIL = "0";
+
+    /**
+     * 错误
+     */
+    int STATUS_CODE_ERROR = -1;
+
+    /**
+     * 成功
+     */
+    int STATUS_CODE_SUCCESSED = 1;
+
+    /**
+     * 错误信息
+     */
+    String MESSAGE_STR_ERROR = "错误";
+
+    /**
+     * 登录用户信息
+     */
+    String USER_INFO = "userinfo";
 }

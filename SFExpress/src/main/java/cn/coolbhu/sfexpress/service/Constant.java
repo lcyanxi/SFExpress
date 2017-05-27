@@ -19,4 +19,14 @@ public interface Constant {
      * 标记
      */
     int MARK_CODE_OK = 1;
+
+    /**
+     * 标记死亡
+     */
+    int SLEAD_ALIVE = 1;
+
+    /**
+     * 标记存货
+     */
+    int SLEAT_DEATH = -1;
 }
