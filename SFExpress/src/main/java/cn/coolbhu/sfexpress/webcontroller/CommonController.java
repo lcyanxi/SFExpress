@@ -24,4 +24,14 @@ public class CommonController {
 
         return "index";
     }
+
+    @RequestMapping(value = "register")
+    public String toRegister(){
+        return "register";
+    }
+
+    @RequestMapping(value = "login")
+    public String toLogin(){
+        return "login";
+    }
 }
