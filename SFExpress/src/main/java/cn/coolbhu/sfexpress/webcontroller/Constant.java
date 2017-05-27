@@ -14,4 +14,24 @@ public interface Constant {
      * 购物车产品
      */
     String MODEL_KEY_CARTS = "carts";
+
+    /**
+     * 状态
+     */
+    String STATUS = "status";
+
+    /**
+     * 消息
+     */
+    String MESSAGE = "message";
+
+    /**
+     * 成功
+     */
+    String SUCCESS = "1";
+
+    /**
+     * 失败
+     */
+    String FAIL = "0";
 }
