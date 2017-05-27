@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>商品详情</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../css/main.css">
+	<script type="text/javascript" th:src="@{/js/jquery.js}" src="../js/jquery.js"></script>
+	<script type="text/javascript" th:src="@{/js/jquery.cookie.js}" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" th:src="@{/js/details.js}" src="../js/details.js"></script>
+	<script type="text/javascript" th:src="@{/js/list.js}" src="../js/list.js"></script>
+</head>
+<body>
+	<div class="zhezhao"></div>
+	<div class="car_success">
+		<div class="remind">
+			提示
+		</div>
+		<p>成功添加到购物车</p>
+		<input type="button" value="继续购物" id="go_on"/>
+		<input type="button" value="查看购物车" id="car_goto"/>
+	</div>
+	<!-- header -->
+	<div id="header">
+		<div class="header-main">
+			<div class="hl">
+				<span class="hl-span">冷链配送 99元顺丰到家 送至:</span>
+				<div id="position">成都
+					<i></i>
+					<div class="position">
+						<div class="p-container">
+							<p>请选择您的收货地址</p>
+							<ul class="p-title">
+								<li>北京</li>
+								<li>上海</li>
+								<li>广州</li>
+								<li>深圳</li>
+								<li>天津</li>
+								<li>苏州</li>
+								<li>杭州</li>
+								<li>南京</li>
+								<li>无锡</li>
+								<li>青岛</li>
+								<li>武汉</li>
+							</ul>
+							<span class="p-color">更多城市:</span>
+							<ul class="p-content">
+								<li class="p-color">华东:</li>
+								<li>上海</li>
+								<li>浙江</li>
+								<li>江苏</li>
+								<li>安徽</li>
+							</ul>
+							<ul class="p-content">
+								<li class="p-color">华南:</li>
+								<li>广东</li>
+								<li>福建</li>
+								<li>海南</li>
+								<li>广西</li>
+							</ul>
+							<ul class="p-content">
+								<li class="p-color">华北:</li>
+								<li>北京</li>
+								<li>天津</li>
+								<li>河北</li>
+								<li>山东</li>
+								<li>山西</li>
+								<li>内蒙古</li>
+							</ul>
+							<ul class="p-content">
+								<li class="p-color">华中:</li>
+								<li>湖北</li>
+								<li>江西</li>
+								<li>湖南</li>
+								<li>河南</li>
+							</ul>
+							<ul class="p-content">
+								<li class="p-color">东北:</li>
+								<li>辽宁</li>
+								<li>吉林</li>
+								<li>黑龙江</li>
+							</ul>
+							<ul class="p-content">
+								<li class="p-color">西南:</li>
+								<li>重庆</li>
+								<li>四川</li>
+								<li>云南</li>
+								<li>贵州</li>
+								<li>西藏</li>
+							</ul>
+							<ul class="p-content">
+								<li class="p-color">西北:</li>
+								<li>陕西</li>
+								<li>甘肃</li>
+								<li>宁夏</li>
+								<li>青海</li>
+								<li>新疆</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hr">
+				<span>
+					<a href="login.html" class="user_name">嘿,欢迎来顺丰优选！请登录
+					</a>
+					<a href="javascript:void(0)" class="quit">[退出]</a>
+				</span>
+				<ul class="hr-one">
+					<li><a href="<register class="html">免费注册</a></li>
+					<li><a href="#">我的订单</a></li>
+					<li class="hro-a"><a href="#">我的优选</a></li>
+					<li class="hro-b"><a href="#">移动客户端</a></li>
+					<li class="hro-a"><a href="#">帮助中心</a></li>
+					<li class="hro-a"><a href="#">网站导航</a></li>
+				</ul>
+				<div class="hr-two">
+					<a href="#"><img src="../img/weibo.jpg" alt="微博" /></a>
+					<a href="#"><img src="../img/weixin.jpg" alt="微信" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- logo -->
+	<div id="logo">
+		<div class="img">
+			<a class="li-one" href="#"></a>
+			<a class="li-two" href="#"></a>
+			<div class="li-thr">
+				<a href="#"><img src="../img/logo_word.jpg" alt="" />
+				</a>
+			</div>
+		</div>
+		<a class="gif">
+			<img src="../img/dong.gif" alt="" />
+		</a>
+		<div class="l-cart">
+			<div class="lc-one">
+				<form action="" class="lco-form">
+					<input type="text" placeholder="大闸蟹" class="lco-text"/>
+					<input type="button" value="搜索" class="lco-seek"/>
+				</form>
+				<ul class="lco-list">
+					<li>牛排</li>
+					<li>牛奶</li>
+					<li>石榴</li>
+					<li>酸奶</li>
+					<li>白虾</li>
+					<li>大米</li>
+					<li>猕猴桃</li>
+					<li>海外直采</li>
+				</ul>
+			</div>                     
+			<div class="lc-two">
+				<form action="" class="lct-form">
+					<a href="cart.html" class="lct-seek">我的购物车</a>
+					<input type="text" value="0" class="lct-text"/>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- list -->
+	<div id="list">
+		<ul class="list-list">
+			<li class="ll-one"><h1>精选商品分类</h1></li>
+			<div id="llo-list" class="none" style="position:relative;z-index:9999">
+			<li>
+				<div class="lo">
+					<h2><span class="ll-rou"></span>肉类海鲜</h2>
+					<p>                          
+						<a href="#">大闸蟹</a>
+						<!-- 商品列表页面 -->
+						<a href="details.html">牛肉</a>
+						<a href="#">虾</a>
+						<a href="#">羊肉</a>
+					</p>
+				</div>
+				<div id="lr-show">
+					<div class="lrs-text">
+						<ul class="lrs-one">
+							<h2 class="ll-big">精品肉类</h2>
+							<li>牛肉</li>
+							<li>猪肉</li>
+							<li>禽类</li>
+							<li>腌腊肉品</li>
+							<li>肉类礼盒</li>
+							<li class="ll-color">澳洲牛肉</li>
+							<li class="ll-color">牛排</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">海鲜水产</h2>
+							<li>虾</li>
+							<li>鱼</li>
+							<li>蟹/贝</li>
+							<li>参鲍</li>
+							<li>海鲜礼盒</li>
+							<li class="ll-color">白虾</li>
+							<li class="ll-color">鳕鱼</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">速冻食品</h2>
+							<li>中式面点</li>
+							<li>西式面点</li>
+							<li>西式料理</li>
+							<li>加工水产</li>
+							<li>其他肉类</li>
+							<li class="ll-color">饺子</li>
+							<li class="ll-color">披萨</li>
+						</ul>
+					</div>
+					<div class="lrs-img">
+						<img src="../img/1463455028.jpg" alt="" />
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="lo">
+					<h2><span class="ll-food"></span>熟食豆奶</h2>
+					<p>
+						<a href="#">熟食</a>
+						<a href="">蛋品</a>
+						<a href="">低温奶</a>
+					</p>
+				</div>
+				<div id="lr-show">
+					<div class="lrs-text">
+						<ul class="lrs-one">
+							<h2 class="ll-big">肉类熟食</h2>
+							<li>香肠</li>
+							<li>火腿</li>
+							<li>培根</li>
+							<li>其他熟食</li>
+							<li class="ll-color">荷美尔</li>
+							<li class="ll-color">月盛斋</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">蛋品</h2>
+							<li>鸡蛋</li>
+							<li>松花蛋/咸鸭蛋</li>
+							<li class="ll-color">德清源</li>
+							<li class="ll-color">百年栗园</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">冷藏奶品饮品</h2>
+							<li>低温奶</li>
+							<li>奶制品</li>
+							<li>冷藏果汁</li>
+							<li>奶酪</li>
+							<li>黄油</li>
+							<li>酸奶</li>
+						</ul>
+					</div>
+					<div class="lrs-img">
+						<img src="../img/1463456854.jpg" alt="" />
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="lo">
+					<h2><span class="ll-friut"></span>水果蔬菜</h2>
+					<p>
+						<a href="#">水果</a>
+						<a href="#">蔬菜</a>
+					</p>
+				</div>
+				<div id="lr-show">
+					<div class="lrs-text">
+						<ul class="lrs-one">
+							<h2 class="ll-big">水果</h2>
+							<li>橙类</li>
+							<li>柚类</li>
+							<li>柠檬</li>
+							<li>苹果</li>
+							<li>牛油果</li>
+							<li>火龙果</li>
+							<li>奇异果/猕猴桃</li>
+							<li>梨</li>
+							<li>提子/葡萄</li>
+							<li>瓜类</li>
+							<li>桃/李/杏</li>
+							<li>木瓜/龙眼/芒果</li>
+							<li>原产地水果</li>
+							<li>冷冻水果</li>
+							<li>其他</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">蔬菜</h2>
+							<li>有机蔬菜</li>
+							<li>根茎/瓜类</li>
+							<li>菌菇类</li>
+							<li>叶菜</li>
+							<li>茄果/花菜/豆</li>
+							<li>特色蔬菜</li>
+							<li>加工蔬菜</li>
+							<li>礼盒/劵</li>
+							<li class="ll-color">加利利</li>
+							<li class="ll-color">黄瓜</li>
+						</ul>
+					</div>
+					<div class="lrs-img">
+						<img src="../img/1468837571.jpg" alt="" />
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="lo">
+					<h2><span class="ll-milk"></span>酒水饮料</h2>
+					<p>
+						<a href="#">葡萄酒</a>
+						<a href="#">啤酒</a>
+						<a href="#">白酒</a>
+						<a href="#">牛奶</a>
+					</p>
+				</div>
+				<div id="lr-show">
+					<div class="lrs-text">
+						<ul class="lrs-one">
+							<h2 class="ll-big">葡萄酒</h2>
+							<li>红葡萄酒</li>
+							<li>白葡萄酒</li>
+							<li>桃红葡萄酒</li>
+							<li>香槟酒</li>
+							<li>起泡酒</li>
+							<li>甜酒/贵腐酒</li>
+							<li>整箱装</li>
+							<li>礼盒</li>
+							<li class="ll-color">列级庄</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">洋酒</h2>
+							<li>威士忌</li>
+							<li>伏特加</li>
+							<li>白兰地</li>
+							<li>利口酒</li>
+							<li>朗姆酒</li>
+							<li>预调酒</li>
+							<li>礼盒</li>
+							<li>其他</li>
+							<li class="ll-color">芝华士</li>
+							<li class="ll-color">马爹利</li>
+							<li class="ll-color">人头马</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">啤酒</h2>
+							<li>黑啤</li>
+							<li>黄啤</li>
+							<li>白啤</li>
+							<li>果味啤酒</li>
+							<li>量贩装啤酒</li>
+							<li class="ll-color">比利时啤酒</li>
+						</ul>
+					</div>
+					<div class="lrs-img">
+						<img src="../img/1474289394.jpg" alt="" />
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="lo">
+					<h2><span class="ll-lingshi"></span>休闲食品</h2>
+					<p>
+						<a href="#">巧克力</a>
+						<a href="#">坚果</a>
+						<a href="#">曲奇</a>
+						<a href="#">月饼</a>
+					</p>
+				</div>
+				<div id="lr-show">
+					<div class="lrs-text">
+						<ul class="lrs-one">
+							<h2 class="ll-big">休闲零食</h2>
+							<li>果干</li>
+							<li>肉类零食</li>
+							<li>果冻</li>
+							<li>年节礼盒</li>
+							<li>其他零食</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">坚果炒货</h2>
+							<li>扁桃仁/巴旦木</li>
+							<li>开心果</li>
+							<li>腰果</li>
+							<li>松子</li>
+							<li>瓜子</li>
+							<li>花生</li>
+							<li>其他</li>
+							<li class="ll-color">万多福</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">糖果/巧克力</h2>
+							<li>巧克力</li>
+							<li>糖果</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">饼干糕点</h2>
+							<li>曲奇</li>
+							<li>饼干</li>
+							<li>糕点</li>
+							<li>威化</li>
+							<li class="ll-color">奇华</li>
+							<li class="ll-color">祖母</li>
+							<li class="ll-color">捷森</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">季节性食品</h2>
+							<li>月饼</li>
+						</ul>
+					</div>
+					<div class="lrs-img">
+						<img src="../img/1474287884.jpg" alt="" />
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="lo">
+					<h2><span class="ll-drink"></span>冲调茶饮</h2>
+					<p>
+						<a href="#">蜂蜜</a>
+						<a href="#">咖啡</a>
+						<a href="#">麦片</a>
+						<a href="#">茶</a>
+					</p>
+				</div>
+				<div id="lr-show">
+					<div class="lrs-text">
+						<ul class="lrs-one">
+							<h2 class="ll-big">休闲冲饮</h2>
+							<li>蜂蜜</li>
+							<li>麦片/粥</li>
+							<li>蜜炼茶</li>
+							<li>巧克力粉</li>
+							<li>奶茶</li>
+							<li>天然谷物粉</li>
+							<li class="ll-color">麦卢卡</li>
+							<li class="ll-color">柚子茶</li>
+							<li class="ll-color">维多麦</li>
+							<li class="ll-color">果酱/涂抹酱</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">咖啡/伴侣</h2>
+							<li>速溶咖啡</li>
+							<li>咖啡粉/豆</li>
+							<li>调糖/伴侣</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">进口茶</h2>
+							<li>红茶</li>
+							<li>花茶/果茶</li>
+							<li>乌龙茶</li>
+							<li>黑茶/普洱茶</li>
+							<li>花草茶/果茶</li>
+							<li>其他国产茗茶</li>
+							<li class="ll-color">铁观音</li>
+							<li class="ll-color">大红袍</li>
+						</ul>
+					</div>
+					<div class="lrs-img">
+						<img src="../img/1474287857.jpg" alt="" />
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="lo">
+					<h2><span class="ll-liangyou"></span>粮油干货</h2>
+					<p>
+						<a href="#">橄榄油</a>
+						<a href="#">大米</a>
+						<a href="#">枣</a>
+					</p>
+				</div>
+				<div id="lr-show">
+					<div class="lrs-text">
+						<ul class="lrs-one">
+							<h2 class="ll-big">食用油</h2>
+							<li>橄榄油</li>
+							<li>礼盒</li>
+							<li>其他食用油</li>
+							<li class="ll-color">欧丽薇兰</li>
+							<li class="ll-color">希腊橄榄油</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">米面杂粮</h2>
+							<li>大米</li>
+							<li>意大利面</li>
+							<li>面粉/面条</li>
+							<li>杂粮</li>
+							<li>礼盒</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">厨房调料</h2>
+							<li>酱油/醋</li>
+							<li>调味油/汁</li>
+							<li>调味料/粉/酱</li>
+							<li>调味酱/番茄酱</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">方便速食</h2>
+							<li>速食面/汤</li>
+							<li>速食罐头</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">南北干货</h2>
+							<li>和田枣</li>
+							<li其他枣类</li>
+							<li>香菇</li>
+							<li>猴头菇</li>
+							<li>其他菌菇</li>
+							<li>木耳</li>
+							<li>银耳</li>
+							<li>枸杞</li>
+							<li>莲子</li>
+							<li>紫菜</li>
+							<li>其它干货</li>
+							<li>桂圆</li>
+							<li>礼盒装</li>
+						</ul>
+					</div>
+					<div class="lrs-img">
+						<img src="../img/1474287871.jpg" alt="" />
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="lo">
+					<h2><span class="ll-world"></span>优选国际</h2>
+					<p>
+						<a href="#">奶粉</a>
+						<a href="#">纸尿裤</a>
+						<a href="#">韩妆</a>
+						<a href="#">营养</a>
+					</p>
+				</div>
+				<div id="lr-show">
+					<div class="lrs-text">
+						<ul class="lrs-one">
+							<h2 class="ll-big">母婴食品</h2>
+							<li>奶粉</li>
+							<li>一段</li>
+							<li>二段</li>
+							<li>三段</li>
+							<li>四段</li>
+							<li>羊奶粉</li>
+							<li>有机奶粉</li>
+							<li>辅食</li>
+							<li>米粉/米糊</li>
+							<li>宝宝零食</li>
+							<li>营养品</li>
+							<li>钙铁锌</li>
+							<li>维生素</li>
+							<li>DHA</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">母婴用品</h2>
+							<li>纸尿裤</li>
+							<li>拉拉裤</li>
+							<li>婴儿湿巾</li>
+							<li>婴儿洗护</li>
+							<li>洗发沐浴</li>
+							<li>婴儿护肤</li>
+							<li>驱蚊防虫</li>
+							<li>口腔护理</li>
+							<li>喂养用品</li>
+							<li>妈妈用品</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">美妆个护</h2>
+							<li>面部护理</li>
+							<li>缤纷彩妆</li>
+							<li>口腔护理</li>
+							<li>美发护发</li>
+							<li>沐浴用品</li>
+							<li>女士护理</li>
+							<li>面膜</li>
+							<li>防晒</li>
+							<li>洁面</li>
+							<li>护肤套装</li>
+							<li>BB霜</li>
+							<li>隔离</li>
+							<li>牙膏</li>
+							<li>洗护发</li>
+							<li>沐浴露</li>
+							<li>卫生巾</li>
+							<li>女性洗液</li>
+						</ul>
+						<ul class="lrs-one">
+							<h2 class="ll-big">营养</h2>
+							<li>营养补充</li>
+							<li>健康养护</li>
+							<li>女士保养</li>
+							<li>男士保养</li>
+							<li>关爱老年</li>
+							<li>滋补养生</li>
+							<li class="ll-color">Swisse</li>
+							<li class="ll-color">澳洲保养</li>
+						</ul>
+					</div>
+					<div class="lrs-img">
+						<img src="../img/1471311388.jpg" alt="" />
+					</div>
+				</div>
+			</li>
+			</div>
+		</ul>
+		<ul class="list-header">
+			<li><a href="index.html" class="lh-green">首页</a></li>
+			<li><a href="#">优选生鲜</a></li>
+			<li><a href="#">全球美食</a></li>
+			<li><a href="#">优选厨房</a></li>
+			<li><a href="#">新品尝鲜</a></li>
+			<li><a href="#">优选国际</a></li>
+			<li><a href="#">企业专区</a></li>
+		</ul>
+	</div>
+	<div id="details-main">
+		<div id="dm-container">
+			<div class="dm-title">
+				<h3>生鲜食品</h3>
+				<p>
+					>
+					<a href="#">精品肉类</a>
+					>
+					<a href="#">牛肉</a>
+					>
+					<a href="#">闲工夫</a>
+					>
+					<a href="#">闲工夫 澳洲黑椒牛排130g</a>
+				</p>
+			</div>
+			<!-- 放大镜页面 -->
+			<div class="list-one">
+				<div class="listo-left">
+					<!-- 放大镜效果 -->
+					<div class="ll-operate" id="ll-operate">
+						<div class="op-small">
+							<a href="#" class="op-prev"></a>
+								<div class="op-imgs">
+									<div class="op-box">
+										<img src="../img/thumb_1800240143_1_1.jpg" alt="" />
+										<img src="../img/thumb_1800240143_1_2.jpg" alt="" />
+										<img src="../img/thumb_1800240143_1_3.jpg" alt="" />
+										<img src="../img/thumb_1800240143_1_4.jpg" alt="" />
+										<img src="../img/thumb_1800240143_1_5.jpg" alt="" />
+										<img src="../img/thumb_1800240143_1_6.jpg" alt="" />
+										<img src="../img/thumb_1800240143_1_7.jpg" alt="" />
+										<img src="../img/thumb_1800240143_1_8.jpg" alt="" />
+									</div>
+								</div>
+							<a href="#" class="op-next"></a>
+						</div>
+						<div class="op-middle">
+							<img src="../img/middle_1800240143_1_1.jpg" alt="" id="img_car"/>
+							<div class="op-pop"></div>
+						</div>
+						<div class="op-big">
+							<img src="../img/original_1800240143_1_1.jpg" alt="" />
+						</div>
+					</div>
+					<div class="listol-price">
+						<p class="lp-title"><span>自营</span>闲工夫 澳洲黑椒牛排130g</p>
+						<div class="lp-bg">
+							<div class="lpbg-box">
+								<span>优选价:</span>
+								<b>￥</b>
+								<strong>
+									9
+									<span>.6</span>
+								</strong>
+							</div>
+							<div class="lpbg-img"></div>
+							<div class="lpbg-logo"></div>
+							<div id="show_img">
+								<img src="../img/middle_1800240143_1_1.jpg" alt="" />
+							</div>
+						</div>
+						<div class="lp-buy">
+							<div class="lb-address">
+								<b>送至:</b>
+								<p>四川省成都市青羊区</p>预计
+								<span>48小时</span>内为您送达
+							</div>
+							<div class="lb-one">
+								<div class="lbo-amout">1</div>
+								<button class="lbo-add">+</button>
+								<button class="lbo-cut">-</button>
+							</div>
+							<div class="lb-two" id="append_car">
+								<i class="b"></i>
+								加入购物车
+							</div>
+							<div class="lb-three">一键购买</div>
+							<div class="lb-four">
+								<i></i>
+								扫描下载客户端
+								<p>先摇劵 后下单</p>
+							</div>
+						</div>
+					</div>
+					<div class="share">
+						<img src="../img/share1.jpg" alt="" />
+						<i class="bbbb">分享到:</i>
+						<img src="../img/share2.jpg" alt="" />
+						<img src="../img/share3.jpg" alt="" />
+						<img src="../img/share4.jpg" alt="" />
+						<img src="../img/share5.jpg" alt="" />
+						<div class="heart">收藏商品</div>
+					</div>
+				</div>
+				<div class="listo-right">
+					<div class="listtor-one">
+						<div>
+							<img src="../img/productattr1.png" alt="" />
+						</div>
+						<div class="border-dashed">
+							<img src="../img/productattr2.png" alt="" />
+						</div>
+						<div>
+							<img src="../img/productattr3.png" alt="" />
+						</div>
+					</div>
+					<div class="listtor-two">
+						<p>品牌: 闲工夫</p>
+						<p><span class="a">产地: </span><i></i>澳大利亚</p>
+						<p>规格: 130g</p>
+						<p>重量: 0.13kg(含包装)</p>
+						<p>商品编号: 1800240143</p>
+						<div class="listtort">
+							<i class="listtort-i">优选卡</i>
+							支持优选卡支付
+						</div>
+						<div class="listtort-a">
+							<i></i>
+							本品不支持无理由退换货
+						</div>
+					</div>
+					<div class="listtor-three">
+						<div class="listtort-first">
+							<strong>好评度:</strong>
+							<p></p>
+							<span>96%</span>
+						</div>
+						<div class="listtort-second">
+							<p>33条评论</p>
+							<div>
+								sf144792696021191:还没开封，看着不错！
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="list-two-left">
+				<div class="ltl-first">
+					<p>相关分类</p>
+					<h3>精品分类</h3>
+					<ul class="ltlf-ul">
+						<li>牛肉</li>
+						<li>羊肉</li>
+						<li>猪肉</li>
+						<li>禽类</li>
+						<li>腌制肉品</li>
+						<li>肉类礼盒</li>
+						<li>其他肉类</li>
+					</ul>
+				</div>
+				<div class="ltl-first">
+					<p>相关品牌</p>
+					<ul class="ltlf-ul">
+						<li>天普乐食</li>
+						<li>牛大厨</li>
+						<li>顶诺</li>
+						<li>Sunny Estate</li>
+						<li>闲功夫</li>
+						<li>急鲜峰</li>
+					</ul>
+					<div>
+					</div>
+				</div>
+				<div class="ltl-second">
+					<p>购买此商品的顾客还买了</p>
+					<dl class="ltls-dl">
+						<dd>
+							<img src="../img/milk1.jpg" alt="" />
+						</dd>
+						<dt>
+							<p>归原Green Yard有机鲜牛奶</p>
+							<span>【下单后3-5天发货】外包装更</span>
+							<b>￥20</b>
+						</dt>
+					</dl>
+				</div>
+				<div class="ltl-second">
+					<p>购买此商品的顾客还买了</p>
+					<dl class="ltls-dl">
+						<dd>
+							<img src="../img/milk1.jpg" alt="" />
+						</dd>
+						<dt>
+							<p>归原Green Yard有机鲜牛奶</p>
+							<span>【下单后3-5天发货】外包装更</span>
+							<b>￥20</b>
+						</dt>
+					</dl>
+				</div>
+			</div>
+			
+			<div class="list-two-right">
+			<!-- 用于获取相当于页面的高度 -->
+				<div class="ltr-demo" style="height:0;position:absolute;"></div>
+				<div class="ltr-header">
+					<a href="javascript:void(0)" class="ltr-header-bg">商品介绍</a>
+					<a href="javascript:void(0)" class="discuss">评价(33)</a>
+					<a href="javascript:void(0)">售后服务</a>
+					<div><b></b>加入购物车</div>
+				</div>
+				<div class="ltr-all">
+					<ul class="ltra-ul">
+						<li>
+							<strong>保质期：</strong>
+							365（天）
+						</li>
+						<li>
+							<strong>重量(含包装)：</strong>
+							0.13（kg）
+						</li>
+						<li>
+							<strong>销售单位：</strong>
+							份
+						</li>
+						<li>
+							<strong>产地：</strong>
+							澳大利亚
+						</li>
+						<li>
+							<strong>规格：</strong>
+							130g
+						</li>
+					</ul>
+					<div style="background-color:#f5f5f5;padding: 4px 20px 4px 0;line-height:20px;overflow:hidden;">
+						<span style="float:left;width: 100px;text-align:right;padding-right:6px;margin-right:6px;">
+							温馨提示
+						</span>
+						<span style="display:block;overflow:hidden;">
+							顺丰优选所售商品均经过严格的供应商资质审查、商品审查、入库全检、出货全检流程。由于部分商品存在厂家更换包装、不同批次、不同生产日期、不同生产工厂等情况，导致商品实物与图片存在微小差异，因此请您以收到的商品实物为准，同时我们会尽量做到及时更新，由此给您带来不便敬请谅解，谢谢！
+						</span>
+					</div>
+					<div style="padding:5px 0">如果您发现商品信息存在问题，
+						<a href="#" style="color:#4c9811">欢迎纠错</a>
+					</div>
+					<div class="ltra-info">
+						<h2>
+							<img src="../img/7aefa5dd655285326038180e87ddd5b7.gif" alt="" />
+						</h2>
+						<b>&nbsp;</b>
+						<p style="text-align:center;margin:0;">
+							<img src="../img/1472542916_1.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542916_2.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542916_3.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542916_4.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542916_5.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542916_6.jpg" alt="" style="margin: 0px; display: block;"/>
+							<!-- 下一张 -->
+							<img src="../img/1472542769_1.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_2.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_3.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_4.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_5.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_6.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_7.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_8.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_9.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_10.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_11.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_12.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_13.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_14.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_15.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542769_16.jpg" alt="" style="margin: 0px; display: block;"/>
+							<!-- 下一张 -->
+							<img src="../img/1472542780_1.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_2.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_3.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_4.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_5.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_6.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_7.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_8.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_9.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_10.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_11.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_12.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_13.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_14.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_15.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_16.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_17.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_18.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_19.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_20.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_21.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_22.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_23.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_24.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_25.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_26.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_27.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542780_35.jpg" alt="" style="margin: 0px; display: block;"/>
+							<!-- 下一张 -->
+							<img src="../img/1472542790_1.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_2.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_3.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_4.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_5.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_6.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_7.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_8.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_9.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_10.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_11.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_12.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_13.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_14.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_15.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_16.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_17.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_18.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_19.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_20.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_21.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_22.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_23.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_24.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_25.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_26.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_27.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_28.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_29.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_30.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_31.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_32.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_33.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_34.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_35.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_36.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_37.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_38.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_39.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_40.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_41.jpg" alt="" style="margin: 0px; display: block;"/>
+							<img src="../img/1472542790_42.jpg" alt="" style="margin: 0px; display: block;"/>
+						</p>
+						<p style="text-align:center">
+							<br>
+							&nbsp;
+						</p>
+					</div>
+				</div>
+				<div class="ltr-cont">
+					<div class="ltrc-content">
+						<div class="lc-pt">
+							<h3 class="lcpt-top">用户评价</h3>
+							<div class="lc-commDetail">
+								<div class="lc-Score">好评度
+									<strong>
+										<b>96</b>
+										<span>%</span>
+									</strong>
+								</div>
+								<div class="lc-Percent">
+									<dl>
+										<dt>好评</dt>
+										<dd class="lcp-bar">
+											<div style="width:96px"></div>
+										</dd>
+										<dd>96%</dd>
+									</dl>
+									<dl>
+										<dt>中评</dt>
+										<dd class="lcp-bar">
+											<div style="width:2px"></div>
+										</dd>
+										<dd>2%</dd>
+									</dl>
+									<dl>
+										<dt>差评</dt>
+										<dd class="lcp-bar">
+											<div style="width:2px"></div>
+										</dd>
+										<dd>2%</dd>
+									</dl>
+								</div>
+								<div class="lc-Btns">
+									<div>购买过商品，参与评价晒单，可获得积分哦~~</div>
+									<div>
+										<a href="#" class="lcbtn2">马上评价</a>
+										<span class="showMore">
+											<a href="#">[如何获取积分]</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="lc-commmentAll">
+							<h3 class="lcc-curr">
+								<a href="#">
+									全部评价
+									<b>(86)</b>
+								</a>
+							</h3>
+							<h3>
+								<a href="#">
+									好评
+									<b>(83)</b>
+								</a>
+							</h3>
+							<h3>
+								<a href="#">
+									中评
+									<b>(2)</b>
+								</a>
+							</h3>
+							<h3>
+								<a href="#">
+									差评
+									<b>(1)</b>
+								</a>
+							</h3>
+							<h3>
+								<a href="#">
+									有晒单
+									<b>(7)</b>
+								</a>
+							</h3>
+						</div>
+						<ul class="lc-Comment">
+							<li>
+								<div class="lcc-User">
+									<div class="uIcon">
+										<img src="../img/ulevel3.gif" alt="" />
+									</div>
+									<div class="uName">银卡会员</div>
+									<div class="uLevel">顺丰店021cjas</div>
+								</div>
+								<div class="lcc-Item">
+									<div class="Topic">
+										<span class="T-star">
+											<b class="star5"></b>
+										</span>
+										<div class="T-ct">
+											<a href="#">顺丰店021cjas</a>
+										</div>
+										<span class="T-time">
+											2016-10-09 17:15
+										</span>
+										<span class="T-phone">
+											<a href="#">来自Android客户端</a>
+										</span>
+									</div>
+									<div class="itemCont">
+										<dl class="Ic-c">
+											<dt>评价内容：</dt>
+											<dd>很划算，喜欢找微信15800941827她购买</dd>
+										</dl>
+									</div>
+									<div class="pLike">
+										<a href="#">
+											<b></b>
+											赞
+										</a>
+									</div>
+								</div>
+								<div class="lcc-Corner">
+									<div class="aBg"></div>
+									<div class="aCt"></div>
+								</div>
+							</li>
+							<li>
+								<div class="lcc-User">
+									<div class="uIcon">
+										<img src="../img/ulevel4.gif" alt="" />
+									</div>
+									<div class="uName">金卡会员</div>
+									<div class="uLevel">sf147149692947573</div>
+								</div>
+								<div class="lcc-Item">
+									<div class="Topic">
+										<span class="T-star">
+											<b class="star5"></b>
+										</span>
+										<div class="T-ct">
+											<a href="#"></a>
+										</div>
+										<span class="T-time">
+											2016-10-09 16:45
+										</span>
+										<span class="T-phone">
+											<a href="#"></a>
+										</span>
+									</div>
+									<div class="itemCont">
+										<dl class="Ic-c">
+											<dt>评价内容：</dt>
+											<dd>性价比高。值得购买。下次再来</dd>
+										</dl>
+									</div>
+									<div class="pLike">
+										<a href="#">
+											<b></b>
+											赞
+										</a>
+									</div>
+								</div>
+								<div class="lcc-Corner">
+									<div class="aBg"></div>
+									<div class="aCt"></div>
+								</div>
+							</li>
+							<li>
+								<div class="lcc-User">
+									<div class="uIcon">
+										<img src="../img/ulevel5.gif" alt="" />
+									</div>
+									<div class="uName">钻石会员</div>
+									<div class="uLevel">139****1455</div>
+								</div>
+								<div class="lcc-Item">
+									<div class="Topic">
+										<span class="T-star">
+											<b class="star5"></b>
+										</span>
+										<div class="T-ct">
+											<a href="#"></a>
+										</div>
+										<span class="T-time">
+											2016-10-09 10:24
+										</span>
+										<span class="T-phone">
+											<a href="#"></a>
+										</span>
+									</div>
+									<div class="itemCont">
+										<dl class="Ic-c">
+											<dt>评价内容：</dt>
+											<dd>非常好吃，物流特快，吃完再买</dd>
+										</dl>
+									</div>
+									<div class="pLike">
+										<a href="#">
+											<b></b>
+											赞
+										</a>
+									</div>
+								</div>
+								<div class="lcc-Corner">
+									<div class="aBg"></div>
+									<div class="aCt"></div>
+								</div>
+							</li>
+							<li>
+								<div class="lcc-User">
+									<div class="uIcon">
+										<img src="../img/ulevel5.gif" alt="" />
+									</div>
+									<div class="uName">钻石会员</div>
+									<div class="uLevel">sf146961072673292</div>
+								</div>
+								<div class="lcc-Item">
+									<div class="Topic">
+										<span class="T-star">
+											<b class="star5"></b>
+										</span>
+										<div class="T-ct">
+											<a href="#"></a>
+										</div>
+										<span class="T-time">
+											2016-10-09 10:15
+										</span>
+										<span class="T-phone">
+											<a href="#"></a>
+										</span>
+									</div>
+									<div class="itemCont">
+										<dl class="Ic-c">
+											<dt>评价内容：</dt>
+											<dd>商品很好，一如既往的支持！</dd>
+										</dl>
+									</div>
+									<div class="pLike">
+										<a href="#">
+											<b></b>
+											赞
+										</a>
+									</div>
+								</div>
+								<div class="lcc-Corner">
+									<div class="aBg"></div>
+									<div class="aCt"></div>
+								</div>
+							</li>
+							<li>
+								<div class="lcc-User">
+									<div class="uIcon">
+										<img src="../img/ulevel5.gif" alt="" />
+									</div>
+									<div class="uName">钻石会员</div>
+									<div class="uLevel">sf146466403108349</div>
+								</div>
+								<div class="lcc-Item">
+									<div class="Topic">
+										<span class="T-star">
+											<b class="star5"></b>
+										</span>
+										<div class="T-ct">
+											<a href="#">sf146466403108349</a>
+										</div>
+										<span class="T-time">
+											2016-10-09 09:28
+										</span>
+										<span class="T-phone">
+											<a href="#">来自iPhone客户端</a>
+										</span>
+									</div>
+									<div class="itemCont">
+										<dl class="Ic-c">
+											<dt>评价内容：</dt>
+											<dd>好吃便宜，小孩子的最爱，非常不错………………………………………………………………</dd>
+										</dl>
+									</div>
+									<div class="pLike">
+										<a href="#">
+											<b></b>
+											赞
+										</a>
+									</div>
+								</div>
+								<div class="lcc-Corner">
+									<div class="aBg"></div>
+									<div class="aCt"></div>
+								</div>
+							</li>
+							<li>
+								<div class="lcc-User">
+									<div class="uIcon">
+										<img src="../img/ulevel5.gif" alt="" />
+									</div>
+									<div class="uName">钻石会员</div>
+									<div class="uLevel">13925519065a</div>
+								</div>
+								<div class="lcc-Item">
+									<div class="Topic">
+										<span class="T-star">
+											<b class="star5"></b>
+										</span>
+										<div class="T-ct">
+											<a href="#"></a>
+										</div>
+										<span class="T-time">
+											2016-10-09 08:26
+										</span>
+										<span class="T-phone">
+											<a href="#"></a>
+										</span>
+									</div>
+									<div class="itemCont">
+										<dl class="Ic-c">
+											<dt>评价内容：</dt>
+											<dd>很新鲜，速度快。</dd>
+										</dl>
+									</div>
+									<div class="pLike">
+										<a href="#">
+											<b></b>
+											赞
+										</a>
+									</div>
+								</div>
+								<div class="lcc-Corner">
+									<div class="aBg"></div>
+									<div class="aCt"></div>
+								</div>
+							</li>
+							<li>
+								<div class="lcc-User">
+									<div class="uIcon">
+										<img src="../img/ulevel1.gif" alt="" />
+									</div>
+									<div class="uName">注册会员</div>
+									<div class="uLevel">sf142278710563</div>
+								</div>
+								<div class="lcc-Item">
+									<div class="Topic">
+										<span class="T-star">
+											<b class="star5"></b>
+										</span>
+										<div class="T-ct">
+											<a href="#">sf142278710563</a>
+										</div>
+										<span class="T-time">
+											2016-10-08 22:15
+										</span>
+										<span class="T-phone">
+											<a href="#">来自Android客户端</a>
+										</span>
+									</div>
+									<div class="itemCont">
+										<dl class="Ic-c">
+											<dt>评价内容：</dt>
+											<dd>还没吃，到包装很好，和牛肉一起发来的，好评全五分</dd>
+										</dl>
+									</div>
+									<div class="pLike">
+										<a href="#">
+											<b></b>
+											赞
+										</a>
+									</div>
+								</div>
+								<div class="lcc-Corner">
+									<div class="aBg"></div>
+									<div class="aCt"></div>
+								</div>
+							</li>
+							<li>
+								<div class="lcc-User">
+									<div class="uIcon">
+										<img src="../img/ulevel1.gif" alt="" />
+									</div>
+									<div class="uName">普通会员</div>
+									<div class="uLevel">nyx65882855905</div>
+								</div>
+								<div class="lcc-Item">
+									<div class="Topic">
+										<span class="T-star">
+											<b class="star5"></b>
+										</span>
+										<div class="T-ct">
+											<a href="#">nyx65882855905</a>
+										</div>
+										<span class="T-time">
+											2016-10-08 17:32
+										</span>
+										<span class="T-phone">
+											<a href="#">来自iPhone客户端</a>
+										</span>
+									</div>
+									<div class="itemCont">
+										<dl class="Ic-c">
+											<dt>评价内容：</dt>
+											<dd>好吃 很方便  但是强烈建议顺丰送货的时候可以让人选择不用专用的需要工作人员一签收就要回收的保温箱 毕竟不是所有人收获都很方便身边有冷冻设备 一收到就可以立马把一堆散装的东西及时放冰箱 如果有泡沫箱带冰袋的选项更好</dd>
+										</dl>
+									</div>
+									<div class="pLike">
+										<a href="#">
+											<b></b>
+											赞
+										</a>
+									</div>
+								</div>
+								<div class="lcc-Corner">
+									<div class="aBg"></div>
+									<div class="aCt"></div>
+								</div>
+							</li>
+							<li>
+								<div class="lcc-User">
+									<div class="uIcon">
+										<img src="../img/ulevel5.gif" alt="" />
+									</div>
+									<div class="uName">钻石会员</div>
+									<div class="uLevel">sf146269328665709</div>
+								</div>
+								<div class="lcc-Item">
+									<div class="Topic">
+										<span class="T-star">
+											<b class="star5"></b>
+										</span>
+										<div class="T-ct">
+											<a href="#">sf146269328665709</a>
+										</div>
+										<span class="T-time">
+											2016-10-08 11:30
+										</span>
+										<span class="T-phone">
+											<a href="#">来自Android客户端</a>
+										</span>
+									</div>
+									<div class="itemCont">
+										<dl class="Ic-c">
+											<dt>评价内容：</dt>
+											<dd>还是一如既往的好！</dd>
+										</dl>
+									</div>
+									<div class="pLike">
+										<a href="#">
+											<b></b>
+											赞
+										</a>
+									</div>
+								</div>
+								<div class="lcc-Corner">
+									<div class="aBg"></div>
+									<div class="aCt"></div>
+								</div>
+							</li>
+							<li>
+								<div class="lcc-User">
+									<div class="uIcon">
+										<img src="../img/ulevel5.gif" alt="" />
+									</div>
+									<div class="uName">钻石会员</div>
+									<div class="uLevel">顺丰店510CCS</div>
+								</div>
+								<div class="lcc-Item">
+									<div class="Topic">
+										<span class="T-star">
+											<b class="star5"></b>
+										</span>
+										<div class="T-ct">
+											<a href="#">顺丰店510CCS</a>
+										</div>
+										<span class="T-time">
+											2016-10-08 07:53
+										</span>
+										<span class="T-phone">
+											<a href="#">来自Android客户端</a>
+										</span>
+									</div>
+									<div class="itemCont">
+										<dl class="Ic-c">
+											<dt>评价内容：</dt>
+											<dd>便宜又实惠，下次还要买</dd>
+										</dl>
+									</div>
+									<div class="pLike">
+										<a href="#">
+											<b></b>
+											赞
+										</a>
+									</div>
+								</div>
+								<div class="lcc-Corner">
+									<div class="aBg"></div>
+									<div class="aCt"></div>
+								</div>
+							</li>
+						</ul>
+						<div class="lc-Plpage">
+							<div class="showAll">
+								<a href="#">[查看全部评价]</a>
+							</div>
+							<div class="pages">
+								<span class="lc-prev">
+									<b class="prevbg"></b>
+									上一页
+								</span>
+								<span class="current">1</span>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<span class="pagedot">...</span>
+								<a href="#">9</a>
+								<a href="#" class="lc-next">
+									下一页
+									<b class="nextbg"></b>	
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="ltr-sftitle">
+					<img src="../img/ystitle.jpg" alt="" />
+				</div>
+				<!-- 页面下部轮播图 -->
+				<div class="ltr-sfimgs">
+					<div class="sfIcons">
+						<div class="sfIcon1">
+							<span>1</span>
+						</div>
+						<div class="sfIcon2">
+							<span>2</span>
+						</div>
+						<div class="sfIcon3">
+							<span>3</span>
+						</div>
+						<div class="sfIcon4">
+							<span>4</span>
+						</div>
+						<div class="sfIcon5">
+							<span>5</span>
+						</div>
+						<div class="sfIcon6">
+							<span>6</span>
+						</div>
+					</div>
+					<div class="sf-boxs">
+						<ul id="sf-imgs">
+							<li class="sfPic">
+								<img src="../img/yspic7801.jpg" alt="" />
+							</li>
+							<li class="sfPic">
+								<img src="../img/yspic7802.jpg" alt="" />
+							</li>
+							<li class="sfPic">
+								<img src="../img/yspic7803.jpg" alt="" />
+							</li>
+							<li class="sfPic">
+								<img src="../img/yspic7804.jpg" alt="" />
+							</li>
+							<li class="sfPic">
+								<img src="../img/yspic7805.jpg" alt="" />
+							</li>
+							<li class="sfPic">
+								<img src="../img/yspic7806.jpg" alt="" />
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- foot -->
+	<div id="foot">
+		<div class="foot-header">
+			<div class="fh-left">
+				<div></div>
+				<h1>9533858</h1>
+				<p>周一到周日8:30~22:00</p>
+			</div>
+			<div class="fh-center">
+				<ul>
+					<li class="strong"><a href="#">购物指南</a></li>
+					<li><a href="#">积分制度</a></li>
+					<li><a href="#">会员介绍</a></li>
+					<li><a href="#">购物流程</a></li>
+					<li><a href="#">常见问题</a></li>
+				</ul>
+				<ul>
+					<li class="strong"><a href="#">配送服务</a></li>
+					<li><a href="#">配送政策</a></li>
+					<li><a href="#">开箱验货</a></li>
+					<li><a href="#">配送运费</a></li>
+					<li><a href="#">配送范围</a></li>
+				</ul>
+				<ul>
+					<li class="strong"><a href="#">支付方式</a></li>
+					<li><a href="#">货到付款</a></li>
+					<li><a href="#">在线支付</a></li>
+					<li><a href="#">优选卡</a></li>
+					<li><a href="#">发票制度</a></li>
+				</ul>
+				<ul>
+					<li class="strong"><a href="#">售后服务</a></li>
+					<li><a href="#">退款说明</a></li>
+					<li><a href="#">退换货流程</a></li>
+					<li><a href="#">退换货政策</a></li>
+					<li><a href="#">隐私条款</a></li>
+				</ul>
+				<ul>
+					<li class="strong"><a href="#">商家中心</a></li>
+					<li><a href="#">商家规则 </a></li>
+				</ul>
+			</div>
+			<div class="fh-right">
+				<img src="../img/foot.jpg" alt="" />
+			</div>
+		</div>
+		<div class="foot-foot">
+			<div class="ff-main">
+				<img src="../img/kxicon.jpg" alt="" />
+				<img src="../img/bottom_sm.png" alt="" />
+				<ul>
+					<li>关于我们</li>
+					<li>联系我们</li>
+					<li>招聘人才</li>
+					<li>友情链接</li>
+					<li>供应商申请</li>
+				</ul>
+				<span>Copyright&copy;顺丰优选 sfbest.com版权所有</span>
+				<p>京公网安备 11010502026831  京ICP证150325号 食品流通许可证SP1101131210068671(1-1)号  企业营业执照</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>注册</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/register.css}" href="../css/register.css">
+	<script type="text/javascript" th:src="@{/js/jquery.js}" src="../js/jquery.js"></script>
+	<script type="text/javascript" th:src="@{/js/register.js}" src="../js/register.js"></script>
+</head>
+<body>
+	<!-- 遮罩层 -->
+	<div class="zhezhao">
+	</div>
+	<div class="zhezhao2">
+			<p style="width:100%;height:80px;text-align:center;font-size:24px;line-height:40px;color:#f00">此用户已在顺丰优选注册！！</p>
+			<input type="button" value="登录" style="width:80%;margin-left:30px;margin-top:30px" id="re-login"/>
+	</div>
+	<div class="register-success">
+		<div class="remind">
+			提示
+		</div>
+		<p>注册成功</p>
+		<input type="button" value="确定" id="successBtn"/>
+	</div>
+	<!-- header -->
+	<div class="header">
+		<a href="#">
+			<img src="../img/logo.png" alt="" />
+			<span>欢迎注册</span>
+		</a>
+	</div>
+	<!-- register-main -->
+	<div class="tabBox">
+		<!-- <span class="tabBox1">个人用户</span> -->
+		<div class="login">
+			已有账号，立即
+			<!-- 跳转至登陆页面 -->
+			<a href="login.html">登录</a>
+		</div>
+	</div>
+	<div class="reg-table">
+		<ul class="reg-UserBg">
+			<form action="regForm-tab" id="regForm-tab" method="post">
+				<li class="reg-one">
+					<label for="">
+						<font>*</font>
+						 账户名：
+					</label>
+					<div class="reg-all">
+						<input type="text" id="username"/>
+						<em class="regOK1"></em>
+					</div>
+					<span class="regPoint1">请输入你的手机号</span>
+					<span class="regPoint-err1">请输入正确的手机号</span>
+					<span class="reg_exist">
+						该手机号已在顺丰优选注册
+						<a href="login.html">请直接登录
+						</a>
+					</span>
+				</li>
+				<li class="reg-two">
+					<label for="">
+						<font>*</font>
+						 登录密码:
+					</label>
+					<div class="reg-all">
+						<input type="password" id="password"/>
+						<em class="regOK2"></em>
+					</div>
+					<span class="regPoint2">6-20位字符,可使用字母、数字、下划线。不建议使用纯数字或字母组合</span>
+					<span class="regPoint-err2">密码只能是6-20位字母数字下划线组合</span>
+				</li>
+				<li class="reg-thr">
+					<font style="font-size:12px">安全程度：</font>
+					<em class="default one">弱</em>
+					<em class="default">中</em>
+					<em class="default">强</em>
+				</li>
+				<li class="reg-one">
+					<label for="">
+						<font>*</font>
+						 确认密码：
+					</label>
+					<div class="reg-all">
+						<input type="password" id="password2"/>
+						<em class="regOK3"></em>
+					</div>
+					<span class="regPoint3">请再次输入密码</span>
+					<span class="regPoint-err3">两次输入不一致，请重新输入</span>
+				</li>
+				<!-- 验证码 -->
+				<li class="reg-four">
+					<label for="">
+						<font>*</font>
+						  验证码：
+					</label>
+					<div class="reg-all none">
+						<input type="text" id="auth_code" />
+						<span id="code_img1"></span>
+						<span class="rf-span">
+							看不清？
+							<a href="javascript:void(0)" id="onchange">换一换</a>
+						</span>
+						<em class="regOK"></em>
+					</div>
+					<span class="regPoint">请输入验证码</span>
+					
+					
+				</li>
+				<li class="reg-five">
+					<input type="checkbox" checked="checked" />
+					<a href="#">
+						我已阅读并同意
+						<font style="font-size:12px">《顺丰优选用户注册协议》</font>
+					</a>
+				</li>
+				<li class="reg-six">
+					<input type="button" value="立即注册" id="reg"/>
+				</li>
+			</form>
+		</ul>
+		<div class="reg-tip">
+			<a href="#">了解更多>></a>
+		</div>
+	</div>
+	<!-- foot -->
+	<div class="foot">
+		<span>
+			<a href="#">关于我们</a>|
+			<a href="#">联系我们</a>|
+			<a href="#">招聘人才</a>|
+			<a href="#">友情链接</a>|
+			<a href="#">供应商申请</a>
+		</span>
+		<p>
+			北京顺丰电子商务有限公司
+			<br />
+			北京市公安局顺义分局备案11011302000890号|
+			<a href="#">京ICP备12011349号</a>|
+			<a href="#">企业营业执照</a>
+			<br />
+			Copyright© 顺丰优选 sfbest.com 版权所有
+			<br />
+		</p>
+	</div>
+</body>
+</html>

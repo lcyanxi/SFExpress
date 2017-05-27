@@ -1,0 +1,184 @@
+@charset "utf-8";
+
+
+body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend{margin:0; padding:0;}
+ul,li,ol{list-style:none;}
+img,fieldset{border:0; }
+img{display:block;}
+a{text-decoration:none; color:#333;}
+body{font-size:12px; font-family:"微软雅黑";}
+
+/***********car-main*********/
+#car-main{
+	min-height: 400px;
+	height: auto!important;
+	height: 400px;	
+	width: 1200px;
+	margin:0 auto;
+}
+#car-main:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+}
+.cm-my{
+	height: 50px;
+}
+#cart{
+	width: 1200px;
+}
+.title{
+	width: 1200px;
+	height: 30px;
+	background: #81a84a;
+}
+.title div{
+	float: left;
+	padding:0px 30px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	width: 100px;
+	text-align: center;
+}
+.title div.goods{
+	width: 150px;
+}
+.title div.numbers{
+	width: 150px;
+}
+#gross{
+	height: 48px;
+	border:1px solid #969696;
+	float: left;
+	width: 1200px;
+}
+#del_checked,#clear_cart{
+	padding: 0 10px;
+	height: 50px;
+	float: left;
+	line-height: 50px;
+	font-size: 14px;
+	background: url(../img/delbg.jpg) no-repeat 3px 18px;
+	text-indent: 10px;
+}
+.subAll{
+	float: right;
+	height: 50px;
+	padding: 0 20px 0 10px;
+	line-height: 50px;
+}
+#subAll{
+	font-size: 24px;
+	color:#ea5404;
+	padding: 0 5px;
+}
+#goout{
+	width: 70px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	border: 1px solid #81a84a;
+	display: block;
+	margin:20px 0 0 950px;
+	float: left;
+	cursor: pointer;
+}
+#account{
+	float: left;
+	width: 150px;
+	height: 45px;
+	background: #6e9b0c;
+	margin: 10px;
+	line-height: 45px;
+	text-align: center;
+	font-size:20px;
+	color: #fff;
+	cursor:pointer;
+}
+#cart .cart_body{
+	width: 1200px;
+	border:none;
+	height: 100px;
+	float: left;
+}
+#cart .cart_body div{
+	float: left;
+	padding: 0 30px;
+	width: 100px;
+	text-align: center;
+	margin-top: 10px;
+}
+#cart .cart_body div.goods{
+	width: 150px;
+}
+#cart .cart_body div.amount{
+	width: 150px;
+}
+.amount .minus,.addnum{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer;
+	background: #f9af3a;
+	border-radius: 5px;
+	font-size: 15px;
+}
+.amount input{
+	text-align: center;
+	border:none;
+}
+.zhezhao{
+	width: 100%;
+	height: 750px;
+	background: #000;
+	opacity: 0.3;
+	z-index: 9999;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+.cart_null{
+	width: 360px;
+	height: 200px;
+	border:5px solid #ccc;
+	position: fixed;
+	left: 450px;
+	top: 200px;
+	background: #fff;
+	z-index: 999999;
+	display: none;
+}
+.remind{
+	height: 40px;
+	background: #f1f1f1;
+	border-bottom: 1px solid #ddd;
+	line-height: 40px;
+	text-indent: 10px;
+}
+.cart_null input{
+	position: absolute;
+	right: 50px;
+	bottom: 20px;
+	border-radius: 5px;
+	height: 30px;
+}
+.cart_null p{
+	height: 85px;
+	line-height: 85px;
+	text-align: center;
+	width: 300px;
+	margin:0 auto;
+	border-bottom: 1px solid #ddd;
+	background: url(../img/car_bg.jpg) no-repeat 20px 25px;
+}
+.quit{
+	color:#f00;
+	display: none;
+}
