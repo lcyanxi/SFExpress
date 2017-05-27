@@ -5,5 +5,13 @@ package cn.coolbhu.sfexpress.service;
  */
 public interface AdminService {
 
+    /**
+     * 注册
+     * @param username
+     * @param password
+     * @return
+     */
     int addUser(String username,String password);
+
+    boolean isExistPhone(String Phone);
 }

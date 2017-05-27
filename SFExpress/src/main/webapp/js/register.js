@@ -83,24 +83,23 @@ $(function(){
 		$("#reg").on("click",function(){
 			if(checkUsername&&pwd&&checkCode&&($("#password").val()===$("#password2").val())){
 				// alert("注册成功");
-				var name = $("#username").val(),
-					password = $("#password").val();
-				var data = {
-					"username":name,
-					"password":password
-				};
-				var data = JSON.stringify(data);
+				var name = $("#username").val();
+				var password = $("#password").val();
 				$.ajax({
-					type:"post",
+					type:"POST",
 					url:"/user/adduser",
-					data:data,
+					data:{
+						username:name,
+						password:password
+					},
+
+					dataType:'json',
 					success:function(data){
 						console.log(data);
-						alert(data);
 						$(".zhezhao").show();
 						$(".register-success").show();
 						$("#successBtn").click(function(){
-							location = "../WEB-INF/login.html";
+							location = "/login";
 						});
 					},
 					error:function(data){
@@ -111,17 +110,17 @@ $(function(){
 							$('.zhezhao').show();
 							$('.zhezhao2').show();
 							$('#re-login').click(function(){
-								location.href = '../WEB-INF/login.html'
+								location.href = '/login'
 							});
 						}else if(date.ResultCode == 200){
 							console.log('注册成功');
-							location.href = '../WEB-INF/login.html';
+							location.href = '/login';
 						}
-					}	
+					}
 				});
 			}
 			else{
-				// alert("注册不成功");
+				alert("注册不成功");
 			}
 		});
 		// 随机生成验证码

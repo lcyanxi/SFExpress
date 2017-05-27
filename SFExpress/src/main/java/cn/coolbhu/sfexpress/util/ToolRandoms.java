@@ -19,7 +19,7 @@ public class ToolRandoms {
      *
      * @return
      */
-    public static String randomCode8() {
+    public static String randomCode10() {
         String codeStr = yearDateFormat.format(new Date());
 
         for (int i = 0; i < 6; i++) {

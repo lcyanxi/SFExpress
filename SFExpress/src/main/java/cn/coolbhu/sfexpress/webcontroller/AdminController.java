@@ -4,7 +4,9 @@ import cn.coolbhu.sfexpress.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,12 +21,22 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-    @RequestMapping(value = "/adduser")
+    @RequestMapping(value = "/adduser" ,method = RequestMethod.POST)
+    @ResponseBody
     public Map addUser(@RequestParam(value = "username")String username,
                        @RequestParam(value = "password")String password){
         Map map=new HashMap();
         if (username==""||username==null||password==""||password==null){
-            map.put(Constant.STATUS,"用户名或者密码不能为空！");
+            map.put(Constant.STATUS,Constant.FAIL);
+            map.put(Constant.MESSAGE,"用户名或者密码不能为空！");
+            return map;
+        }
+
+
+        //判断电话号码是否存在
+        if (adminService.isExistPhone(username)){
+            map.put(Constant.STATUS,Constant.FAIL);
+            map.put(Constant.MESSAGE,"对不起，该电话号码已经注册了！");
             return map;
         }
 
@@ -33,6 +45,7 @@ public class AdminController {
             map.put(Constant.MESSAGE,"恭喜你，注册成功！");
 
         }else {
+            map.put(Constant.STATUS,Constant.FAIL);
             map.put(Constant.MESSAGE,"对不起，注册失败，请重新注册！");
         }
 
