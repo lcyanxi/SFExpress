@@ -20,7 +20,7 @@ $(function(){
 		$("#usernameError").hide();
 	});
 	$("#password").on("focus",function(){
-		$("#passwordError").hide();		
+		$("#passwordError").hide();
 	});
 
 	// 检查用户名和密码
@@ -67,12 +67,6 @@ $(function(){
 			}
 		});
 	}
-	// 登陆
-	$("#login").on("click",function(){
-		if(checkCode()){
-			check()
-		}
-	});
 	$("#errorBtn").click(function(){
 		$(".login-error").hide();
 		$(".zhezhao").hide();
