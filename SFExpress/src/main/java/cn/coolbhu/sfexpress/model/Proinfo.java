@@ -2,7 +2,7 @@ package cn.coolbhu.sfexpress.model;
 
 import java.util.Date;
 
-public class proinfo {
+public class Proinfo {
     private String proinfoid;
 
     private String orderid;
