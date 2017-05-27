@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>登陆</title>
+	<link rel="stylesheet" type="text/css" href="css/register.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+</head>
+<body style="background:#fff">
+	<!-- 遮罩层 -->
+	<div class="zhezhao"></div>
+	<div class="login-error">
+		<div class="remind">
+			提示
+		</div>
+		<p>账户或密码错误请重新登陆</p>
+		<input type="button" value="确定" id="errorBtn"/>
+	</div>
+
+	<!-- header -->
+	<div class="header">
+		<a href="#">
+			<img src="img/logo.png" alt="" />
+			<span>欢迎登录</span>
+		</a>
+	</div>
+	<!-- login-main -->
+	<div class="login_main">
+		<div class="LM_pic">
+			<img src="img/ab85e7244ad237811101c7cab14adef1.png" alt="" />
+		</div>
+		<div class="LM_login">
+			<div class="LML_header">
+				<span>您还未登录</span>
+				<a href="register.html">免费注册</a>
+			</div>
+			<div class="LML_box">
+				<!-- <ul class="LML_nav"></ul> -->
+				<div class="LML_con">
+					<ul>
+						<form action="" id="fm1">
+							<li>
+								<span class="LML_title">手机/验证邮箱/用户名</span>
+								<div class="LML_border" style="position:relative;">
+									<input type="text" id="username" />
+									<em id="usernamelogo"></em>
+								</div>
+								<span id="usernameError">请输入手机/验证邮箱/用户名</span>
+							</li>
+							<li>
+								<span class="LML_title">登录密码</span>
+								<div class="LML_border" style="position:relative;">
+									<input type="password" id="password" />
+									<em id="passwordlogo"></em>
+								</div>
+								<span id="passwordError">请输入密码</span>
+							</li>
+							<li>
+								<input type="text" id="code_auth"/>
+								<span class="code_auth"></span>
+								<div class="code_err">
+									验证码错误!!!
+								</div>
+							</li>
+							<a href="#">忘记密码?</a>
+							<input type="button" id="login" value="登陆"/>
+							<div class="zhifubao">
+								<p>合作网站登陆</p>
+								<a href="#">QQ</a>|
+								<a href="#">新浪微博</a>|
+								<a href="#">腾讯微博</a>|
+								<a href="#">支付宝</a>
+							</div>
+						</form>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- foot -->
+	<div class="foot">
+		<span>
+			<a href="#">关于我们</a>|
+			<a href="#">联系我们</a>|
+			<a href="#">招聘人才</a>|
+			<a href="#">友情链接</a>|
+			<a href="#">供应商申请</a>
+		</span>
+		<p>
+			北京顺丰电子商务有限公司
+			<br />
+			北京市公安局顺义分局备案11011302000890号|
+			<a href="#">京ICP备12011349号</a>|
+			<a href="#">企业营业执照</a>
+			<br />
+			Copyright© 顺丰优选 sfbest.com 版权所有
+			<br />
+		</p>
+	</div>
+</body>
+</html>
