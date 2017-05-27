@@ -92,7 +92,7 @@ $(function(){
 				var data = JSON.stringify(data);
 				$.ajax({
 					type:"post",
-					url:"http://localhost:8080/project-webapp/json/adduser",
+					url:"/user/adduser",
 					data:data,
 					success:function(data){
 						console.log(data);
