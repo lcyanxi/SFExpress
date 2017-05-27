@@ -22,7 +22,7 @@
     <!--springMVC+thymeleaf的跳转页面配置-->
     <bean id="templateResolver"
           class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
-        <property name="prefix" value="/WEB-INF/templates/"/>
+        <property name="prefix" value="/WEB-INF/"/>
         <property name="suffix" value=".html"/>
         <property name="templateMode" value="HTML"/>
         <property name="cacheable" value="false"/>
