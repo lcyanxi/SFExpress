@@ -65,7 +65,7 @@
                selectByExampleQueryId="false">
         </table>
 
-        <table tableName="proinfo" domainObjectName="proinfo"
+        <table tableName="proinfo" domainObjectName="Proinfo"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
