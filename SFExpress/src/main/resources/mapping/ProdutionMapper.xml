@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.coolbhu.sfexpress.dao.ProdutionMapper">
+  <resultMap id="BaseResultMap" type="cn.coolbhu.sfexpress.model.Prodution">
+    <id column="ProId" jdbcType="CHAR" property="proid" />
+    <result column="ProName" jdbcType="VARCHAR" property="proname" />
+    <result column="Price" jdbcType="DOUBLE" property="price" />
+    <result column="Img" jdbcType="VARCHAR" property="img" />
+    <result column="Detail" jdbcType="VARCHAR" property="detail" />
+    <result column="ProMark" jdbcType="INTEGER" property="promark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from prodution
+    where ProId = #{proid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.coolbhu.sfexpress.model.Prodution">
+    insert into prodution (ProId, ProName, Price, 
+      Img, Detail, ProMark
+      )
+    values (#{proid,jdbcType=CHAR}, #{proname,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, 
+      #{img,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, #{promark,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.coolbhu.sfexpress.model.Prodution">
+    update prodution
+    set ProName = #{proname,jdbcType=VARCHAR},
+      Price = #{price,jdbcType=DOUBLE},
+      Img = #{img,jdbcType=VARCHAR},
+      Detail = #{detail,jdbcType=VARCHAR},
+      ProMark = #{promark,jdbcType=INTEGER}
+    where ProId = #{proid,jdbcType=CHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select ProId, ProName, Price, Img, Detail, ProMark
+    from prodution
+    where ProId = #{proid,jdbcType=CHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ProId, ProName, Price, Img, Detail, ProMark
+    from prodution
+  </select>
+</mapper>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.coolbhu.sfexpress.dao.AddressMapper">
+  <resultMap id="BaseResultMap" type="cn.coolbhu.sfexpress.model.Address">
+    <id column="AddId" jdbcType="CHAR" property="addid" />
+    <result column="UserId" jdbcType="CHAR" property="userid" />
+    <result column="AddName" jdbcType="VARCHAR" property="addname" />
+    <result column="Address" jdbcType="VARCHAR" property="address" />
+    <result column="DetailAddress" jdbcType="VARCHAR" property="detailaddress" />
+    <result column="AddPhone" jdbcType="VARCHAR" property="addphone" />
+    <result column="AddCreateTime" jdbcType="TIMESTAMP" property="addcreatetime" />
+    <result column="AddMark" jdbcType="INTEGER" property="addmark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from address
+    where AddId = #{addid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.coolbhu.sfexpress.model.Address">
+    insert into address (AddId, UserId, AddName, 
+      Address, DetailAddress, AddPhone, 
+      AddCreateTime, AddMark)
+    values (#{addid,jdbcType=CHAR}, #{userid,jdbcType=CHAR}, #{addname,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{detailaddress,jdbcType=VARCHAR}, #{addphone,jdbcType=VARCHAR}, 
+      #{addcreatetime,jdbcType=TIMESTAMP}, #{addmark,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.coolbhu.sfexpress.model.Address">
+    update address
+    set UserId = #{userid,jdbcType=CHAR},
+      AddName = #{addname,jdbcType=VARCHAR},
+      Address = #{address,jdbcType=VARCHAR},
+      DetailAddress = #{detailaddress,jdbcType=VARCHAR},
+      AddPhone = #{addphone,jdbcType=VARCHAR},
+      AddCreateTime = #{addcreatetime,jdbcType=TIMESTAMP},
+      AddMark = #{addmark,jdbcType=INTEGER}
+    where AddId = #{addid,jdbcType=CHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select AddId, UserId, AddName, Address, DetailAddress, AddPhone, AddCreateTime, AddMark
+    from address
+    where AddId = #{addid,jdbcType=CHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select AddId, UserId, AddName, Address, DetailAddress, AddPhone, AddCreateTime, AddMark
+    from address
+  </select>
+</mapper>

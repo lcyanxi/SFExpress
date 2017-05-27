@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.coolbhu.sfexpress.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="cn.coolbhu.sfexpress.model.User">
+    <id column="UserId" jdbcType="CHAR" property="userid" />
+    <result column="UserName" jdbcType="VARCHAR" property="username" />
+    <result column="Password" jdbcType="VARCHAR" property="password" />
+    <result column="Email" jdbcType="VARCHAR" property="email" />
+    <result column="Phone" jdbcType="CHAR" property="phone" />
+    <result column="Slead" jdbcType="INTEGER" property="slead" />
+    <result column="UserCreateTime" jdbcType="TIMESTAMP" property="usercreatetime" />
+    <result column="UserMark" jdbcType="INTEGER" property="usermark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from user
+    where UserId = #{userid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.coolbhu.sfexpress.model.User">
+    insert into user (UserId, UserName, Password, 
+      Email, Phone, Slead, UserCreateTime, 
+      UserMark)
+    values (#{userid,jdbcType=CHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{phone,jdbcType=CHAR}, #{slead,jdbcType=INTEGER}, #{usercreatetime,jdbcType=TIMESTAMP}, 
+      #{usermark,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.coolbhu.sfexpress.model.User">
+    update user
+    set UserName = #{username,jdbcType=VARCHAR},
+      Password = #{password,jdbcType=VARCHAR},
+      Email = #{email,jdbcType=VARCHAR},
+      Phone = #{phone,jdbcType=CHAR},
+      Slead = #{slead,jdbcType=INTEGER},
+      UserCreateTime = #{usercreatetime,jdbcType=TIMESTAMP},
+      UserMark = #{usermark,jdbcType=INTEGER}
+    where UserId = #{userid,jdbcType=CHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select UserId, UserName, Password, Email, Phone, Slead, UserCreateTime, UserMark
+    from user
+    where UserId = #{userid,jdbcType=CHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select UserId, UserName, Password, Email, Phone, Slead, UserCreateTime, UserMark
+    from user
+  </select>
+</mapper>

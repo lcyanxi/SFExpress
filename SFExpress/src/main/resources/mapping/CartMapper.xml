@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.coolbhu.sfexpress.dao.CartMapper">
+  <resultMap id="BaseResultMap" type="cn.coolbhu.sfexpress.model.Cart">
+    <id column="CartId" jdbcType="CHAR" property="cartid" />
+    <result column="UserId" jdbcType="CHAR" property="userid" />
+    <result column="ProId" jdbcType="CHAR" property="proid" />
+    <result column="Num" jdbcType="INTEGER" property="num" />
+    <result column="Total" jdbcType="DOUBLE" property="total" />
+    <result column="CartCreateTime" jdbcType="TIMESTAMP" property="cartcreatetime" />
+    <result column="CartUpdateTime" jdbcType="TIMESTAMP" property="cartupdatetime" />
+    <result column="CartMark" jdbcType="INTEGER" property="cartmark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from cart
+    where CartId = #{cartid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.coolbhu.sfexpress.model.Cart">
+    insert into cart (CartId, UserId, ProId, 
+      Num, Total, CartCreateTime, 
+      CartUpdateTime, CartMark)
+    values (#{cartid,jdbcType=CHAR}, #{userid,jdbcType=CHAR}, #{proid,jdbcType=CHAR}, 
+      #{num,jdbcType=INTEGER}, #{total,jdbcType=DOUBLE}, #{cartcreatetime,jdbcType=TIMESTAMP}, 
+      #{cartupdatetime,jdbcType=TIMESTAMP}, #{cartmark,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.coolbhu.sfexpress.model.Cart">
+    update cart
+    set UserId = #{userid,jdbcType=CHAR},
+      ProId = #{proid,jdbcType=CHAR},
+      Num = #{num,jdbcType=INTEGER},
+      Total = #{total,jdbcType=DOUBLE},
+      CartCreateTime = #{cartcreatetime,jdbcType=TIMESTAMP},
+      CartUpdateTime = #{cartupdatetime,jdbcType=TIMESTAMP},
+      CartMark = #{cartmark,jdbcType=INTEGER}
+    where CartId = #{cartid,jdbcType=CHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select CartId, UserId, ProId, Num, Total, CartCreateTime, CartUpdateTime, CartMark
+    from cart
+    where CartId = #{cartid,jdbcType=CHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select CartId, UserId, ProId, Num, Total, CartCreateTime, CartUpdateTime, CartMark
+    from cart
+  </select>
+</mapper>
