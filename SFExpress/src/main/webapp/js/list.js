@@ -9,7 +9,7 @@ $(function(){
 			// 点击退出清空当前的cookie值
 			$(".quit").on("click",function(){
 				$.cookie("name",name,{expires:-1});
-				location = "login.html";
+				location = "../WEB-INF/login.html";
 			});
 		}
 	/***********放大镜效果***********/
@@ -193,7 +193,7 @@ $(function(){
 			$(".car_success").hide();
 		});
 		$("#car_goto").click(function(){
-			location="cart.html";
+			location="../WEB-INF/cart.html";
 		});
 		/**********cookie*********/
 		var $div = $(this).parents(".listol-price"),

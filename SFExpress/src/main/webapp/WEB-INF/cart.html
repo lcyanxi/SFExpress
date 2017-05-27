@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
 	<title>购物车</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/car.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.cookie.js"></script>
-	<script type="text/javascript" src="js/car.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/car.css}" href="../css/car.css">
+	<script type="text/javascript" th:href="@{/js/jquery.js}" src="../js/jquery.js"></script>
+	<script type="text/javascript" th:src="@{/js/jquery.cookie.js}" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" th:src="@{/js/car.js}" src="../js/car.js"></script>
 </head>
 <body>
 	<div class="zhezhao"></div>
@@ -113,8 +114,8 @@
 					<li class="hro-a"><a href="#">网站导航</a></li>
 				</ul>
 				<div class="hr-two">
-					<a href="#"><img src="img/weibo.jpg" alt="微博" /></a>
-					<a href="#"><img src="img/weixin.jpg" alt="微信" /></a>
+					<a href="#"><img src="../img/weibo.jpg" alt="微博" /></a>
+					<a href="#"><img src="../img/weixin.jpg" alt="微信" /></a>
 				</div>
 			</div>
 		</div>
@@ -125,10 +126,10 @@
 			<a class="li-one" href="#"></a>
 			<a class="li-two" href="#"></a>
 			<div class="li-thr">
-				<a href="#"><img src="img/logo_word.jpg" alt="" />
+				<a href="#"><img src="../img/logo_word.jpg" alt="" />
 				</a>
 			</div>
-			<img src="img/step_01.jpg " alt="" />
+			<img src="../img/step_01.jpg " alt="" />
 		</div>
 	</div>
 	<!-- main -->
@@ -220,13 +221,13 @@
 				</ul>
 			</div>
 			<div class="fh-right">
-				<img src="img/foot.jpg" alt="" />
+				<img src="../img/foot.jpg" alt="" />
 			</div>
 		</div>
 		<div class="foot-foot">
 			<div class="ff-main">
-				<img src="img/kxicon.jpg" alt="" />
-				<img src="img/bottom_sm.png" alt="" />
+				<img src="../img/kxicon.jpg" alt="" />
+				<img src="../img/bottom_sm.png" alt="" />
 				<ul>
 					<li>关于我们</li>
 					<li>联系我们</li>

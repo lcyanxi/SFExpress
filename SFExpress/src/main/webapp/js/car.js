@@ -9,7 +9,7 @@ $(function(){
 			// 点击退出清空当前的cookie值
 			$(".quit").on("click",function(){
 				$.cookie("name",name,{expires:-1});
-				location = "login.html";
+				location = "../WEB-INF/login.html";
 			});
 		}
 	$.cookie.json = true;
@@ -77,7 +77,7 @@ $(function(){
 		calcTotal();
 	});
 	$("#go_on2").click(function(){
-		location="index.html";
+		location="../WEB-INF/index.html";
 	});
 	// 加数量
 	$(".addnum").click(function(){
@@ -126,10 +126,10 @@ $(function(){
 	}
 	// 继续购物
 	$("#goout").click(function(){
-		location="index.html";
+		location="../WEB-INF/index.html";
 	});
 	// 去结算
 	$("#account").click(function(){
-		location="indent.html";
+		location="../WEB-INF/indent.html";
 	});
 });

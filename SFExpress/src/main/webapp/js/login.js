@@ -56,7 +56,7 @@ $(function(){
 				var date = JSON.parse(data.responseText);
 				console.log(date);
 				if(date.ResultCode == 200){
-					location.href = 'index.html';
+					location.href = '../WEB-INF/index.html';
 					// 将用户名保存到cookie中
 						$.cookie.json = true;
 						$.cookie("name",name,{expires:7});

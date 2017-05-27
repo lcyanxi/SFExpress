@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
 	<title>首页</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.cookie.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../css/main.css">
+	<script type="text/javascript" th:src="@{/js/jquery.js}" src="../js/jquery.js"></script>
+	<script type="text/javascript" th:src="@{/js/jquery.cookie.js}" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" th:src="@{/js/index.js}" src="../js/index.js"></script>
 </head>
 <body>
 	<!-- header -->
@@ -105,8 +106,8 @@
 					<li class="hro-a"><a href="#">网站导航</a></li>
 				</ul>
 				<div class="hr-two">
-					<a href="#"><img src="img/weibo.jpg" alt="微博" /></a>
-					<a href="#"><img src="img/weixin.jpg" alt="微信" /></a>
+					<a href="#"><img src="../img/weibo.jpg" alt="微博" /></a>
+					<a href="#"><img src="../img/weixin.jpg" alt="微信" /></a>
 				</div>
 			</div>
 		</div>
@@ -117,12 +118,12 @@
 			<a class="li-one" href="#"></a>
 			<a class="li-two" href="#"></a>
 			<div class="li-thr">
-				<a href="#"><img src="img/logo_word.jpg" alt="" />
+				<a href="#"><img src="../img/logo_word.jpg" alt="" />
 				</a>
 			</div>
 		</div>
 		<a class="gif">
-			<img src="img/dong.gif" alt="" />
+			<img src="../img/dong.gif" alt="" />
 		</a>
 		<div class="l-cart">
 			<div class="lc-one">
@@ -199,7 +200,7 @@
 						</ul>
 					</div>
 					<div class="lrs-img">
-						<img src="img/1463455028.jpg" alt="" />
+						<img src="../img/1463455028.jpg" alt="" />
 					</div>
 				</div>
 			</li>
@@ -241,7 +242,7 @@
 						</ul>
 					</div>
 					<div class="lrs-img">
-						<img src="img/1463456854.jpg" alt="" />
+						<img src="../img/1463456854.jpg" alt="" />
 					</div>
 				</div>
 			</li>
@@ -288,7 +289,7 @@
 						</ul>
 					</div>
 					<div class="lrs-img">
-						<img src="img/1468837571.jpg" alt="" />
+						<img src="../img/1468837571.jpg" alt="" />
 					</div>
 				</div>
 			</li>
@@ -341,7 +342,7 @@
 						</ul>
 					</div>
 					<div class="lrs-img">
-						<img src="img/1474289394.jpg" alt="" />
+						<img src="../img/1474289394.jpg" alt="" />
 					</div>
 				</div>
 			</li>
@@ -397,7 +398,7 @@
 						</ul>
 					</div>
 					<div class="lrs-img">
-						<img src="img/1474287884.jpg" alt="" />
+						<img src="../img/1474287884.jpg" alt="" />
 					</div>
 				</div>
 			</li>
@@ -445,7 +446,7 @@
 						</ul>
 					</div>
 					<div class="lrs-img">
-						<img src="img/1474287857.jpg" alt="" />
+						<img src="../img/1474287857.jpg" alt="" />
 					</div>
 				</div>
 			</li>
@@ -506,7 +507,7 @@
 						</ul>
 					</div>
 					<div class="lrs-img">
-						<img src="img/1474287871.jpg" alt="" />
+						<img src="../img/1474287871.jpg" alt="" />
 					</div>
 				</div>
 			</li>
@@ -585,7 +586,7 @@
 						</ul>
 					</div>
 					<div class="lrs-img">
-						<img src="img/1471311388.jpg" alt="" />
+						<img src="../img/1471311388.jpg" alt="" />
 					</div>
 				</div>
 			</li>
@@ -605,21 +606,21 @@
 	<div id="banner">
 		<div class="box">
 			<ul class="b-list">
-				<li class="topic"><img src="img/banner1.jpg" alt="" /></li>
-				<li class="topic"><img src="img/banner2.jpg" alt="" /></li>
-				<li class="topic"><img src="img/banner3.jpg" alt="" /></li>
-				<li class="topic"><img src="img/banner4.jpg" alt="" /></li>
-				<li class="topic"><img src="img/banner5.jpg" alt="" /></li>
-				<li class="topic"><img src="img/banner6.jpg" alt="" /></li>
-				<li class="topic"><img src="img/banner7.jpg" alt="" /></li>
-				<li class="topic"><img src="img/banner8.jpg" alt="" /></li>
+				<li class="topic"><img src="../img/banner1.jpg" alt="" /></li>
+				<li class="topic"><img src="../img/banner2.jpg" alt="" /></li>
+				<li class="topic"><img src="../img/banner3.jpg" alt="" /></li>
+				<li class="topic"><img src="../img/banner4.jpg" alt="" /></li>
+				<li class="topic"><img src="../img/banner5.jpg" alt="" /></li>
+				<li class="topic"><img src="../img/banner6.jpg" alt="" /></li>
+				<li class="topic"><img src="../img/banner7.jpg" alt="" /></li>
+				<li class="topic"><img src="../img/banner8.jpg" alt="" /></li>
 			</ul>
 			<div id="pages"></div>
 		</div>
 		<ul class="b-img">
-			<li><img src="img/banner11.jpg" alt="" /></li>
-			<li><img src="img/banner12.jpg" alt="" /></li>
-			<li><img src="img/banner13.jpg" alt="" /></li>
+			<li><img src="../img/banner11.jpg" alt="" /></li>
+			<li><img src="../img/banner12.jpg" alt="" /></li>
+			<li><img src="../img/banner13.jpg" alt="" /></li>
 		</ul>
 		<div class="zhe"></div>
 	</div>
@@ -678,7 +679,7 @@
 				</li>
 			</ul>
 			<dl class="yx-right">
-				<dt><img src="img/must9.jpg" alt="" /></dt>
+				<dt><img src="../img/must9.jpg" alt="" /></dt>
 				<dd>
 					<p class="yxr-one">最新动态<a href="#">更多></a>
 					</p>
@@ -699,7 +700,7 @@
 				</div>
 				<div class="time-list">
 					<dl>
-						<dt><img src="img/xianshi1.jpg" alt="" /></dt>
+						<dt><img src="../img/xianshi1.jpg" alt="" /></dt>
 						<dd>
 							<p class="tl-text">可康COCON甜橙味果冻</p>
 							<span class="tl-price">￥6.9</span>
@@ -709,7 +710,7 @@
 				</div>
 				<div class="time-list">
 					<dl>
-						<dt><img src="img/xianshi2.jpg" alt="" /></dt>
+						<dt><img src="../img/xianshi2.jpg" alt="" /></dt>
 						<dd>
 							<p class="tl-text">Figo金瓜鱼丸 200g</p>
 							<span class="tl-price">￥15.9</span>
@@ -719,7 +720,7 @@
 				</div>
 				<div class="time-list">
 					<dl>
-						<dt><img src="img/xianshi3.jpg" alt="" /></dt>
+						<dt><img src="../img/xianshi3.jpg" alt="" /></dt>
 						<dd>
 							<p class="tl-text">佰乐佳美娜红+长相思白2款</p>
 							<span class="tl-price">￥68</span>
@@ -729,7 +730,7 @@
 				</div>
 				<div class="time-list">
 					<dl>
-						<dt><img src="img/xianshi4.jpg" alt="" /></dt>
+						<dt><img src="../img/xianshi4.jpg" alt="" /></dt>
 						<dd>
 							<p class="tl-text">中原G7 3合1速溶咖啡 384g</p>
 							<span class="tl-price">￥29.9</span>
@@ -739,7 +740,7 @@
 				</div>
 				<div class="time-list">
 					<dl>
-						<dt><img src="img/xianshi5.jpg" alt="" /></dt>
+						<dt><img src="../img/xianshi5.jpg" alt="" /></dt>
 						<dd>
 							<p class="tl-text">柴火大院 有机红小豆 400g</p>
 							<span class="tl-price">￥9.9</span>
@@ -749,11 +750,11 @@
 				</div>
 			</div>
 			<div class="time-right">
-				<img src="img/xianshi6.jpg" alt="" />
+				<img src="../img/xianshi6.jpg" alt="" />
 			</div>
 		</div>
 		<div class="images">
-			<img src="img/1.jpg" alt="" />
+			<img src="../img/1.jpg" alt="" />
 		</div>
 		<!-- 楼层导航 -->
 		<ul class="floor">
@@ -768,13 +769,13 @@
 		<div class="friut">
 			<dl class="friut-left">
 				<dt><p>水果 蔬菜</p></dt>
-				<dd><img src="img/friut0.jpg" alt="" class="img-one"/></dd>
+				<dd><img src="../img/friut0.jpg" alt="" class="img-one"/></dd>
 			</dl>
 			<ul class="friut-center">
 				<li>
 					<dl>
 						<dt>
-							<img src="img/friut1.jpg" alt="" />
+							<img src="../img/friut1.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -788,7 +789,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/friut2.jpg" alt="" />
+							<img src="../img/friut2.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -802,7 +803,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/friut3.jpg" alt="" />
+							<img src="../img/friut3.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -816,7 +817,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/friut4.jpg" alt="" />
+							<img src="../img/friut4.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -830,7 +831,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/friut5.jpg" alt="" />
+							<img src="../img/friut5.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -844,7 +845,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/friut6.jpg" alt="" />
+							<img src="../img/friut6.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -858,7 +859,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/friut7.jpg" alt="" />
+							<img src="../img/friut7.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -872,7 +873,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/friut8.jpg" alt="" />
+							<img src="../img/friut8.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -896,20 +897,20 @@
 					<span><a href="#">加工蔬菜</a></span>
 					<span><a href="#">加利利</a></span>
 				</div>
-				<div class="fr-bg"><img src="img/friut9.jpg" alt="" />
+				<div class="fr-bg"><img src="../img/friut9.jpg" alt="" />
 				</div>
 			</div>
 		</div>
 		<div class="friut rou">
 			<dl class="friut-left">
 				<dt><p id="rou">肉类 海鲜</p></dt>
-				<dd><img src="img/rou0.jpg" alt="" /></dd>
+				<dd><img src="../img/rou0.jpg" alt="" /></dd>
 			</dl>
 			<ul class="friut-center">
 				<li>
 					<dl>
 						<dt>
-							<img src="img/rou1.jpg" alt="" />
+							<img src="../img/rou1.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -923,7 +924,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/rou2.jpg" alt="" />
+							<img src="../img/rou2.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -937,7 +938,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/rou3.jpg" alt="" />
+							<img src="../img/rou3.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -951,7 +952,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/rou4.jpg" alt="" />
+							<img src="../img/rou4.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -965,7 +966,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/rou5.jpg" alt="" />
+							<img src="../img/rou5.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -979,7 +980,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/rou6.jpg" alt="" />
+							<img src="../img/rou6.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -993,7 +994,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/rou7.jpg" alt="" />
+							<img src="../img/rou7.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1007,7 +1008,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/rou8.jpg" alt="" />
+							<img src="../img/rou8.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1031,20 +1032,20 @@
 					<span><a href="#">鱼</a></span>
 					<span><a href="#">蟹/贝</a></span>
 				</div>
-				<div class="fr-bg"><img src="img/rou9.jpg" alt="" />
+				<div class="fr-bg"><img src="../img/rou9.jpg" alt="" />
 				</div>
 			</div>
 		</div>
 		<div class="friut food">
 			<dl class="friut-left">
 				<dt><p id="food">熟食 蛋奶</p></dt>
-				<dd><img src="img/food0.jpg" alt="" /></dd>
+				<dd><img src="../img/food0.jpg" alt="" /></dd>
 			</dl>
 			<ul class="friut-center">
 				<li>
 					<dl>
 						<dt>
-							<img src="img/food1.jpg" alt="" />
+							<img src="../img/food1.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1058,7 +1059,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/food2.jpg" alt="" />
+							<img src="../img/food2.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1072,7 +1073,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/food3.jpg" alt="" />
+							<img src="../img/food3.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1086,7 +1087,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/food4.jpg" alt="" />
+							<img src="../img/food4.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1100,7 +1101,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/food5.jpg" alt="" />
+							<img src="../img/food5.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1114,7 +1115,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/food6.jpg" alt="" />
+							<img src="../img/food6.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1128,7 +1129,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/food7.jpg" alt="" />
+							<img src="../img/food7.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1142,7 +1143,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/rou8.jpg" alt="" />
+							<img src="../img/rou8.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1166,23 +1167,23 @@
 					<span><a href="#">圃美多</a></span>
 					<span><a href="#">必品阁</a></span>
 				</div>
-				<div class="fr-bg"><img src="img/food9.jpg" alt="" />
+				<div class="fr-bg"><img src="../img/food9.jpg" alt="" />
 				</div>
 			</div>
 		</div>
 		<div class="images">
-			<img src="img/2.jpg" alt="" />
+			<img src="../img/2.jpg" alt="" />
 		</div>
 		<div class="friut liangyou">
 			<dl class="friut-left">
 				<dt><p id="liangyou">粮油 干货</p></dt>
-				<dd><img src="img/liangyou0.jpg" alt="" /></dd>
+				<dd><img src="../img/liangyou0.jpg" alt="" /></dd>
 			</dl>
 			<ul class="friut-center">
 				<li>
 					<dl>
 						<dt>
-							<img src="img/liangyou1.jpg" alt="" />
+							<img src="../img/liangyou1.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1196,7 +1197,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/liangyou2.jpg" alt="" />
+							<img src="../img/liangyou2.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1210,7 +1211,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/liangyou3.jpg" alt="" />
+							<img src="../img/liangyou3.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1224,7 +1225,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/liangyou4.jpg" alt="" />
+							<img src="../img/liangyou4.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1238,7 +1239,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/liangyou5.jpg" alt="" />
+							<img src="../img/liangyou5.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1252,7 +1253,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/liangyou6.jpg" alt="" />
+							<img src="../img/liangyou6.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1266,7 +1267,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/liangyou7.jpg" alt="" />
+							<img src="../img/liangyou7.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1280,7 +1281,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/liangyou8.jpg" alt="" />
+							<img src="../img/liangyou8.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1304,20 +1305,20 @@
 					<span><a href="#">和田枣</a></span>
 					<span><a href="#">桂圆</a></span>
 				</div>
-				<div class="fr-bg"><img src="img/liangyou9.jpg" alt="" />
+				<div class="fr-bg"><img src="../img/liangyou9.jpg" alt="" />
 				</div>
 			</div>
 		</div>
 		<div class="friut lingshi">
 			<dl class="friut-left">
 				<dt><p id="lingshi">休闲零食</p></dt>
-				<dd><img src="img/lingshi0.jpg" alt="" /></dd>
+				<dd><img src="../img/lingshi0.jpg" alt="" /></dd>
 			</dl>
 			<ul class="friut-center">
 				<li>
 					<dl>
 						<dt>
-							<img src="img/lingshi1.jpg" alt="" />
+							<img src="../img/lingshi1.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1331,7 +1332,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/lingshi2.jpg" alt="" />
+							<img src="../img/lingshi2.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1345,7 +1346,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/lingshi3.jpg" alt="" />
+							<img src="../img/lingshi3.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1359,7 +1360,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/lingshi4.jpg" alt="" />
+							<img src="../img/lingshi4.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1373,7 +1374,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/lingshi5.jpg" alt="" />
+							<img src="../img/lingshi5.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1387,7 +1388,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/lingshi6.jpg" alt="" />
+							<img src="../img/lingshi6.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1401,7 +1402,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/lingshi7.jpg" alt="" />
+							<img src="../img/lingshi7.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1415,7 +1416,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/lingshi8.jpg" alt="" />
+							<img src="../img/lingshi8.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1439,23 +1440,23 @@
 					<span><a href="#">EDO</a></span>
 					<span><a href="#">丽芝士</a></span>
 				</div>
-				<div class="fr-bg"><img src="img/lingshi9.jpg" alt="" />
+				<div class="fr-bg"><img src="../img/lingshi9.jpg" alt="" />
 				</div>
 			</div>
 		</div>
 		<div class="images">
-			<img src="img/3.jpg" alt="" />
+			<img src="../img/3.jpg" alt="" />
 		</div>
 		<div class="friut milk">
 			<dl class="friut-left">
 				<dt><p id="milk">牛奶 茶饮</p></dt>
-				<dd><img src="img/milk0.jpg" alt="" /></dd>
+				<dd><img src="../img/milk0.jpg" alt="" /></dd>
 			</dl>
 			<ul class="friut-center">
 				<li>
 					<dl>
 						<dt>
-							<img src="img/milk1.jpg" alt="" />
+							<img src="../img/milk1.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1469,7 +1470,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/milk2.jpg" alt="" />
+							<img src="../img/milk2.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1483,7 +1484,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/milk3.jpg" alt="" />
+							<img src="../img/milk3.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1497,7 +1498,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/milk4.jpg" alt="" />
+							<img src="../img/milk4.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1511,7 +1512,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/milk5.jpg" alt="" />
+							<img src="../img/milk5.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1525,7 +1526,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/milk6.jpg" alt="" />
+							<img src="../img/milk6.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1539,7 +1540,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/milk7.jpg" alt="" />
+							<img src="../img/milk7.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1553,7 +1554,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/milk8.jpg" alt="" />
+							<img src="../img/milk8.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1577,23 +1578,23 @@
 					<span><a href="#">茶</a></span>
 					<span><a href="#">奶茶</a></span>
 				</div>
-				<div class="fr-bg"><img src="img/milk9.jpg" alt="" />
+				<div class="fr-bg"><img src="../img/milk9.jpg" alt="" />
 				</div>
 			</div>
 		</div>
 		<div class="images">
-			<img src="img/4.jpg" alt="" />
+			<img src="../img/4.jpg" alt="" />
 		</div>
 		<div class="friut drink">
 			<dl class="friut-left">
 				<dt><p id="drink">酒水饮料</p></dt>
-				<dd><img src="img/drink0.jpg" alt="" /></dd>
+				<dd><img src="../img/drink0.jpg" alt="" /></dd>
 			</dl>
 			<ul class="friut-center">
 				<li>
 					<dl>
 						<dt>
-							<img src="img/drink1.jpg" alt="" />
+							<img src="../img/drink1.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1607,7 +1608,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/drink2.jpg" alt="" />
+							<img src="../img/drink2.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1621,7 +1622,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/drink3.jpg" alt="" />
+							<img src="../img/drink3.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1635,7 +1636,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/drink4.jpg" alt="" />
+							<img src="../img/drink4.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1649,7 +1650,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/drink5.jpg" alt="" />
+							<img src="../img/drink5.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1663,7 +1664,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/drink6.jpg" alt="" />
+							<img src="../img/drink6.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1677,7 +1678,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/drink7.jpg" alt="" />
+							<img src="../img/drink7.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1691,7 +1692,7 @@
 				<li>
 					<dl>
 						<dt>
-							<img src="img/drink8.jpg" alt="" />
+							<img src="../img/drink8.jpg" alt="" />
 							<div class="shopping">
 								<a href="javascript:void(0)"><i></i>加入购物车</a>
 							</div>
@@ -1716,7 +1717,7 @@
 					<span><a href="#">黑啤</a></span>
 					<span><a href="#">果汁</a></span>
 				</div>
-				<div class="fr-bg"><img src="img/drink9.jpg" alt="" />
+				<div class="fr-bg"><img src="../img/drink9.jpg" alt="" />
 				</div>
 			</div>
 		</div>
@@ -1724,7 +1725,7 @@
 			<div class="news-left">
 				<p class="news-title">优选味道</p>
 				<div class="nl-list">
-					<img src="img/news.jpg" alt="" />
+					<img src="../img/news.jpg" alt="" />
 					<ul>
 						<li><a href="#">花草茶 来自大自然的恩惠</a></li>
 						<li><a href="#">酒桌礼仪：斟酒的讲究</a></li>
@@ -1738,7 +1739,7 @@
 				<p class="news-title">热门晒单</p>
 				<div class="nl-asscess">
 					<dl>
-						<dt><a href="#"><img src="img/asscess1.jpg" alt="" /></a></dt>
+						<dt><a href="#"><img src="../img/asscess1.jpg" alt="" /></a></dt>
 						<dd>
 							<p>荷美尔Hormel经典香煎培根120g*5</p>
 							<span>"包装好,送货快,食材新鲜,冷链配送棒极了！"</span>
@@ -1747,7 +1748,7 @@
 				</div>
 				<div class="nl-asscess">
 					<dl>
-						<dt><a href="#"><img src="img/asscess2.jpg" alt="" /></a></dt>
+						<dt><a href="#"><img src="../img/asscess2.jpg" alt="" /></a></dt>
 						<dd>
 							<p>獐子岛 蒜蓉粉丝蛤280g*4</p>
 							<span>"包装好,送货快,已多次购买，味道棒极了！"</span>
@@ -1758,10 +1759,10 @@
 			<div class="news-right">
 				<p class="nr-header"><span>发现优品</span><a href="#">换一换</a></p>
 				<div class="nr-imgs">
-					<img src="img/70x70_017.jpg" alt="" />
-					<img src="img/70x70_015.jpg" alt="" />
-					<img src="img/70x70_064.jpg" alt="" />
-					<img src="img/70x70_002.jpg" alt="" />
+					<img src="../img/70x70_017.jpg" alt="" />
+					<img src="../img/70x70_015.jpg" alt="" />
+					<img src="../img/70x70_064.jpg" alt="" />
+					<img src="../img/70x70_002.jpg" alt="" />
 				</div>
 				<div class="nr-text">
 					<input type="text" placeholder="请填写邮箱订阅促销" class="nrt-test"/>
@@ -1840,13 +1841,13 @@
 				</ul>
 			</div>
 			<div class="fh-right">
-				<img src="img/foot.jpg" alt="" />
+				<img src="../img/foot.jpg" alt="" />
 			</div>
 		</div>
 		<div class="foot-foot">
 			<div class="ff-main">
-				<img src="img/kxicon.jpg" alt="" />
-				<img src="img/bottom_sm.png" alt="" />
+				<img src="../img/kxicon.jpg" alt="" />
+				<img src="../img/bottom_sm.png" alt="" />
 				<ul>
 					<li>关于我们</li>
 					<li>联系我们</li>

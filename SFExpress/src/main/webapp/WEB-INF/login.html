@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
 	<title>登陆</title>
-	<link rel="stylesheet" type="text/css" href="css/register.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.cookie.js"></script>
-	<script type="text/javascript" src="js/login.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/register.css}" href="../css/register.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../css/main.css">
+	<script type="text/javascript" th:src="@{/js/jquery.js}" src="../js/jquery.js"></script>
+	<script type="text/javascript" th:src="@{/js/jquery.cookie.js}" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" th:src="@{/js/login.js}" src="../js/login.js"></script>
 </head>
 <body style="background:#fff">
 	<!-- 遮罩层 -->
@@ -23,14 +24,14 @@
 	<!-- header -->
 	<div class="header">
 		<a href="#">
-			<img src="img/logo.png" alt="" />
+			<img src="../img/logo.png" alt="" />
 			<span>欢迎登录</span>
 		</a>
 	</div>
 	<!-- login-main -->
 	<div class="login_main">
 		<div class="LM_pic">
-			<img src="img/ab85e7244ad237811101c7cab14adef1.png" alt="" />
+			<img src="../img/ab85e7244ad237811101c7cab14adef1.png" alt="" />
 		</div>
 		<div class="LM_login">
 			<div class="LML_header">
