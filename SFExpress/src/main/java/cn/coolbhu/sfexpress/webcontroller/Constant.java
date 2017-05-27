@@ -9,4 +9,9 @@ public interface Constant {
      * 多个商品
      */
     String MODEL_KEY_PRODUCTIONS = "productions";
+
+    /**
+     * 购物车产品
+     */
+    String MODEL_KEY_CARTS = "carts";
 }
