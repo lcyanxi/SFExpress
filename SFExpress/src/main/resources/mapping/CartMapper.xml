@@ -11,6 +11,25 @@
         <result column="CartUpdateTime" jdbcType="TIMESTAMP" property="cartupdatetime"/>
         <result column="CartMark" jdbcType="INTEGER" property="cartmark"/>
     </resultMap>
+
+    <resultMap id="cartInfoResultMap" type="cn.coolbhu.sfexpress.vo.CartInfo">
+        <id column="CartId" jdbcType="CHAR" property="cartid"/>
+        <result column="UserId" jdbcType="CHAR" property="userid"/>
+        <result column="ProId" jdbcType="CHAR" property="proid"/>
+        <result column="Num" jdbcType="INTEGER" property="num"/>
+        <result column="Total" jdbcType="DOUBLE" property="total"/>
+        <result column="CartCreateTime" jdbcType="TIMESTAMP" property="cartcreatetime"/>
+        <result column="CartUpdateTime" jdbcType="TIMESTAMP" property="cartupdatetime"/>
+        <result column="CartMark" jdbcType="INTEGER" property="cartmark"/>
+        <result column="Img" jdbcType="VARCHAR" property="img"/>
+        <result column="Price" jdbcType="DOUBLE" property="price"/>
+        <result column="ProName" jdbcType="VARCHAR" property="proname"/>
+    </resultMap>
+
+    <delete id="deleteAll">
+        DELETE FROM cart
+    </delete>
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from cart
     where CartId = #{cartid,jdbcType=CHAR}
@@ -46,6 +65,12 @@
     <select id="selectCartByUserId" parameterType="java.lang.String" resultMap="BaseResultMap">
      select CartId, UserId, ProId, Num, Total, CartCreateTime, CartUpdateTime, CartMark
       from cart
+      WHERE UserId=#{userid}
+    </select>
+
+    <select id="selectCartInfoByUserId" parameterType="java.lang.String" resultMap="cartInfoResultMap">
+         select C.CartId, C.UserId, C.ProId, C.Num, C.Total, C.CartCreateTime, C.CartUpdateTime, C.CartMark,P.Img,P.Price,P.ProName
+      from cart C LEFT JOIN prodution P ON C.ProId = P.ProId
       WHERE UserId=#{userid}
     </select>
 </mapper>

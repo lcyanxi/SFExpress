@@ -1,6 +1,7 @@
 package cn.coolbhu.sfexpress.service;
 
 import cn.coolbhu.sfexpress.model.Cart;
+import cn.coolbhu.sfexpress.vo.CartInfo;
 
 import java.util.List;
 
@@ -22,4 +23,46 @@ public interface CartService {
      * @return
      */
     int addCart(String userid, String proid, Integer num);
+
+    /**
+     * @param userId
+     * @return
+     */
+    List<CartInfo> getCartInfoByUserId(String userId);
+
+    /**
+     * @param cartid
+     * @return
+     */
+    int deleteCartByCartId(String cartid);
+
+    /**
+     * @param cartid
+     * @return
+     */
+    int plusCartNumByCartId(String cartid);
+
+    /**
+     * @param cartid
+     * @return
+     */
+    int minusCartNumByCartId(String cartid);
+
+    /**
+     * @param cartInfos
+     * @return
+     */
+    Double countTotalByCartInfos(List<CartInfo> cartInfos);
+
+    /**
+     * @return
+     */
+    int deleteAll();
+
+    /**
+     *
+     * @param cartids
+     * @return
+     */
+    int deleteChoose(String[] cartids);
 }

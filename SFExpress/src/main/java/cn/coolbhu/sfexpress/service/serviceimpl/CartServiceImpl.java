@@ -7,6 +7,7 @@ import cn.coolbhu.sfexpress.model.Prodution;
 import cn.coolbhu.sfexpress.service.CartService;
 import cn.coolbhu.sfexpress.service.Constant;
 import cn.coolbhu.sfexpress.util.RandomUtils;
+import cn.coolbhu.sfexpress.vo.CartInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,5 +58,95 @@ public class CartServiceImpl implements CartService {
 
         //添加到购物车
         return cartMapper.insert(cart);
+    }
+
+    @Override
+    public List<CartInfo> getCartInfoByUserId(String userId) {
+
+        return cartMapper.selectCartInfoByUserId(userId);
+    }
+
+    @Override
+    public int deleteCartByCartId(String cartid) {
+        return cartMapper.deleteByPrimaryKey(cartid);
+    }
+
+    @Override
+    public int plusCartNumByCartId(String cartid) {
+
+        Cart cart = cartMapper.selectByPrimaryKey(cartid);
+
+        if (cart != null) {
+
+            Double price = cart.getTotal() / cart.getNum();
+
+            cart.setNum(cart.getNum() + 1);
+
+            cart.setTotal(cart.getNum() * price);
+
+            //更新
+            cartMapper.updateByPrimaryKey(cart);
+        }
+
+        return -1;
+    }
+
+    @Override
+    public int minusCartNumByCartId(String cartid) {
+
+        Cart cart = cartMapper.selectByPrimaryKey(cartid);
+
+        if (cart != null) {
+
+            Double price = cart.getTotal() / cart.getNum();
+
+            cart.setNum(cart.getNum() - 1);
+
+            //删除
+            if (cart.getNum() <= 0) {
+
+                cartMapper.deleteByPrimaryKey(cart.getCartid());
+            } else {
+
+                cart.setTotal(cart.getNum() * price);
+
+                //更新
+                cartMapper.updateByPrimaryKey(cart);
+            }
+
+            return 1;
+        }
+
+        return -1;
+    }
+
+    @Override
+    public Double countTotalByCartInfos(List<CartInfo> cartInfos) {
+
+        Double total = 0.00;
+
+        //算总计
+        for (CartInfo cartInfo : cartInfos) {
+
+            total += cartInfo.getTotal();
+        }
+
+        return total;
+    }
+
+    @Override
+    public int deleteAll() {
+        return cartMapper.deleteAll();
+    }
+
+    @Override
+    public int deleteChoose(String[] cartids) {
+
+        for (int i = 0; i < cartids.length; i++) {
+
+            while (cartMapper.deleteByPrimaryKey(cartids[i]) > 0) ;
+        }
+
+        return cartids.length;
     }
 }
