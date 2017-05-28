@@ -131,7 +131,7 @@
 </div>
 <!-- main -->
 <div id="indent-main">
-    <form action="" id="indent-create">
+    <form th:action="@{/order/create}" action="" id="indent-create" method="post">
         <h3 class="indentHd">填写并核对订单信息</h3>
         <div id="userAddId">
             <p class="indentTitle">收货人信息：</p>
@@ -259,7 +259,7 @@
             <li class="last-li">
                 <div class="account">应付金额:<span id="gross" th:text="${total}"></span></div>
                 &nbsp;&nbsp;
-                <div id="sumbit">提交订单</div>
+                <button type="submit" id="sumbit">提交订单</button>
             </li>
         </ul>
     </form>
