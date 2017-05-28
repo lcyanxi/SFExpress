@@ -108,7 +108,7 @@ CREATE TABLE `user` (
   `Password` varchar(255) NOT NULL,
   `Email` varchar(255) DEFAULT NULL UNIQUE ,
   `Phone` char(11) DEFAULT NULL UNIQUE ,
-  `Slead` int(11) DEFAULT NULL,
+  `Slead` int(11) DEFAULT 0,
   `UserCreateTime` datetime DEFAULT NULL,
   `UserMark` int(11) DEFAULT NULL,
   PRIMARY KEY (`UserId`)

@@ -413,6 +413,16 @@ body{font-size:12px; font-family:"微软雅黑";}
 	background: url(../img/header1.jpg)no-repeat right top;
 	border-bottom:2px solid #690;
 }
+
+.list-header1{
+	height: 32px;
+	width: 1200px;
+	float: left;
+	padding-left: 200px;
+	background: url(../img/header1.jpg)no-repeat right top;
+	border-bottom:2px solid #690;
+}
+
 .list-header li{
 	float: left;
 	height: 34px;

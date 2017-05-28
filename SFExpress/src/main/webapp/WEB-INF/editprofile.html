@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>账户信息</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" href="../css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/bootstrap-reset.css}" href="../css/bootstrap-reset.css" rel="stylesheet">
+
+
+    <!--external css-->
+    <link th:href="@{/assets/font-awesome/css/font-awesome.css}"
+          href="../assets/font-awesome/css/font-awesome.css"
+          rel="stylesheet"/>
+    <link th:href="@{/css/owl.carousel.css}" rel="stylesheet" href="../css/owl.carousel.css" type="text/css">
+
+    <link th:href="@{/css/account/style.css}" href="../css/account/style.css" rel="stylesheet">
+    <link th:href="@{/css/style-responsive.css}" href="../css/style-responsive.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../css/main.css">
+    <script type="text/javascript" th:src="@{/js/jquery.js}" src="../js/jquery.js"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.cookie.js}" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" th:src="@{/js/index.js}" src="../js/index.js"></script>
+</head>
+<body>
+<!-- header -->
+<div id="header">
+    <div class="header-main">
+        <div class="hl">
+            <span class="hl-span">冷链配送 99元顺丰到家 送至:</span>
+            <div id="position">成都
+                <i></i>
+                <div class="position">
+                    <div class="p-container">
+                        <p>请选择您的收货地址</p>
+                        <ul class="p-title">
+                            <li>北京</li>
+                            <li>上海</li>
+                            <li>广州</li>
+                            <li>深圳</li>
+                            <li>天津</li>
+                            <li>苏州</li>
+                            <li>杭州</li>
+                            <li>南京</li>
+                            <li>无锡</li>
+                            <li>青岛</li>
+                            <li>武汉</li>
+                        </ul>
+                        <span class="p-color">更多城市:</span>
+                        <ul class="p-content">
+                            <li class="p-color">华东:</li>
+                            <li>上海</li>
+                            <li>浙江</li>
+                            <li>江苏</li>
+                            <li>安徽</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">华南:</li>
+                            <li>广东</li>
+                            <li>福建</li>
+                            <li>海南</li>
+                            <li>广西</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">华北:</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                            <li>河北</li>
+                            <li>山东</li>
+                            <li>山西</li>
+                            <li>内蒙古</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">华中:</li>
+                            <li>湖北</li>
+                            <li>江西</li>
+                            <li>湖南</li>
+                            <li>河南</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">东北:</li>
+                            <li>辽宁</li>
+                            <li>吉林</li>
+                            <li>黑龙江</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">西南:</li>
+                            <li>重庆</li>
+                            <li>四川</li>
+                            <li>云南</li>
+                            <li>贵州</li>
+                            <li>西藏</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">西北:</li>
+                            <li>陕西</li>
+                            <li>甘肃</li>
+                            <li>宁夏</li>
+                            <li>青海</li>
+                            <li>新疆</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hr">
+				<span>
+					<a th:if="${session.userinfo}!=null" class="user_name" th:text="'用户: '+${session.userinfo.phone}"
+                       th:href="@{/user/info}">已登录
+					</a>
+                    <a th:if="${session.userinfo}==null" th:href="@{/user/login}">
+                        嘿,欢迎来顺丰优选！请登录
+                    </a>
+					<a th:if="${session.userinfo}!=null" th:href="@{/user/logout}" class="color_red">&nbsp;[退出]</a>
+				</span>
+            <ul class="hr-one">
+                <li><a th:href="@{/register}" href="register.html">免费注册</a></li>
+                <li><a href="#">我的订单</a></li>
+                <li class="hro-a"><a href="#">我的优选</a></li>
+                <li class="hro-b"><a href="#">移动客户端</a></li>
+                <li class="hro-a"><a href="#">帮助中心</a></li>
+                <li class="hro-a"><a href="#">网站导航</a></li>
+            </ul>
+            <div class="hr-two">
+                <a href="#"><img src="../img/weibo.jpg" alt="微博"/></a>
+                <a href="#"><img src="../img/weixin.jpg" alt="微信"/></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- logo -->
+<div id="logo">
+    <div class="img">
+        <a class="li-one" href="#"></a>
+        <a class="li-two" href="#"></a>
+        <div class="li-thr">
+            <a href="#"><img src="../img/logo_word.jpg" alt=""/>
+            </a>
+        </div>
+    </div>
+    <a class="gif">
+        <img src="../img/dong.gif" alt=""/>
+    </a>
+    <div class="l-cart">
+        <div class="lc-one">
+            <form action="" class="lco-form">
+                <input type="text" placeholder="大闸蟹" class="lco-text"/>
+                <input type="button" value="搜索" class="lco-seek"/>
+            </form>
+            <ul class="lco-list">
+                <li>牛排</li>
+                <li>牛奶</li>
+                <li>石榴</li>
+                <li>酸奶</li>
+                <li>白虾</li>
+                <li>大米</li>
+                <li>猕猴桃</li>
+                <li>海外直采</li>
+            </ul>
+        </div>
+        <div class="lc-two">
+            <form action="" class="lct-form">
+                <a th:href="@{/cart/all}" href="cart.html" class="lct-seek">我的购物车</a>
+                <input type="text" id="cartnum" th:value="${cartnum}" value="0" class="lct-text"/>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- list -->
+<div id="list" >
+    <ul class="list-list">
+        <li class="ll-one"><h1>个人信息中心</h1></li>
+    </ul>
+
+    <ul class="list-header list-header1">
+        <li><a href="index.html" class="lh-green">首页</a></li>
+        <li><a href="#">优选生鲜</a></li>
+        <li><a href="#">全球美食</a></li>
+        <li><a href="#">优选厨房</a></li>
+        <li><a href="#">新品尝鲜</a></li>
+        <li><a href="#">优选国际</a></li>
+        <li><a href="#">企业专区</a></li>
+    </ul>
+</div>
+
+
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <div class="row">
+            <!--<aside class="profile-nav col-lg-3">-->
+            <!--</aside>-->
+
+            <!--右侧修改详细信息-->
+            <aside class="profile-info col-lg-10">
+                <section class="panel">
+                    <div class="bio-graph-heading">
+                        修改个人信息
+                    </div>
+                    <div class="panel-body bio-graph-info">
+                        <h1>修改基本信息</h1>
+                        <form class="form-horizontal" role="form" th:action="@{/user/updateprofile}"
+                              method="post" id="profile_edit">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">姓名</label>
+                                <div class="col-lg-6 has-success">
+                                    <input type="text" class="form-control" name="username" id="username"
+                                           th:value="${session.userinfo.username}" placeholder="姓名">
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">电话号码</label>
+                                <div class="col-lg-6 has-success">
+                                    <input type="text" class="form-control" name="phone" id="phone"
+                                           th:value="${session.userinfo.phone}" placeholder="电话号码">
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">状态信息</label>
+                                <div class="col-lg-6 has-success">
+                                    <span th:if="${session.userinfo.slead}">在线</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">邮箱</label>
+                                <div class="col-lg-6 has-success">
+                                    <input type="text" class="form-control" name="email" id="email"
+                                           th:value="${session.userinfo.email}" placeholder="邮箱">
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">注册时间</label>
+                                <div class="col-lg-6 has-success">
+                                   <span th:text="${#dates.format(session.userinfo.usercreatetime, 'yyyy-MM-dd')}"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button type="submit" class="btn btn-success">保存修改</button>
+                                    <button type="button" class="btn btn-default">取消</button>
+                                </div>
+                                <h4 class="help-block text-danger text-center" th:text="${message}"></h4>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </aside>
+            <!--右侧修改详细信息 结束-->
+        </div>
+
+        <!-- page end-->
+    </section>
+</section>
+
+
+<!-- foot -->
+<div id="send">
+    <div class="send-main">
+        <div class="sendto sendone">
+            <h1>全球美食</h1>
+            <p>世界美味 优质优价</p>
+        </div>
+        <div class="sendto sendtwo">
+            <h1>产地直供</h1>
+            <p>原汁原味 新鲜直达</p>
+        </div>
+        <div class="sendto sendthr">
+            <h1>全程冷链</h1>
+            <p>智能控温 冷箱护送</p>
+        </div>
+        <div class="sendto sendfour">
+            <h1>全球美食</h1>
+            <p>领先物流 极速送达</p>
+        </div>
+    </div>
+</div>
+<div id="foot">
+    <div class="foot-header">
+        <div class="fh-left">
+            <div></div>
+            <h1>9533858</h1>
+            <p>周一到周日8:30~22:00</p>
+        </div>
+        <div class="fh-center">
+            <ul>
+                <li class="strong"><a href="#">购物指南</a></li>
+                <li><a href="#">积分制度</a></li>
+                <li><a href="#">会员介绍</a></li>
+                <li><a href="#">购物流程</a></li>
+                <li><a href="#">常见问题</a></li>
+            </ul>
+            <ul>
+                <li class="strong"><a href="#">配送服务</a></li>
+                <li><a href="#">配送政策</a></li>
+                <li><a href="#">开箱验货</a></li>
+                <li><a href="#">配送运费</a></li>
+                <li><a href="#">配送范围</a></li>
+            </ul>
+            <ul>
+                <li class="strong"><a href="#">支付方式</a></li>
+                <li><a href="#">货到付款</a></li>
+                <li><a href="#">在线支付</a></li>
+                <li><a href="#">优选卡</a></li>
+                <li><a href="#">发票制度</a></li>
+            </ul>
+            <ul>
+                <li class="strong"><a href="#">售后服务</a></li>
+                <li><a href="#">退款说明</a></li>
+                <li><a href="#">退换货流程</a></li>
+                <li><a href="#">退换货政策</a></li>
+                <li><a href="#">隐私条款</a></li>
+            </ul>
+            <ul>
+                <li class="strong"><a href="#">商家中心</a></li>
+                <li><a href="#">商家规则 </a></li>
+            </ul>
+        </div>
+        <div class="fh-right">
+            <img src="../img/foot.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="foot-foot">
+        <div class="ff-main">
+            <img src="../img/kxicon.jpg" alt=""/>
+            <img src="../img/bottom_sm.png" alt=""/>
+            <ul>
+                <li>关于我们</li>
+                <li>联系我们</li>
+                <li>招聘人才</li>
+                <li>友情链接</li>
+                <li>供应商申请</li>
+            </ul>
+            <span>Copyright&copy;顺丰优选 sfbest.com版权所有</span>
+            <p>京公网安备 11010502026831 京ICP证150325号 食品流通许可证SP1101131210068671(1-1)号 企业营业执照</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -132,6 +132,8 @@ $(function(){
 				$(".regOK").show();
 				$(".regPoint").hide();
 			}else{
+                $(".regOK").hide();
+                $(".regPoint").show();
 				return false;
 			}
 		}

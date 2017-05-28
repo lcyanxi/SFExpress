@@ -89,6 +89,8 @@ public class CartController extends BaseController {
         //添加商品到购物车
         int result = cartService.addCart(user.getUserid(), proid, num);
 
+        session.setAttribute(Constant.CART_NUM,cartService.getCartInfoByUserId(user.getUserid()).size());
+
         map.put(Constant.STATUS, result);
 
         return map;

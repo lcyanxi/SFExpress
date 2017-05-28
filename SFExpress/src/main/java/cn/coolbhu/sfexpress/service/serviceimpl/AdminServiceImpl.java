@@ -34,6 +34,7 @@ public class AdminServiceImpl implements AdminService {
         user.setUsername("顺丰优选");
         user.setPhone(username);
         user.setPassword(newPassword);
+        user.setSlead(1);
         user.setUsercreatetime(new Date());
         user.setSlead(Constant.SLEAD_ALIVE);
 
@@ -49,5 +50,10 @@ public class AdminServiceImpl implements AdminService {
     public User getUserByPhone(String phone) {
 
         return userMapper.selectByPhone(phone);
+    }
+
+    @Override
+    public int updateProfile(User user) {
+        return userMapper.updateByPrimaryKey(user);
     }
 }

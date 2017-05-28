@@ -127,6 +127,8 @@
         </property>
         <property name="filterChainDefinitions">
             <value>
+                /user/profile=anon
+                /user/toeditprofile=anon
                 /user/login=anon
                 /user/adduser=anon
                 /cart/addcart=anon
