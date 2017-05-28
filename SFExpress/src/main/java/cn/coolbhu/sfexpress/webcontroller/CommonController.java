@@ -19,6 +19,9 @@ public class CommonController extends BaseController {
     @RequestMapping(value = {"/", "index"})
     public String index(Model model) {
 
+        //将登录用户的信息拿到
+        model.addAttribute(Constant.USER_INFO, session.getAttribute(Constant.USER_INFO));
+
         //添加所有的商品
         model.addAttribute(Constant.MODEL_KEY_PRODUCTIONS, productionService.getAllProduction());
 

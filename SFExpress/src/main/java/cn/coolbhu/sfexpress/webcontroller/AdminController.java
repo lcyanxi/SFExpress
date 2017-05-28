@@ -108,4 +108,14 @@ public class AdminController extends BaseController {
 
         return "login";
     }
+
+    @RequestMapping(value = "logout", method = RequestMethod.GET)
+    public String logout(Model model) {
+
+        //退出
+        session.removeAttribute(Constant.USER_INFO);
+
+        //重定向到 login
+        return "redirect:/user/login";
+    }
 }
