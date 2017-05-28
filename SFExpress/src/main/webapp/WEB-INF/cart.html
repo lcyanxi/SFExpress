@@ -124,7 +124,7 @@
 					<a th:if="${userinfo}!=null" th:href="@{/user/logout}" class="color_red">&nbsp;[退出]</a>
 				</span>
             <ul class="hr-one">
-                <li><a href="register.html">免费注册</a></li>
+                <li><a th:href="@{/register}" href="register.html">免费注册</a></li>
                 <li><a href="#">我的订单</a></li>
                 <li class="hro-a"><a href="#">我的优选</a></li>
                 <li class="hro-b"><a href="#">移动客户端</a></li>
@@ -154,7 +154,7 @@
 <div id="car-main">
     <br/>
     <!-- 购物车 -->
-    <form th:action="@{/address/showaddress}" method="post" id="fm_cart">
+    <form th:action="@{/order/prepare}" method="post" id="fm_cart">
         <!--page_start 主要内容部分-->
         <section id="main-content">
             <section class="wrapper">
@@ -250,6 +250,7 @@
 
             <button type="submit" id="account">&nbsp;去结算&nbsp;</button>
         </div>
+        <h4 class="help-block text-danger text-center" style="color:red" th:text="${message}"></h4>
     </form>
     <!-- 复制 -->
     <div class="template" style="display:none;">

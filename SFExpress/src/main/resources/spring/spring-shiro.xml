@@ -131,6 +131,8 @@
                 /user/adduser=anon
                 /cart/addcart=anon
                 /cart/** = user
+                /address/**=user
+                /order/**=user
                 / = anon
             </value>
         </property>

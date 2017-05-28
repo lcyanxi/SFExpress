@@ -74,4 +74,11 @@ public interface Constant {
      * 购物车数量
      */
     String CART_NUM = "cartnum";
+
+    /**
+     * 请求参数为空
+     */
+    String MESSAGE_STR_NULL_PARAM = "请先选择商品";
+
+    String MODEL_KEY_USER_ADDRESSES = "addresses";
 }

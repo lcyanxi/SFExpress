@@ -1,6 +1,7 @@
 package cn.coolbhu.sfexpress.dao;
 
 import cn.coolbhu.sfexpress.model.Address;
+
 import java.util.List;
 
 public interface AddressMapper {
@@ -13,4 +14,10 @@ public interface AddressMapper {
     List<Address> selectAll();
 
     int updateByPrimaryKey(Address record);
+
+    /**
+     * @param userid
+     * @return
+     */
+    List<Address> selectByUserId(String userid);
 }

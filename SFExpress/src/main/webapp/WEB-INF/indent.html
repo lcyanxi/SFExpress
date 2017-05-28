@@ -1,321 +1,330 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8" />
-	<title>确认订单</title>
-	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../css/style.css">
-	<link rel="stylesheet" type="text/css" th:href="@{/css/indent.css}" href="../css/indent.css">
-	<script type="text/javascript" th:src="@{/js/jquery.js}" src="../js/jquery.js"></script>
-	<script type="text/javascript" th:src="@{/js/jquery.cookie.js}" src="../js/jquery.cookie.js"></script>
-	<script type="text/javascript" th:src="@{/js/indent.js}" src="../js/indent.js"></script>
+    <meta charset="UTF-8"/>
+    <title>确认订单</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/indent.css}" href="../css/indent.css">
+    <script type="text/javascript" th:src="@{/js/jquery.js}" src="../js/jquery.js"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.cookie.js}" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" th:src="@{/js/indent.js}" src="../js/indent.js"></script>
 </head>
 <body>
-	<div class="zhezhao"></div>
-	<!-- header -->
-	<div id="header">
-		<div class="header-main">
-			<div class="hl">
-				<span class="hl-span">冷链配送 99元顺丰到家 送至:</span>
-				<div id="position">成都
-					<i></i>
-					<div class="position">
-						<div class="p-container">
-							<p>请选择您的收货地址</p>
-							<ul class="p-title">
-								<li>北京</li>
-								<li>上海</li>
-								<li>广州</li>
-								<li>深圳</li>
-								<li>天津</li>
-								<li>苏州</li>
-								<li>杭州</li>
-								<li>南京</li>
-								<li>无锡</li>
-								<li>青岛</li>
-								<li>武汉</li>
-							</ul>
-							<span class="p-color">更多城市:</span>
-							<ul class="p-content">
-								<li class="p-color">华东:</li>
-								<li>上海</li>
-								<li>浙江</li>
-								<li>江苏</li>
-								<li>安徽</li>
-							</ul>
-							<ul class="p-content">
-								<li class="p-color">华南:</li>
-								<li>广东</li>
-								<li>福建</li>
-								<li>海南</li>
-								<li>广西</li>
-							</ul>
-							<ul class="p-content">
-								<li class="p-color">华北:</li>
-								<li>北京</li>
-								<li>天津</li>
-								<li>河北</li>
-								<li>山东</li>
-								<li>山西</li>
-								<li>内蒙古</li>
-							</ul>
-							<ul class="p-content">
-								<li class="p-color">华中:</li>
-								<li>湖北</li>
-								<li>江西</li>
-								<li>湖南</li>
-								<li>河南</li>
-							</ul>
-							<ul class="p-content">
-								<li class="p-color">东北:</li>
-								<li>辽宁</li>
-								<li>吉林</li>
-								<li>黑龙江</li>
-							</ul>
-							<ul class="p-content">
-								<li class="p-color">西南:</li>
-								<li>重庆</li>
-								<li>四川</li>
-								<li>云南</li>
-								<li>贵州</li>
-								<li>西藏</li>
-							</ul>
-							<ul class="p-content">
-								<li class="p-color">西北:</li>
-								<li>陕西</li>
-								<li>甘肃</li>
-								<li>宁夏</li>
-								<li>青海</li>
-								<li>新疆</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="hr">
-				<span>
-					<a href="login.html" class="user_name">嘿,欢迎来顺丰优选！请登录
+<div class="zhezhao"></div>
+<!-- header -->
+<div id="header">
+    <div class="header-main">
+        <div class="hl">
+            <span class="hl-span">冷链配送 99元顺丰到家 送至:</span>
+            <div id="position">成都
+                <i></i>
+                <div class="position">
+                    <div class="p-container">
+                        <p>请选择您的收货地址</p>
+                        <ul class="p-title">
+                            <li>北京</li>
+                            <li>上海</li>
+                            <li>广州</li>
+                            <li>深圳</li>
+                            <li>天津</li>
+                            <li>苏州</li>
+                            <li>杭州</li>
+                            <li>南京</li>
+                            <li>无锡</li>
+                            <li>青岛</li>
+                            <li>武汉</li>
+                        </ul>
+                        <span class="p-color">更多城市:</span>
+                        <ul class="p-content">
+                            <li class="p-color">华东:</li>
+                            <li>上海</li>
+                            <li>浙江</li>
+                            <li>江苏</li>
+                            <li>安徽</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">华南:</li>
+                            <li>广东</li>
+                            <li>福建</li>
+                            <li>海南</li>
+                            <li>广西</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">华北:</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                            <li>河北</li>
+                            <li>山东</li>
+                            <li>山西</li>
+                            <li>内蒙古</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">华中:</li>
+                            <li>湖北</li>
+                            <li>江西</li>
+                            <li>湖南</li>
+                            <li>河南</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">东北:</li>
+                            <li>辽宁</li>
+                            <li>吉林</li>
+                            <li>黑龙江</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">西南:</li>
+                            <li>重庆</li>
+                            <li>四川</li>
+                            <li>云南</li>
+                            <li>贵州</li>
+                            <li>西藏</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">西北:</li>
+                            <li>陕西</li>
+                            <li>甘肃</li>
+                            <li>宁夏</li>
+                            <li>青海</li>
+                            <li>新疆</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hr">
+            <span>
+					<a th:if="${userinfo}!=null" class="user_name" th:text="'用户: '+${userinfo.phone}"
+                       th:href="@{/user/info}">已登录
 					</a>
-					<a href="javascript:void(0)" class="quit">[退出]</a>
+                    <a th:if="${userinfo}==null" th:href="@{/user/login}">
+                        嘿,欢迎来顺丰优选！请登录
+                    </a>
+					<a th:if="${userinfo}!=null" th:href="@{/user/logout}" class="color_red">&nbsp;[退出]</a>
 				</span>
-				<ul class="hr-one">
-					<li><a href="register.html">免费注册</a></li>
-					<li><a href="#">我的订单</a></li>
-					<li class="hro-a"><a href="#">我的优选</a></li>
-					<li class="hro-b"><a href="#">移动客户端</a></li>
-					<li class="hro-a"><a href="#">帮助中心</a></li>
-					<li class="hro-a"><a href="#">网站导航</a></li>
-				</ul>
-				<div class="hr-two">
-					<a href="#"><img src="../img/weibo.jpg" alt="微博" /></a>
-					<a href="#"><img src="../img/weixin.jpg" alt="微信" /></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- logo -->
-	<div id="logo">
-		<div class="img">
-			<a class="li-one" href="#"></a>
-			<a class="li-two" href="#"></a>
-			<div class="li-thr">
-				<a href="#"><img src="../img/logo_word.jpg" alt="" />
-				</a>
-			</div>
-			<img src="../img/step_02.jpg " alt="" />
-		</div>
-	</div>
-	<!-- main -->
-	<div id="indent-main">
-		<form action="" id="indent-create">
-			<h3 class="indentHd">填写并核对订单信息</h3>
-			<div id="userAddId">
-				<p class="indentTitle">收货人信息：</p>
-				<ul class="indentAll">
-					<li>
-						<input type="radio" checked="checked" class="iA-btn" />
-						<span class="newAddress">使用新收货地址</span>
-					</li>
-					<li class="indentUser">
-						<div class="label">
-							<b>*</b>
-							收货人:
-						</div>
-						<input type="text" placeholder="请填写收货人姓名" id="IU-name"/>
-						<span class="iuErr">请填写收货人姓名</span>
-					</li>
-					<li class="indentAddress">
-						<div class="label">
-							<b>*</b>
-							所在地区:
-						</div>
-						<select id="province"></select>
-						<select id="city"></select>
-						<select id="district"></select>
-					</li>
-					<li class="fullAddress">
-						<div class="label">
-							<b>*</b>
-							详细地址:
-						</div>
-						<div class="FA-field">
-							<span class="sheng"></span>
-							<span class="shi"></span>
-							<span class="xian"></span>
-							<input type="text" placeholder="请直接填写街道等详细地址" id="IU-address"/>
-						</div>
-						<span class="faErr">请您填写完整的地区信息</span>
-					</li>
-					<li class="indent-phone">
-						<div class="label">
-							<b>*</b>
-							手机号码:
-						</div>
-						<input type="text" placeholder="11位手机号码" id="IU-phone"/>
-						<div class="label">
-							或者固定电话:
-						</div>
-						<input type="text" placeholder="区号-电话号码-分机号(可选)" 
-						id="IU-phone2"/>
-						<span class="ipErr">请您填写手机号码或固定电话</span>
-					</li>
-				</ul>
-				<div id="save">保存收货人信息</div>
-			</div>
-			<!-- 订单信息 -->
-			<ul class="indentContent">
-				<li>
-					<div class="userInfo">
-						收货人信息:
-						<a href="#" class="amend" id="amend">[修改]</a>
-					</div>
-					<div class="userAddress">
-						<span class="f-name"></span>
-						<span class="f-phone">13526547895</span>
-						<span class="f-shi"></span>
-						<span class="f-xian"></span>
-						<span class="f-zhen"></span>
-					</div>
-				</li>
-				<li>
-					<div class="userPrice">
-						支付及配送方式:
-						<a href="#" class="amend">[修改]</a>
-					</div>
-					<p class="pay">在线支付</p>
-					<div class="UP-indent">
-						<p>订单一</p>
-						<div class="shunfeng">
-							<div><span>顺丰速运</span>负责配送</div>
-							<p>下单后尽快为您发货</p>
-						</div>
-					</div>
-				</li>
-				<li >
-					<div class="userInfo">
-						发票信息:
-						<a href="#" class="amend">[修改]</a>
-					</div>
-					<div class="bill">
-						暂不需要发票
-					</div>
-				</li>
-				<li>
-					<div class="userInfo">
-						商品信息:
-						<a href="#" class="amend">[修改]</a>
-					</div>
-					<a href="cart.html" class="goto-cart">返回购物车</a>
-					<p>商品下单后尽快为您发货</p>
-					<!-- 购物车详情 -->
-					<div id="cart-info">
-						<div class="ci-title">
-							<div class="ci-name">商品名称</div>
-							<div>单价</div>
-							<div>返现</div>
-							<div>库存状态</div>
-							<div>数量</div>
-							<div>小计</div>
-						</div>
-					</div>
-					<!-- 复制 -->
-					<div class="ci-template" style="display:none">
-						<div class="id"></div>
-						<div class="price"></div>
-						<div class="fanxian">返现</div>
-						<div class="repertory">现货</div>
-						<div class="amount"></div>
-						<div class="sub"></div>
-					</div>
-				</li>
-				<li class="last-li">
-					<div class="account">应付金额:<span id="gross"></span></div>
-					<div id="sumbit">提交订单</div>
-				</li>
-			</ul>
-		</form>
-	</div>
-	<!-- foot -->
-	<div id="foot">
-		<div class="foot-header">
-			<div class="fh-left">
-				<div></div>
-				<h1>9533858</h1>
-				<p>周一到周日8:30~22:00</p>
-			</div>
-			<div class="fh-center">
-				<ul>
-					<li class="strong"><a href="#">购物指南</a></li>
-					<li><a href="#">积分制度</a></li>
-					<li><a href="#">会员介绍</a></li>
-					<li><a href="#">购物流程</a></li>
-					<li><a href="#">常见问题</a></li>
-				</ul>
-				<ul>
-					<li class="strong"><a href="#">配送服务</a></li>
-					<li><a href="#">配送政策</a></li>
-					<li><a href="#">开箱验货</a></li>
-					<li><a href="#">配送运费</a></li>
-					<li><a href="#">配送范围</a></li>
-				</ul>
-				<ul>
-					<li class="strong"><a href="#">支付方式</a></li>
-					<li><a href="#">货到付款</a></li>
-					<li><a href="#">在线支付</a></li>
-					<li><a href="#">优选卡</a></li>
-					<li><a href="#">发票制度</a></li>
-				</ul>
-				<ul>
-					<li class="strong"><a href="#">售后服务</a></li>
-					<li><a href="#">退款说明</a></li>
-					<li><a href="#">退换货流程</a></li>
-					<li><a href="#">退换货政策</a></li>
-					<li><a href="#">隐私条款</a></li>
-				</ul>
-				<ul>
-					<li class="strong"><a href="#">商家中心</a></li>
-					<li><a href="#">商家规则 </a></li>
-				</ul>
-			</div>
-			<div class="fh-right">
-				<img src="../img/foot.jpg" alt="" />
-			</div>
-		</div>
-		<div class="foot-foot">
-			<div class="ff-main">
-				<img src="../img/kxicon.jpg" alt="" />
-				<img src="../img/bottom_sm.png" alt="" />
-				<ul>
-					<li>关于我们</li>
-					<li>联系我们</li>
-					<li>招聘人才</li>
-					<li>友情链接</li>
-					<li>供应商申请</li>
-				</ul>
-				<span>Copyright&copy;顺丰优选 sfbest.com版权所有</span>
-				<p>京公网安备 11010502026831  京ICP证150325号 食品流通许可证SP1101131210068671(1-1)号  企业营业执照</p>
-			</div>
-		</div>
-	</div>
+            <ul class="hr-one">
+                <li><a th:href="@{/register}" href="register.html">免费注册</a></li>
+                <li><a href="#">我的订单</a></li>
+                <li class="hro-a"><a href="#">我的优选</a></li>
+                <li class="hro-b"><a href="#">移动客户端</a></li>
+                <li class="hro-a"><a href="#">帮助中心</a></li>
+                <li class="hro-a"><a href="#">网站导航</a></li>
+            </ul>
+            <div class="hr-two">
+                <a href="#"><img src="../img/weibo.jpg" alt="微博"/></a>
+                <a href="#"><img src="../img/weixin.jpg" alt="微信"/></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- logo -->
+<div id="logo">
+    <div class="img">
+        <a class="li-one" href="#"></a>
+        <a class="li-two" href="#"></a>
+        <div class="li-thr">
+            <a href="#"><img src="../img/logo_word.jpg" alt=""/>
+            </a>
+        </div>
+        <img src="../img/step_02.jpg " alt=""/>
+    </div>
+</div>
+<!-- main -->
+<div id="indent-main">
+    <form action="" id="indent-create">
+        <h3 class="indentHd">填写并核对订单信息</h3>
+        <div id="userAddId">
+            <p class="indentTitle">收货人信息：</p>
+            <ul class="indentAll">
+                <li>
+                    <input type="radio" checked="checked" class="iA-btn"/>
+                    <span class="newAddress">使用新收货地址</span>
+                </li>
+                <li class="indentUser">
+                    <div class="label">
+                        <b>*</b>
+                        收货人:
+                    </div>
+                    <input type="text" placeholder="请填写收货人姓名" id="IU-name"/>
+                    <span class="iuErr">请填写收货人姓名</span>
+                </li>
+                <li class="indentAddress">
+                    <div class="label">
+                        <b>*</b>
+                        所在地区:
+                    </div>
+                    <select id="province"></select>
+                    <select id="city"></select>
+                    <select id="district"></select>
+                </li>
+                <li class="fullAddress">
+                    <div class="label">
+                        <b>*</b>
+                        详细地址:
+                    </div>
+                    <div class="FA-field">
+                        <span class="sheng"></span>
+                        <span class="shi"></span>
+                        <span class="xian"></span>
+                        <input type="text" placeholder="请直接填写街道等详细地址" id="IU-address"/>
+                    </div>
+                    <span class="faErr">请您填写完整的地区信息</span>
+                </li>
+                <li class="indent-phone">
+                    <div class="label">
+                        <b>*</b>
+                        手机号码:
+                    </div>
+                    <input type="text" placeholder="11位手机号码" id="IU-phone"/>
+                    <div class="label">
+                        或者固定电话:
+                    </div>
+                    <input type="text" placeholder="区号-电话号码-分机号(可选)"
+                           id="IU-phone2"/>
+                    <span class="ipErr">请您填写手机号码或固定电话</span>
+                </li>
+            </ul>
+            <div id="save">保存收货人信息</div>
+        </div>
+        <!-- 订单信息 -->
+        <ul class="indentContent">
+            <li>
+                <div class="userInfo">
+                    收货人信息:
+                    <a href="#" class="amend" id="amend">[修改]</a>
+                </div>
+                <div class="userAddress" th:each="address,addressStat:${addresses}">
+                    <input type="radio" th:if="${addressStat.index==0}" checked="checked" th:value="${address.addid}"
+                           name="addid">
+                    <input type="radio" th:if="${addressStat.index!=0}" th:value="${address.addid}"
+                           name="addid">
+                    <span class="f-name" th:text="${address.addname}"></span>
+                    <span class="f-phone" th:text="${address.addphone}">13526547895</span>
+                    <span class="f-shi" th:text="${address.address}"></span>
+                </div>
+            </li>
+            <li>
+                <div class="userPrice">
+                    支付及配送方式:
+                    <a href="#" class="amend">[修改]</a>
+                </div>
+                <p class="pay">在线支付</p>
+                <div class="UP-indent">
+                    <p>订单一</p>
+                    <div class="shunfeng">
+                        <div><span>顺丰速运</span>负责配送</div>
+                        <p>下单后尽快为您发货</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="userInfo">
+                    发票信息:
+                    <a href="#" class="amend">[修改]</a>
+                </div>
+                <div class="bill">
+                    暂不需要发票
+                </div>
+            </li>
+            <li>
+                <div class="userInfo">
+                    商品信息:
+                    <a href="#" class="amend">[修改]</a>
+                </div>
+                <a th:href="@{/cart/all}" href="cart.html" class="goto-cart">返回购物车</a>
+                <p>商品下单后尽快为您发货</p>
+                <!-- 购物车详情 -->
+                <div>
+                    <div class="ci-title">
+                        <div class="ci-name">商品名称</div>
+                        <div>单价</div>
+                        <div>返现</div>
+                        <div>库存状态</div>
+                        <div>数量</div>
+                        <div>小计</div>
+                    </div>
+                </div>
+                <!-- 复制 -->
+                <div th:each="cartinfo,cartinfoStat:${cartinfos}">
+                    <div class="ci-title">
+                        <div class="ci-name" th:text="${cartinfo.proname}">商品名称</div>
+                        <div th:text="${cartinfo.price}">单价</div>
+                        <div>0.00</div>
+                        <div>有库存</div>
+                        <div th:text="${cartinfo.num}">0</div>
+                        <div th:text="${cartinfo.total}">0.00</div>
+                    </div>
+                </div>
+            </li>
+            <li class="last-li">
+                <div class="account">应付金额:<span id="gross" th:text="${total}"></span></div>
+                &nbsp;&nbsp;
+                <div id="sumbit">提交订单</div>
+            </li>
+        </ul>
+    </form>
+</div>
+<!-- foot -->
+<div id="foot">
+    <div class="foot-header">
+        <div class="fh-left">
+            <div></div>
+            <h1>9533858</h1>
+            <p>周一到周日8:30~22:00</p>
+        </div>
+        <div class="fh-center">
+            <ul>
+                <li class="strong"><a href="#">购物指南</a></li>
+                <li><a href="#">积分制度</a></li>
+                <li><a href="#">会员介绍</a></li>
+                <li><a href="#">购物流程</a></li>
+                <li><a href="#">常见问题</a></li>
+            </ul>
+            <ul>
+                <li class="strong"><a href="#">配送服务</a></li>
+                <li><a href="#">配送政策</a></li>
+                <li><a href="#">开箱验货</a></li>
+                <li><a href="#">配送运费</a></li>
+                <li><a href="#">配送范围</a></li>
+            </ul>
+            <ul>
+                <li class="strong"><a href="#">支付方式</a></li>
+                <li><a href="#">货到付款</a></li>
+                <li><a href="#">在线支付</a></li>
+                <li><a href="#">优选卡</a></li>
+                <li><a href="#">发票制度</a></li>
+            </ul>
+            <ul>
+                <li class="strong"><a href="#">售后服务</a></li>
+                <li><a href="#">退款说明</a></li>
+                <li><a href="#">退换货流程</a></li>
+                <li><a href="#">退换货政策</a></li>
+                <li><a href="#">隐私条款</a></li>
+            </ul>
+            <ul>
+                <li class="strong"><a href="#">商家中心</a></li>
+                <li><a href="#">商家规则 </a></li>
+            </ul>
+        </div>
+        <div class="fh-right">
+            <img src="../img/foot.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="foot-foot">
+        <div class="ff-main">
+            <img src="../img/kxicon.jpg" alt=""/>
+            <img src="../img/bottom_sm.png" alt=""/>
+            <ul>
+                <li>关于我们</li>
+                <li>联系我们</li>
+                <li>招聘人才</li>
+                <li>友情链接</li>
+                <li>供应商申请</li>
+            </ul>
+            <span>Copyright&copy;顺丰优选 sfbest.com版权所有</span>
+            <p>京公网安备 11010502026831 京ICP证150325号 食品流通许可证SP1101131210068671(1-1)号 企业营业执照</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>

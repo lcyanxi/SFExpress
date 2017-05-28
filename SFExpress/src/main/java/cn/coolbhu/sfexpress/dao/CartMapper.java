@@ -32,4 +32,10 @@ public interface CartMapper {
      * @return
      */
     int deleteAll();
+
+    /**
+     * @param cartid
+     * @return
+     */
+    CartInfo selectCartInfoByCartId(String cartid);
 }

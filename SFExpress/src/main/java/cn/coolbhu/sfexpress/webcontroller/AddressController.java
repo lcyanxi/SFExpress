@@ -44,19 +44,4 @@ public class AddressController {
         return map;
     }
 
-    /**
-     * 显示收货地址信息
-     * @param model
-     * @return
-     */
-    @RequestMapping(value = "/showaddress")
-    public String  showAddress(Model model){
-        List<Address> list= addressService.showAddress();
-        System.out.print(list);
-        model.addAttribute("Addresslist",list);
-
-        return "indent";
-    }
-
-
 }
