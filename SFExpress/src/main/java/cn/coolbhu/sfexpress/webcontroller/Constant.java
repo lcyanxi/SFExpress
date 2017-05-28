@@ -16,6 +16,16 @@ public interface Constant {
     String MODEL_KEY_CARTS = "carts";
 
     /**
+     * 购物车信息
+     */
+    String MODEL_KEY_CART_INFOS = "cartinfos";
+
+    /**
+     * 商品总计
+     */
+    String MODEL_KEY_CART_TOTAL = "total";
+
+    /**
      * 状态
      */
     String STATUS = "status";
@@ -54,4 +64,14 @@ public interface Constant {
      * 登录用户信息
      */
     String USER_INFO = "userinfo";
+
+    /**
+     * 未登录
+     */
+    int STATUS_CODE_NOT_LOGIN = -2;
+
+    /**
+     * 购物车数量
+     */
+    String CART_NUM = "cartnum";
 }

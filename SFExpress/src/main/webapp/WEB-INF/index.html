@@ -148,8 +148,8 @@
         </div>
         <div class="lc-two">
             <form action="" class="lct-form">
-                <a href="cart.html" class="lct-seek">我的购物车</a>
-                <input type="text" value="0" class="lct-text"/>
+                <a th:href="@{/cart/all}" href="cart.html" class="lct-seek">我的购物车</a>
+                <input type="text" id="cartnum" th:value="${cartnum}" value="0" class="lct-text"/>
             </form>
         </div>
     </div>
@@ -784,7 +784,7 @@
                     <dt>
                         <img th:src="'/img/'+${production.img}+'.jpg'" src="../img/friut1.jpg" alt=""/>
                     <div class="shopping">
-                        <a th:href="@{'/cart/'+${production.proid}}"><i></i>加入购物车</a>
+                        <a href="javascript:void(0)" th:onclick="'addcart('+${production.proid}+')'"><i></i>加入购物车</a>
                     </div>
                     </dt>
                     <dd>

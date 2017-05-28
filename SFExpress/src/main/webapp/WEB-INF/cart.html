@@ -2,243 +2,339 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8" />
-	<title>购物车</title>
-	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../css/style.css">
-	<link rel="stylesheet" type="text/css" th:href="@{/css/car.css}" href="../css/car.css">
-	<script type="text/javascript" th:href="@{/js/jquery.js}" src="../js/jquery.js"></script>
-	<script type="text/javascript" th:src="@{/js/jquery.cookie.js}" src="../js/jquery.cookie.js"></script>
-	<script type="text/javascript" th:src="@{/js/car.js}" src="../js/car.js"></script>
+    <meta charset="UTF-8"/>
+    <title>购物车</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" href="../css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/css/bootstrap-reset.css}" href="../css/bootstrap-reset.css" rel="stylesheet">
+
+    <!--external css-->
+    <link th:href="@{/assets/font-awesome/css/font-awesome.css}"
+          href="../assets/font-awesome/css/font-awesome.css"
+          rel="stylesheet"/>
+    <link th:href="@{/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
+          href="../assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css"
+          media="screen"/>
+    <link th:href="@{/css/owl.carousel.css}" rel="stylesheet" href="../css/owl.carousel.css" type="text/css">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/car.css}" href="../css/car.css">
+
+    <script type="text/javascript" th:href="@{/js/jquery.js}" src="../js/jquery.js"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.cookie.js}" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" th:src="@{/js/car.js}" src="../js/car.js"></script>
 </head>
 <body>
-	<div class="zhezhao"></div>
-	<div class="cart_null">
-		<div class="remind">
-			提示
-		</div>
-		<p>购物车以清空</p>
-		<input type="button" value="重新选购" id="go_on2"/>
-	</div>
-	<!-- header -->
-	<div id="header">
-		<div class="header-main">
-			<div class="hl">
-				<span class="hl-span">冷链配送 99元顺丰到家 送至:</span>
-				<div id="position">成都
-					<i></i>
-					<div class="position">
-						<div class="p-container">
-							<p>请选择您的收货地址</p>
-							<ul class="p-title">
-								<li>北京</li>
-								<li>上海</li>
-								<li>广州</li>
-								<li>深圳</li>
-								<li>天津</li>
-								<li>苏州</li>
-								<li>杭州</li>
-								<li>南京</li>
-								<li>无锡</li>
-								<li>青岛</li>
-								<li>武汉</li>
-							</ul>
-							<span class="p-color">更多城市:</span>
-							<ul class="p-content">
-								<li class="p-color">华东:</li>
-								<li>上海</li>
-								<li>浙江</li>
-								<li>江苏</li>
-								<li>安徽</li>
-							</ul>
-							<ul class="p-content">
-								<li class="p-color">华南:</li>
-								<li>广东</li>
-								<li>福建</li>
-								<li>海南</li>
-								<li>广西</li>
-							</ul>
-							<ul class="p-content">
-								<li class="p-color">华北:</li>
-								<li>北京</li>
-								<li>天津</li>
-								<li>河北</li>
-								<li>山东</li>
-								<li>山西</li>
-								<li>内蒙古</li>
-							</ul>
-							<ul class="p-content">
-								<li class="p-color">华中:</li>
-								<li>湖北</li>
-								<li>江西</li>
-								<li>湖南</li>
-								<li>河南</li>
-							</ul>
-							<ul class="p-content">
-								<li class="p-color">东北:</li>
-								<li>辽宁</li>
-								<li>吉林</li>
-								<li>黑龙江</li>
-							</ul>
-							<ul class="p-content">
-								<li class="p-color">西南:</li>
-								<li>重庆</li>
-								<li>四川</li>
-								<li>云南</li>
-								<li>贵州</li>
-								<li>西藏</li>
-							</ul>
-							<ul class="p-content">
-								<li class="p-color">西北:</li>
-								<li>陕西</li>
-								<li>甘肃</li>
-								<li>宁夏</li>
-								<li>青海</li>
-								<li>新疆</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="hr">
+<div class="zhezhao"></div>
+<div class="cart_null">
+    <div class="remind">
+        提示
+    </div>
+    <p>购物车以清空</p>
+    <input type="button" value="重新选购" id="go_on2"/>
+</div>
+<!-- header -->
+<div id="header">
+    <div class="header-main">
+        <div class="hl">
+            <span class="hl-span">冷链配送 99元顺丰到家 送至:</span>
+            <div id="position">成都
+                <i></i>
+                <div class="position">
+                    <div class="p-container">
+                        <p>请选择您的收货地址</p>
+                        <ul class="p-title">
+                            <li>北京</li>
+                            <li>上海</li>
+                            <li>广州</li>
+                            <li>深圳</li>
+                            <li>天津</li>
+                            <li>苏州</li>
+                            <li>杭州</li>
+                            <li>南京</li>
+                            <li>无锡</li>
+                            <li>青岛</li>
+                            <li>武汉</li>
+                        </ul>
+                        <span class="p-color">更多城市:</span>
+                        <ul class="p-content">
+                            <li class="p-color">华东:</li>
+                            <li>上海</li>
+                            <li>浙江</li>
+                            <li>江苏</li>
+                            <li>安徽</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">华南:</li>
+                            <li>广东</li>
+                            <li>福建</li>
+                            <li>海南</li>
+                            <li>广西</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">华北:</li>
+                            <li>北京</li>
+                            <li>天津</li>
+                            <li>河北</li>
+                            <li>山东</li>
+                            <li>山西</li>
+                            <li>内蒙古</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">华中:</li>
+                            <li>湖北</li>
+                            <li>江西</li>
+                            <li>湖南</li>
+                            <li>河南</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">东北:</li>
+                            <li>辽宁</li>
+                            <li>吉林</li>
+                            <li>黑龙江</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">西南:</li>
+                            <li>重庆</li>
+                            <li>四川</li>
+                            <li>云南</li>
+                            <li>贵州</li>
+                            <li>西藏</li>
+                        </ul>
+                        <ul class="p-content">
+                            <li class="p-color">西北:</li>
+                            <li>陕西</li>
+                            <li>甘肃</li>
+                            <li>宁夏</li>
+                            <li>青海</li>
+                            <li>新疆</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hr">
 				<span>
-					<a href="login.html" class="user_name">嘿,欢迎来顺丰优选！请登录
+					<a th:if="${userinfo}!=null" class="user_name" th:text="'用户: '+${userinfo.phone}"
+                       th:href="@{/user/info}">已登录
 					</a>
-					<a href="javascript:void(0)" class="quit">[退出]</a>
+                    <a th:if="${userinfo}==null" th:href="@{/user/login}">
+                        嘿,欢迎来顺丰优选！请登录
+                    </a>
+					<a th:if="${userinfo}!=null" th:href="@{/user/logout}" class="color_red">&nbsp;[退出]</a>
 				</span>
-				<ul class="hr-one">
-					<li><a href="register.html">免费注册</a></li>
-					<li><a href="#">我的订单</a></li>
-					<li class="hro-a"><a href="#">我的优选</a></li>
-					<li class="hro-b"><a href="#">移动客户端</a></li>
-					<li class="hro-a"><a href="#">帮助中心</a></li>
-					<li class="hro-a"><a href="#">网站导航</a></li>
-				</ul>
-				<div class="hr-two">
-					<a href="#"><img src="../img/weibo.jpg" alt="微博" /></a>
-					<a href="#"><img src="../img/weixin.jpg" alt="微信" /></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- logo -->
-	<div id="logo">
-		<div class="img">
-			<a class="li-one" href="#"></a>
-			<a class="li-two" href="#"></a>
-			<div class="li-thr">
-				<a href="#"><img src="../img/logo_word.jpg" alt="" />
-				</a>
-			</div>
-			<img src="../img/step_01.jpg " alt="" />
-		</div>
-	</div>
-	<!-- main -->
-	<div id="car-main">
-		<div class="cm-my">
-			<h2>我的购物车</h2>
-		</div>
-		<!-- 购物车 -->
-		<div id="cart">
-			<div class="title">
-				<div><input type="checkbox" id="ck_all"/>全选
-				</div>
-				<div class="goods">商品</div>
-				<div>单价</div>
-				<div class="numbers">数量</div>
-				<!-- <div>重量(含包装)
-				</div> -->
-				<div>小计</div>
-				<div>操作</div>
-			</div>
-		</div>
-		<div id="gross">
-			<div id="del_checked">删除选中</div>
-			<div id="clear_cart">清空购物车</div>
-			<div class="subAll">商品总计:<span id="subAll">0</span></div>
-		</div>
-		<p href="#" id="goout">继续购物</p>
-		<p id="account">去结算</p>
+            <ul class="hr-one">
+                <li><a href="register.html">免费注册</a></li>
+                <li><a href="#">我的订单</a></li>
+                <li class="hro-a"><a href="#">我的优选</a></li>
+                <li class="hro-b"><a href="#">移动客户端</a></li>
+                <li class="hro-a"><a href="#">帮助中心</a></li>
+                <li class="hro-a"><a href="#">网站导航</a></li>
+            </ul>
+            <div class="hr-two">
+                <a href="#"><img src="../img/weibo.jpg" alt="微博"/></a>
+                <a href="#"><img src="../img/weixin.jpg" alt="微信"/></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- logo -->
+<div id="logo">
+    <div class="img">
+        <a class="li-one" href="#"></a>
+        <a class="li-two" href="#"></a>
+        <div class="li-thr">
+            <a href="#"><img src="../img/logo_word.jpg" alt=""/>
+            </a>
+        </div>
+        <img src="../img/step_01.jpg " alt=""/>
+    </div>
+</div>
+<!-- main -->
+<div id="car-main">
+    <br/>
+    <!-- 购物车 -->
+    <form th:action="@{/cart/deletechoose}" method="post">
+        <!--page_start 主要内容部分-->
+        <section id="main-content">
+            <section class="wrapper">
+                <!--page start-->
+                <div id="bill_list" class="row">
+                    <div class="col-lg-12">
+                        <section class="panel">
+                            <!--头部 位置显示栏-->
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                <h4 class="modal-title">
+                                    我的购物车
+                                </h4>
+                            </div>
+                            <!--头部 位置显示栏结束-->
 
-		<!-- 复制 -->
-		<div class="template" style="display:none;">
-			<div><input type="checkbox" class="ck"/></div>
-			<div class="id goods">
-				<img src="" alt="" style="widows: 50px;height: 50px;" />
-				<p></p>
-			</div>
-			<div class="price"></div>
-			<div class="amount">
-				<button class="minus">-</button>
-				<input type="text" class="num" value="1" size="1"/>
-				<button class="addnum">+</button>
-			</div>
-			<div class="sub"></div>
-			<div class="oper">
-				<a href="javascript:void(0)" class="detele">删除</a>
-			</div>
-		</div>
-	</div>
-	<!-- foot -->
-	<div id="foot">
-		<div class="foot-header">
-			<div class="fh-left">
-				<div></div>
-				<h1>9533858</h1>
-				<p>周一到周日8:30~22:00</p>
-			</div>
-			<div class="fh-center">
-				<ul>
-					<li class="strong"><a href="#">购物指南</a></li>
-					<li><a href="#">积分制度</a></li>
-					<li><a href="#">会员介绍</a></li>
-					<li><a href="#">购物流程</a></li>
-					<li><a href="#">常见问题</a></li>
-				</ul>
-				<ul>
-					<li class="strong"><a href="#">配送服务</a></li>
-					<li><a href="#">配送政策</a></li>
-					<li><a href="#">开箱验货</a></li>
-					<li><a href="#">配送运费</a></li>
-					<li><a href="#">配送范围</a></li>
-				</ul>
-				<ul>
-					<li class="strong"><a href="#">支付方式</a></li>
-					<li><a href="#">货到付款</a></li>
-					<li><a href="#">在线支付</a></li>
-					<li><a href="#">优选卡</a></li>
-					<li><a href="#">发票制度</a></li>
-				</ul>
-				<ul>
-					<li class="strong"><a href="#">售后服务</a></li>
-					<li><a href="#">退款说明</a></li>
-					<li><a href="#">退换货流程</a></li>
-					<li><a href="#">退换货政策</a></li>
-					<li><a href="#">隐私条款</a></li>
-				</ul>
-				<ul>
-					<li class="strong"><a href="#">商家中心</a></li>
-					<li><a href="#">商家规则 </a></li>
-				</ul>
-			</div>
-			<div class="fh-right">
-				<img src="../img/foot.jpg" alt="" />
-			</div>
-		</div>
-		<div class="foot-foot">
-			<div class="ff-main">
-				<img src="../img/kxicon.jpg" alt="" />
-				<img src="../img/bottom_sm.png" alt="" />
-				<ul>
-					<li>关于我们</li>
-					<li>联系我们</li>
-					<li>招聘人才</li>
-					<li>友情链接</li>
-					<li>供应商申请</li>
-				</ul>
-				<span>Copyright&copy;顺丰优选 sfbest.com版权所有</span>
-				<p>京公网安备 11010502026831  京ICP证150325号 食品流通许可证SP1101131210068671(1-1)号  企业营业执照</p>
-			</div>
-		</div>
-	</div>
+                            <table class="table table-striped border-top" id="sample_1">
+                                <!--头部显示的所有包含的内容-->
+                                <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" id="check-all" onclick="changeState(this.checked)">全选
+                                    </th>
+                                    <th>商品名称</th>
+                                    <th>单价</th>
+                                    <th>数量</th>
+                                    <th>小计</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <!--头部显示的所有包含的内容 结束-->
+
+                                <!--数据显示部分-->
+                                <tbody>
+                                <tr class="odd gradeX" th:each="cartinfo,cartinfoStat:${cartinfos}">
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-xs-2 item-check">
+                                                <input type="checkbox" th:value="${cartinfo.cartid}" name="cartid">
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <img class="pro-img" th:src="'/img/'+${cartinfo.img}+'.jpg'"
+                                                     src="../img/friut1.jpg"
+                                                     alt=""/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <th th:text="${cartinfo.proname}">心心相印</th>
+                                    <td th:text="${cartinfo.price}">156.1</td>
+                                    <td class="hidden-phone">
+                                        <div class="row">
+                                            <a th:href="@{'/cart/minus/'+${cartinfo.cartid}}">
+                                                <button type="button"><i class="icon-minus"></i></button>
+                                            </a>
+                                            &nbsp;<span th:text="${cartinfo.num}">22</span>&nbsp;
+                                            <a th:href="@{'/cart/plus/'+${cartinfo.cartid}}">
+                                                <button type="button"><i class="icon-plus"></i></button>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="hidden-phone" th:text="${cartinfo.total}">33</td>
+                                    <td><a th:href="@{'/cart/delete/'+${cartinfo.cartid}}" href="#">
+                                        <button class="btn btn-danger btn-xs" data-toggle="modal"
+                                                data-target="#delete_staff_myModal">
+                                            <i class="icon-trash "> 删除</i></button>
+                                    </a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <!--数据显示部分 结束-->
+
+                            </table>
+                        </section>
+                    </div>
+                </div>
+                <!-- page end-->
+            </section>
+        </section>
+        <!--main content end 主要内容部分结束-->
+        <div id="gross">
+            <button type="submit" class="btn btn-danger"><i class="icon-trash"></i>删除选中</button>
+            <a th:href="@{/cart/deleteall}">
+                <button type="button" class="btn btn-danger"><i class="icon-ban-circle">清空购物车</i></button>
+            </a>
+            <div class="subAll">商品总计:<span id="subAll" th:text="${total}">0</span></div>
+        </div>
+        <a th:href="@{/index}"><p href="#" id="goout">继续购物</p></a>
+        <a th:href="@{/order/count}"><p id="account">去结算</p></a>
+
+    </form>
+    <!-- 复制 -->
+    <div class="template" style="display:none;">
+        <div><input type="checkbox" class="ck"/></div>
+        <div class="id goods">
+            <img src="" alt="" style="widows: 50px;height: 50px;"/>
+            <p></p>
+        </div>
+        <div class="price"></div>
+        <div class="amount">
+            <button class="minus">-</button>
+            <input type="text" class="num" value="1" size="1"/>
+            <button class="addnum">+</button>
+        </div>
+        <div class="sub"></div>
+        <div class="oper">
+            <a href="javascript:void(0)" class="detele">删除</a>
+        </div>
+    </div>
+</div>
+<!-- foot -->
+<div id="foot">
+    <div class="foot-header">
+        <div class="fh-left">
+            <div></div>
+            <h1>9533858</h1>
+            <p>周一到周日8:30~22:00</p>
+        </div>
+        <div class="fh-center">
+            <ul>
+                <li class="strong"><a href="#">购物指南</a></li>
+                <li><a href="#">积分制度</a></li>
+                <li><a href="#">会员介绍</a></li>
+                <li><a href="#">购物流程</a></li>
+                <li><a href="#">常见问题</a></li>
+            </ul>
+            <ul>
+                <li class="strong"><a href="#">配送服务</a></li>
+                <li><a href="#">配送政策</a></li>
+                <li><a href="#">开箱验货</a></li>
+                <li><a href="#">配送运费</a></li>
+                <li><a href="#">配送范围</a></li>
+            </ul>
+            <ul>
+                <li class="strong"><a href="#">支付方式</a></li>
+                <li><a href="#">货到付款</a></li>
+                <li><a href="#">在线支付</a></li>
+                <li><a href="#">优选卡</a></li>
+                <li><a href="#">发票制度</a></li>
+            </ul>
+            <ul>
+                <li class="strong"><a href="#">售后服务</a></li>
+                <li><a href="#">退款说明</a></li>
+                <li><a href="#">退换货流程</a></li>
+                <li><a href="#">退换货政策</a></li>
+                <li><a href="#">隐私条款</a></li>
+            </ul>
+            <ul>
+                <li class="strong"><a href="#">商家中心</a></li>
+                <li><a href="#">商家规则 </a></li>
+            </ul>
+        </div>
+        <div class="fh-right">
+            <img src="../img/foot.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="foot-foot">
+        <div class="ff-main">
+            <img src="../img/kxicon.jpg" alt=""/>
+            <img src="../img/bottom_sm.png" alt=""/>
+            <ul>
+                <li>关于我们</li>
+                <li>联系我们</li>
+                <li>招聘人才</li>
+                <li>友情链接</li>
+                <li>供应商申请</li>
+            </ul>
+            <span>Copyright&copy;顺丰优选 sfbest.com版权所有</span>
+            <p>京公网安备 11010502026831 京ICP证150325号 食品流通许可证SP1101131210068671(1-1)号 企业营业执照</p>
+        </div>
+    </div>
+</div>
+<script language="JavaScript" type="text/javascript">
+    function changeState(isChecked) {
+        var chk_list = document.getElementsByTagName("input");
+        for (var i = 0; i < chk_list.length; i++) {
+            if (chk_list[i].type == "checkbox") {
+                chk_list[i].checked = isChecked;
+            }
+        }
+    }
+</script>
 </body>
 </html>
