@@ -217,7 +217,7 @@
                                     </td>
                                     <td class="hidden-phone" th:text="${cartinfo.total}">33</td>
                                     <td><a th:href="@{'/cart/delete/'+${cartinfo.cartid}}" href="#">
-                                        <button class="btn btn-danger btn-xs" data-toggle="modal"
+                                        <button type="button" class="btn btn-danger btn-xs" data-toggle="modal"
                                                 data-target="#delete_staff_myModal">
                                             <i class="icon-trash "> 删除</i></button>
                                     </a>

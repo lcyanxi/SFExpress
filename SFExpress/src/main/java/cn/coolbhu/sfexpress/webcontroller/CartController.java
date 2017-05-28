@@ -106,8 +106,11 @@ public class CartController extends BaseController {
     @RequestMapping(value = "/deletechoose", method = RequestMethod.POST)
     public String deleteChoose(@RequestParam(value = "cartid", required = false) String[] cartids) {
 
-        //删除选中的
-        int result = cartService.deleteChoose(cartids);
+        if (cartids != null) {
+
+            //删除选中的
+            int result = cartService.deleteChoose(cartids);
+        }
 
         return "redirect:/cart/all";
     }
