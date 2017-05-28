@@ -26,3 +26,6 @@ hs_err_pid*
 
 # ignore target
 target/
+
+# ignore jdbc.properte
+jdbc.properties

@@ -8,7 +8,7 @@
     <context:component-scan base-package="cn.coolbhu.sfexpress.service"/>
 
     <!--Shiro  配置导入-->
-    <!--<import resource="spring-shiro.xml"/>-->
+    <import resource="spring-shiro.xml"/>
 
     <!--Mybatis 配置导入-->
     <import resource="spring-mybatis.xml"/>

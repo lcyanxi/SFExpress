@@ -93,9 +93,13 @@
         </div>
         <div class="hr">
 				<span>
-					<a href="login.html" class="user_name">嘿,欢迎来顺丰优选！请登录
+					<a th:if="${userinfo}!=null" class="user_name" th:text="'用户: '+${userinfo.phone}"
+                       th:href="@{/user/info}">已登录
 					</a>
-					<a href="javascript:void(0)" class="quit">[退出]</a>
+                    <a th:if="${userinfo}==null" th:href="@{/user/login}">
+                        嘿,欢迎来顺丰优选！请登录
+                    </a>
+					<a th:if="${userinfo}!=null" th:href="@{/user/logout}" class="color_red">&nbsp;[退出]</a>
 				</span>
             <ul class="hr-one">
                 <li><a th:href="@{/register}" href="register.html">免费注册</a></li>

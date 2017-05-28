@@ -11,13 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping(value = "/")
-public class CommonController {
+public class CommonController extends BaseController {
 
     @Autowired
     private ProductionService productionService;
 
     @RequestMapping(value = {"/", "index"})
     public String index(Model model) {
+
+        //将登录用户的信息拿到
+        model.addAttribute(Constant.USER_INFO, session.getAttribute(Constant.USER_INFO));
 
         //添加所有的商品
         model.addAttribute(Constant.MODEL_KEY_PRODUCTIONS, productionService.getAllProduction());
@@ -26,12 +29,12 @@ public class CommonController {
     }
 
     @RequestMapping(value = "register")
-    public String toRegister(){
+    public String toRegister() {
         return "register";
     }
 
     @RequestMapping(value = "login")
-    public String toLogin(){
+    public String toLogin() {
         return "login";
     }
     @RequestMapping(value = "tocart")
