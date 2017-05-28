@@ -52,6 +52,7 @@ public class AddressController {
     @RequestMapping(value = "/showaddress")
     public String  showAddress(Model model){
         List<Address> list= addressService.showAddress();
+        System.out.print(list);
         model.addAttribute("Addresslist",list);
 
         return "indent";
