@@ -15,8 +15,8 @@ $(function(){
 		}
 		var text_sheng;
 		// 页面加载完成后出现
-		$("#userAddId").show();
-		$(".zhezhao").show();
+		// $("#userAddId").show();
+		// $(".zhezhao").show();
 		// 点击保存时消失，并将信息存入页面,
 		// 消失的时候还需判断输入是否符合标准
 		$("#save").click(function(){

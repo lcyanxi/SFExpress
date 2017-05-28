@@ -60,9 +60,14 @@ public interface CartService {
     int deleteAll();
 
     /**
-     *
      * @param cartids
      * @return
      */
     int deleteChoose(String[] cartids);
+
+    /**
+     * @param cartids
+     * @return
+     */
+    List<CartInfo> getCartInfoByCartIds(String[] cartids);
 }

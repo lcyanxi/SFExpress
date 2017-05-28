@@ -11,6 +11,7 @@ import cn.coolbhu.sfexpress.vo.CartInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -148,5 +149,23 @@ public class CartServiceImpl implements CartService {
         }
 
         return cartids.length;
+    }
+
+    @Override
+    public List<CartInfo> getCartInfoByCartIds(String[] cartids) {
+
+        List<CartInfo> cartInfos = new ArrayList<>();
+
+        for (String cartid : cartids) {
+
+            CartInfo cartInfo = cartMapper.selectCartInfoByCartId(cartid);
+
+            if (cartid != null) {
+
+                cartInfos.add(cartInfo);
+            }
+        }
+
+        return cartInfos;
     }
 }
