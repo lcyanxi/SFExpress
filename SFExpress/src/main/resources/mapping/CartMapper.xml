@@ -73,4 +73,9 @@
       from cart C LEFT JOIN prodution P ON C.ProId = P.ProId
       WHERE UserId=#{userid}
     </select>
+    <select id="selectCartInfoByCartId" parameterType="java.lang.String" resultMap="cartInfoResultMap">
+        select C.CartId, C.UserId, C.ProId, C.Num, C.Total, C.CartCreateTime, C.CartUpdateTime, C.CartMark,P.Img,P.Price,P.ProName
+        from cart C LEFT JOIN prodution P ON C.ProId = P.ProId
+        WHERE CartId=#{cartid}
+    </select>
 </mapper>

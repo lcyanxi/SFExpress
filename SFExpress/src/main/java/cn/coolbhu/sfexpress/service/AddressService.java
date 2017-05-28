@@ -12,15 +12,25 @@ public interface AddressService {
 
     /**
      * 添加收货人信息
+     *
      * @param addInfo
      * @return
      */
     int saveAddress(AddInfo addInfo);
 
     /**
-     * 显示收货人信息
+     * @param userid
      * @return
      */
-    List<Address> showAddress();
+    List<Address> getAddressByUserId(String userid);
 
+    /**
+     * @param userid
+     * @param addname
+     * @param address
+     * @param detailaddress
+     * @param addphone
+     * @return
+     */
+    String addAddress(String userid, String addname, String address, String detailaddress, String addphone);
 }

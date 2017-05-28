@@ -124,7 +124,7 @@
 					<a th:if="${userinfo}!=null" th:href="@{/user/logout}" class="color_red">&nbsp;[退出]</a>
 				</span>
             <ul class="hr-one">
-                <li><a href="register.html">免费注册</a></li>
+                <li><a th:href="@{/register}" href="register.html">免费注册</a></li>
                 <li><a href="#">我的订单</a></li>
                 <li class="hro-a"><a href="#">我的优选</a></li>
                 <li class="hro-b"><a href="#">移动客户端</a></li>
@@ -154,7 +154,7 @@
 <div id="car-main">
     <br/>
     <!-- 购物车 -->
-    <form th:action="@{/cart/deletechoose}" method="post">
+    <form th:action="@{/order/prepare}" method="post" id="fm_cart">
         <!--page_start 主要内容部分-->
         <section id="main-content">
             <section class="wrapper">
@@ -189,11 +189,13 @@
 
                                 <!--数据显示部分-->
                                 <tbody>
-                                <tr class="odd gradeX" th:each="cartinfo,cartinfoStat:${cartinfos}">
+                                <tr class="odd gradeX cart_item" th:each="cartinfo,cartinfoStat:${cartinfos}">
                                     <td>
                                         <div class="row">
                                             <div class="col-xs-2 item-check">
-                                                <input type="checkbox" th:value="${cartinfo.cartid}" name="cartid">
+                                                <input type="checkbox" th:value="${cartinfo.cartid}" name="cartid"
+                                                       class="check_ck"
+                                                       onclick="changeTotal()">
                                             </div>
                                             <div class="col-xs-4">
                                                 <img class="pro-img" th:src="'/img/'+${cartinfo.img}+'.jpg'"
@@ -202,7 +204,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <th th:text="${cartinfo.proname}">心心相印</th>
+                                    <td th:text="${cartinfo.proname}">心心相印</td>
                                     <td th:text="${cartinfo.price}">156.1</td>
                                     <td class="hidden-phone">
                                         <div class="row">
@@ -215,7 +217,9 @@
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="hidden-phone" th:text="${cartinfo.total}">33</td>
+                                    <td class="total"><span th:id="'id_'+${cartinfo.cartid}"
+                                                            th:text="${cartinfo.total}">33</span>
+                                    </td>
                                     <td><a th:href="@{'/cart/delete/'+${cartinfo.cartid}}" href="#">
                                         <button type="button" class="btn btn-danger btn-xs" data-toggle="modal"
                                                 data-target="#delete_staff_myModal">
@@ -235,15 +239,18 @@
         </section>
         <!--main content end 主要内容部分结束-->
         <div id="gross">
-            <button type="submit" class="btn btn-danger"><i class="icon-trash"></i>删除选中</button>
             <a th:href="@{/cart/deleteall}">
                 <button type="button" class="btn btn-danger"><i class="icon-ban-circle">清空购物车</i></button>
             </a>
-            <div class="subAll">商品总计:<span id="subAll" th:text="${total}">0</span></div>
+            <div class="subAll">商品总计:<span id="subAll">0</span></div>
         </div>
-        <a th:href="@{/index}"><p href="#" id="goout">继续购物</p></a>
-        <a th:href="@{/address/showaddress}"><p id="account">去结算</p></a>
+        <div class="form-group">
 
+            <a th:href="@{/index}"><p href="#" id="goout">继续购物</p></a>
+
+            <button type="submit" id="account">&nbsp;去结算&nbsp;</button>
+        </div>
+        <h4 class="help-block text-danger text-center" style="color:red" th:text="${message}"></h4>
     </form>
     <!-- 复制 -->
     <div class="template" style="display:none;">
@@ -334,6 +341,24 @@
                 chk_list[i].checked = isChecked;
             }
         }
+
+        changeTotal();
+    }
+    function changeTotal() {
+
+        var total = 0.00;
+
+        $("#fm_cart .check_ck:checked").each(function (index, element) {
+
+            var id = 'id_' + $(this).val();
+
+            var item_total = document.getElementById(id);
+
+            total += parseFloat(item_total.innerHTML);
+        });
+
+        var total_span = document.getElementById("subAll");
+        total_span.innerHTML = total.toFixed(2) + "";
     }
 </script>
 </body>
