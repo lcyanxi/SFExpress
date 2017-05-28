@@ -32,5 +32,5 @@ public interface AddressService {
      * @param addphone
      * @return
      */
-    int addAddress(String userid, String addname, String address, String detailaddress, String addphone);
+    String addAddress(String userid, String addname, String address, String detailaddress, String addphone);
 }

@@ -42,7 +42,7 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public int addAddress(String userid, String addname, String address, String detailaddress, String addphone) {
+    public String addAddress(String userid, String addname, String address, String detailaddress, String addphone) {
 
         //准备  数据
         Address add = new Address();
@@ -60,6 +60,13 @@ public class AddressServiceImpl implements AddressService {
         add.setAddphone(addphone);
 
         //插入
-        return addressMapper.insert(add);
+        int result = addressMapper.insert(add);
+
+        if (result > 0) {
+            return add.getAddid();
+        } else {
+
+            return null;
+        }
     }
 }

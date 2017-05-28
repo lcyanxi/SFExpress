@@ -80,5 +80,16 @@ public interface Constant {
      */
     String MESSAGE_STR_NULL_PARAM = "请先选择商品";
 
+    /**
+     * 地址
+     */
     String MODEL_KEY_USER_ADDRESSES = "addresses";
+
+    /**
+     * 地址舒心
+     */
+    String MODEL_KEY_ADDRESS_ADDNAME = "addname";
+    String MODEL_KEY_ADDRESS_ADDPHONE = "addphone";
+    String MODEL_KEY_ADDRESS_ADDRESS = "address";
+    String MODEL_KEY_ADDRESS_ADDID = "addid";
 }

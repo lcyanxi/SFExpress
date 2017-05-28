@@ -34,9 +34,7 @@ public class AddressTest {
             String address = "吉林省 吉林市 龙潭区";
             String detailaddress = "北华大学北校区";
 
-            result += addressService.addAddress(userid, addname, address, detailaddress, addphone);
+            addressService.addAddress(userid, addname, address, detailaddress, addphone);
         }
-
-        Assert.assertEquals(result, 2);
     }
 }
