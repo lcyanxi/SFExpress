@@ -60,7 +60,7 @@ public class AdminController extends BaseController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(Model model,
-                        @RequestParam(value = "name") String name,
+                        @RequestParam(value = "username") String name,
                         @RequestParam(value = "password") String password) {
 
         //判断参数是否为空
@@ -107,5 +107,15 @@ public class AdminController extends BaseController {
     public String toLogin(Model model) {
 
         return "login";
+    }
+
+    @RequestMapping(value = "logout", method = RequestMethod.GET)
+    public String logout(Model model) {
+
+        //退出
+        session.removeAttribute(Constant.USER_INFO);
+
+        //重定向到 login
+        return "redirect:/user/login";
     }
 }

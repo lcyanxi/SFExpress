@@ -6,9 +6,13 @@
     <title>登陆</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/register.css}" href="../css/register.css">
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../css/main.css">
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" href="../css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" th:src="@{/js/jquery.js}" src="../js/jquery.js"></script>
     <script type="text/javascript" th:src="@{/js/jquery.cookie.js}" src="../js/jquery.cookie.js"></script>
     <script type="text/javascript" th:src="@{/js/login.js}" src="../js/login.js"></script>
+    <!--Jquery Validate-->
+    <script type="text/javascript" th:src="@{/js/jquery.validate.min.js}" src="../js/jquery.validate.min.js"></script>
 </head>
 <body style="background:#fff">
 <!-- 遮罩层 -->
@@ -46,7 +50,7 @@
                         <li>
                             <span class="LML_title">手机/验证邮箱/用户名</span>
                             <div class="LML_border" style="position:relative;">
-                                <input type="text" id="username" name="name"/>
+                                <input type="text" id="username" name="username"/>
                                 <em id="usernamelogo"></em>
                             </div>
                             <span id="usernameError">请输入手机/验证邮箱/用户名</span>
@@ -67,7 +71,10 @@
                             </div>
                         </li>
                         <a href="#">忘记密码?</a>
-                        <input type="submit" id="login" value="登陆"/>
+                        <div class="form-group">
+                            <input type="submit" id="login" value="登陆"/>
+                            <h4 class="help-block text-danger text-center" style="color:red" th:text="${message}"></h4>
+                        </div>
                         <div class="zhifubao">
                             <p>合作网站登陆</p>
                             <a href="#">QQ</a>|
