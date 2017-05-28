@@ -26,14 +26,22 @@ public class AdminController extends BaseController {
     @Autowired
     private AdminService adminService;
 
-    @RequestMapping(value = "/adduser", method = RequestMethod.POST)
+
+    /**
+     * 注册
+     * @param username
+     * @param password
+     * @return
+     */
+    @RequestMapping(value = "/adduser" ,method = RequestMethod.POST)
     @ResponseBody
-    public Map addUser(@RequestParam(value = "username") String username,
-                       @RequestParam(value = "password") String password) {
-        Map map = new HashMap();
-        if (username == "" || username == null || password == "" || password == null) {
-            map.put(Constant.STATUS, Constant.FAIL);
-            map.put(Constant.MESSAGE, "用户名或者密码不能为空！");
+    public Map addUser(@RequestParam(value = "username")String username,
+                       @RequestParam(value = "password")String password){
+        System.out.println(username+password);
+        Map map=new HashMap();
+        if (username==""||username==null||password==""||password==null){
+            map.put(Constant.STATUS,Constant.FAIL);
+            map.put(Constant.MESSAGE,"用户名或者密码不能为空！");
             return map;
         }
 
@@ -118,4 +126,5 @@ public class AdminController extends BaseController {
         //重定向到 login
         return "redirect:/user/login";
     }
+
 }

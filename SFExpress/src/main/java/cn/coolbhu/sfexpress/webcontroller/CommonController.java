@@ -37,4 +37,8 @@ public class CommonController extends BaseController {
     public String toLogin() {
         return "login";
     }
+    @RequestMapping(value = "tocart")
+    public String toCart(){
+        return "cart";
+    }
 }

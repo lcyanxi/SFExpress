@@ -42,7 +42,7 @@
   <select id="selectByPhone" parameterType="java.lang.String" resultMap="BaseResultMap">
     select UserId, UserName, Password, Email, Phone, Slead, UserCreateTime, UserMark
     from user
-    where Phone = #{phone,jdbcType=CHAR}
+    where Phone = #{phone}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
     select UserId, UserName, Password, Email, Phone, Slead, UserCreateTime, UserMark
