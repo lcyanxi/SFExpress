@@ -21,10 +21,17 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    /**
+     * 注册
+     * @param username
+     * @param password
+     * @return
+     */
     @RequestMapping(value = "/adduser" ,method = RequestMethod.POST)
     @ResponseBody
     public Map addUser(@RequestParam(value = "username")String username,
                        @RequestParam(value = "password")String password){
+        System.out.println(username+password);
         Map map=new HashMap();
         if (username==""||username==null||password==""||password==null){
             map.put(Constant.STATUS,Constant.FAIL);
@@ -52,4 +59,12 @@ public class AdminController {
 
         return map;
     }
+
+    public Map login(@RequestParam(value = "username") String username,
+                     @RequestParam(value = "password") String password){
+
+        return null;
+    }
+
+
 }

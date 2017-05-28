@@ -34,4 +34,8 @@ public class CommonController {
     public String toLogin(){
         return "login";
     }
+    @RequestMapping(value = "tocart")
+    public String toCart(){
+        return "cart";
+    }
 }

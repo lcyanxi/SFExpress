@@ -82,4 +82,18 @@ public class User {
     public void setUsermark(Integer usermark) {
         this.usermark = usermark;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userid='" + userid + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", slead=" + slead +
+                ", usercreatetime=" + usercreatetime +
+                ", usermark=" + usermark +
+                '}';
+    }
 }

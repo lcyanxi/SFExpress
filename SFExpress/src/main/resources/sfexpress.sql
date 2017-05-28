@@ -105,9 +105,9 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `UserId` char(10) NOT NULL,
   `UserName` varchar(16) NOT NULL,
-  `Password` varchar(16) NOT NULL,
-  `Email` varchar(255) DEFAULT NULL,
-  `Phone` char(11) DEFAULT NULL,
+  `Password` varchar(255) NOT NULL,
+  `Email` varchar(255) DEFAULT NULL UNIQUE ,
+  `Phone` char(11) DEFAULT NULL UNIQUE ,
   `Slead` int(11) DEFAULT NULL,
   `UserCreateTime` datetime DEFAULT NULL,
   `UserMark` int(11) DEFAULT NULL,

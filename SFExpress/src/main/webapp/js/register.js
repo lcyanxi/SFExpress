@@ -95,28 +95,14 @@ $(function(){
 
 					dataType:'json',
 					success:function(data){
-						console.log(data);
-						$(".zhezhao").show();
-						$(".register-success").show();
-						$("#successBtn").click(function(){
-							location = "/login";
-						});
-					},
-					error:function(data){
-						var date = JSON.parse(JSON.parse(data.responseText));
-						console.log(date);
-						if(date.ResultCode == 202){
-							console.log('用户已存在');
-							$('.zhezhao').show();
-							$('.zhezhao2').show();
-							$('#re-login').click(function(){
-								location.href = '/login'
-							});
-						}else if(date.ResultCode == 200){
-							console.log('注册成功');
-							location.href = '/login';
+						if (data.status==1){
+                            window.wxc.xcConfirm(data.message, window.wxc.xcConfirm.typeEnum.info,{onOk:function () {
+                                location = "/login";
+                            }});
+						}else {
+                            window.wxc.xcConfirm(data.message, window.wxc.xcConfirm.typeEnum.info);
 						}
-					}
+					},
 				});
 			}
 			else{
@@ -138,6 +124,7 @@ $(function(){
 			// console.log($("#code_img1").text());
 		});
 		$("#code_img1").text(randomString());
+
 		function checkCode(){
 			if($("#auth_code").val()== $("#code_img1").text()){
 				$(".regOK").show();
