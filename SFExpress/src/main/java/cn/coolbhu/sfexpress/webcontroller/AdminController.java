@@ -60,7 +60,7 @@ public class AdminController extends BaseController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(Model model,
-                        @RequestParam(value = "name") String name,
+                        @RequestParam(value = "username") String name,
                         @RequestParam(value = "password") String password) {
 
         //判断参数是否为空
