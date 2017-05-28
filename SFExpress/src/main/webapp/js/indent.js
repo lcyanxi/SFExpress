@@ -37,7 +37,25 @@ $(function(){
 						"shi":add_shi,
 						"xian":add_xian,
 						"cun":add_cun
-					};
+					}
+
+                $.ajax({
+                    type:"POST",
+                    url:"/address/saveaddress",
+                    data:{
+                    	name:add_name,
+						phone:add_phone,
+						address:add_shi+add_xian,
+						detail:add_cun
+					},
+
+
+                    dataType:'json',
+                    success:function(data){
+                    	alert("保存成功");
+                    },
+                });
+
 					$.cookie.json = true;
 				var add_informations = $.cookie("add_information");
 					if(!add_informations){
@@ -82,6 +100,12 @@ $(function(){
 				all();
 			} 
 		});
+
+
+
+
+
+
 		/************判断输入信息是否准确************/
 		function checkAddname(){
 			if($("#IU-name").val().length !=0){

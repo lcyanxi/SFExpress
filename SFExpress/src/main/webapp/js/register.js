@@ -38,6 +38,7 @@ $(function(){
 				console.log(1);
 				$(".regPoint-err1").show();
 				$(".regPoint1").hide();
+				return false;
 			}else{
 				console.log(2);
 				$(".regPoint1").hide();
@@ -69,13 +70,14 @@ $(function(){
 		//密码相同
 		function checkSame(){
 			if($("#password2").val().length === 0){
-				return;
+				return false;
 			}
 			if($("#password").val() === $("#password2").val()){
 				$(".regOK3").show();
 			}else{
 				$(".regPoint-err3").show();
 				$(".regOK3").hide();
+				return false;
 			}
 		}
 
@@ -106,7 +108,7 @@ $(function(){
 				});
 			}
 			else{
-				alert("注册不成功");
+				//alert("注册不成功");
 			}
 		});
 		// 随机生成验证码
@@ -130,7 +132,7 @@ $(function(){
 				$(".regOK").show();
 				$(".regPoint").hide();
 			}else{
-				return;
+				return false;
 			}
 		}
 		$("#auth_code").on("blur",function(){
