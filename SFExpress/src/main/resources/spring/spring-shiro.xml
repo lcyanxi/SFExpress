@@ -129,6 +129,7 @@
             <value>
                 /user/login=anon
                 /user/adduser=anon
+                /cart/addcart=anon
                 /cart/** = user
                 / = anon
             </value>
