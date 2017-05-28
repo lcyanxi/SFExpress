@@ -16,6 +16,11 @@ public interface AdminService {
      */
     int addUser(String username, String password);
 
+    /**
+     * 判断电话号码是否存在
+     * @param Phone
+     * @return
+     */
     boolean isExistPhone(String Phone);
 
     /**
@@ -23,4 +28,15 @@ public interface AdminService {
      * @return
      */
     User getUserByPhone(String phone);
+
+
+    /**
+     * 更新个人信息
+     * @param user
+     * @return
+     */
+    int updateProfile(User user);
+
+
+
 }

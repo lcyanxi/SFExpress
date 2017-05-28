@@ -36,8 +36,10 @@ public class CommonController extends BaseController {
             List<Cart> cartList = cartService.getCartByUserId(user.getUserid());
             model.addAttribute(Constant.CART_NUM, cartList.size());
 
+            session.setAttribute(Constant.CART_NUM, cartList.size());
+
             model.addAttribute(Constant.USER_INFO, user);
-        }else {
+        } else {
 
             model.addAttribute(Constant.CART_NUM, 0);
         }
@@ -57,8 +59,15 @@ public class CommonController extends BaseController {
     public String toLogin() {
         return "login";
     }
+
     @RequestMapping(value = "tocart")
-    public String toCart(){
+    public String toCart() {
         return "cart";
+    }
+
+    @RequestMapping(value = "toeditprofile")
+    public String toEditProfile(Model model){
+        model.addAttribute(Constant.CART_NUM,session.getAttribute(Constant.CART_NUM));
+        return "editprofile";
     }
 }

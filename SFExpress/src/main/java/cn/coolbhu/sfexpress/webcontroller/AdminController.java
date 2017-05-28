@@ -1,5 +1,6 @@
 package cn.coolbhu.sfexpress.webcontroller;
 
+import cn.coolbhu.sfexpress.model.User;
 import cn.coolbhu.sfexpress.service.AdminService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
@@ -125,6 +126,65 @@ public class AdminController extends BaseController {
 
         //重定向到 login
         return "redirect:/user/login";
+    }
+
+    /**
+     * 显示个人信息
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/profile",method = RequestMethod.GET)
+    public String showUserInfo(Model model){
+
+
+        User user=(User) session.getAttribute(Constant.USER_INFO);
+
+        if (user==null){
+            //重定向到 login
+            return "redirect:/user/login";
+        }
+
+        int cartNum=(int)session.getAttribute(Constant.CART_NUM);
+
+        model.addAttribute(Constant.USER_INFO,user);
+        model.addAttribute(Constant.CART_NUM,cartNum);
+
+        return "account";
+    }
+
+    /**
+     * 更新个人信息
+     * @param username
+     * @param phone
+     * @param email
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/updateprofile" ,method = RequestMethod.POST)
+    public String updateProfile(@RequestParam(value = "username") String username,
+                                @RequestParam(value = "phone") String phone,
+                                @RequestParam(value = "email") String email,
+                                Model model){
+
+
+        User user=(User) session.getAttribute(Constant.USER_INFO);
+
+        user.setUsername(username);
+        user.setPhone(phone);
+        user.setEmail(email);
+
+
+        if (adminService.updateProfile(user)>0){
+            //更新session里的值
+            session.setAttribute(Constant.USER_INFO,user);
+            session.setAttribute(Constant.CART_NUM,session.getAttribute(Constant.CART_NUM));
+            model.addAttribute(Constant.MESSAGE,"更改成功！");
+
+        }else {
+            model.addAttribute(Constant.MESSAGE,"更改失败！");
+        }
+
+        return "editprofile";
     }
 
 }

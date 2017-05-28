@@ -69,20 +69,25 @@ $(function(){
 		}
 		//密码相同
 		function checkSame(){
-			if($("#password2").val().length === 0){
-				return false;
-			}
-			if($("#password").val() === $("#password2").val()){
-				$(".regOK3").show();
-			}else{
-				$(".regPoint-err3").show();
-				$(".regOK3").hide();
-				return false;
-			}
+            if($("#password2").val().length === 0){
+                return;
+            }
+            if($("#password").val() === $("#password2").val()){
+                $(".regOK3").show();
+            }else{
+                $(".regPoint-err3").show();
+                $(".regOK3").hide();
+            }
 		}
 
 		// 注册
 		$("#reg").on("click",function(){
+
+			if (!checkCode()){
+
+				return;
+			}
+
 			if(checkUsername&&pwd&&checkCode&&($("#password").val()===$("#password2").val())){
 				// alert("注册成功");
 				var name = $("#username").val();
@@ -113,7 +118,7 @@ $(function(){
 		});
 		// 随机生成验证码
 		function randomString(){
-			var $arr = "ABCDEFGHIGKLMNOPQRSTUVWXYZ123456789";
+			var $arr = "abcdefghijklmnopqrstuvwxyz123456789";
 			var Maxlen = $arr.length;
 			var pos = "";
 			for(var i=0;i<4;i++){
@@ -131,7 +136,11 @@ $(function(){
 			if($("#auth_code").val()== $("#code_img1").text()){
 				$(".regOK").show();
 				$(".regPoint").hide();
+
+				return true;
 			}else{
+                $(".regOK").hide();
+                $(".regPoint").show();
 				return false;
 			}
 		}
