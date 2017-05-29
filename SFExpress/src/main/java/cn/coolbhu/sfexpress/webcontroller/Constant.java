@@ -92,4 +92,9 @@ public interface Constant {
     String MODEL_KEY_ADDRESS_ADDPHONE = "addphone";
     String MODEL_KEY_ADDRESS_ADDRESS = "address";
     String MODEL_KEY_ADDRESS_ADDID = "addid";
+
+    /**
+     * order
+     */
+    String MODEL_KEY_ORDER = "order";
 }
