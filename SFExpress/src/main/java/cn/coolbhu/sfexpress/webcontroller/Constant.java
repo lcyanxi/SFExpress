@@ -21,6 +21,11 @@ public interface Constant {
     String MODEL_KEY_CART_INFOS = "cartinfos";
 
     /**
+     * 订单信息集合
+     */
+    String ODERINFO_LIST="orderlist";
+
+    /**
      * 商品总计
      */
     String MODEL_KEY_CART_TOTAL = "total";

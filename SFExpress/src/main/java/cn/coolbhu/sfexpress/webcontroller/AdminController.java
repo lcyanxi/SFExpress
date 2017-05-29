@@ -158,6 +158,7 @@ public class AdminController extends BaseController {
 
         int cartNum=(int)session.getAttribute(Constant.CART_NUM);
 
+        model.addAttribute(Constant.ODERINFO_LIST,orderInfos);
         model.addAttribute(Constant.USER_INFO,user);
         model.addAttribute(Constant.CART_NUM,cartNum);
 
