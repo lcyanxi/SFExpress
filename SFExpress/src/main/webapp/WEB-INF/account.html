@@ -7,22 +7,16 @@
     <!-- Bootstrap core CSS -->
     <link th:href="@{/css/bootstrap.min.css}" href="../css/bootstrap.min.css" rel="stylesheet">
     <link th:href="@{/css/bootstrap-reset.css}" href="../css/bootstrap-reset.css" rel="stylesheet">
-
-
-    <!--external css-->
-    <!--<link th:href="@{/assets/font-awesome/css/font-awesome.css}"-->
-          <!--href="../assets/font-awesome/css/font-awesome.css"-->
-          <!--rel="stylesheet"/>-->
-    <link th:href="@{/css/owl.carousel.css}" rel="stylesheet" href="../css/owl.carousel.css" type="text/css">
-
+    <!--<link th:href="@{/css/owl.carousel.css}" rel="stylesheet" href="../css/owl.carousel.css" type="text/css">-->
     <link th:href="@{/css/account/style.css}" href="../css/account/style.css" rel="stylesheet">
-    <link th:href="@{/css/style-responsive.css}" href="../css/style-responsive.css" rel="stylesheet"/>
+    <!--<link th:href="@{/css/style-responsive.css}" href="../css/style-responsive.css" rel="stylesheet"/>-->
 
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../css/style.css">
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../css/main.css">
     <script type="text/javascript" th:src="@{/js/jquery.js}" src="../js/jquery.js"></script>
     <script type="text/javascript" th:src="@{/js/jquery.cookie.js}" src="../js/jquery.cookie.js"></script>
-    <script type="text/javascript" th:src="@{/js/index.js}" src="../js/index.js"></script>
+    <script type="text/javascript" th:src="@{/assets/jquery-knob/js/jquery.knob.js}" src="../assets/jquery-knob/js/jquery.knob.js"></script>
+
 </head>
 <body>
 <!-- header -->
@@ -191,15 +185,14 @@
     <section class="wrapper">
         <!-- page start-->
         <div class="row">
-            <!--<aside class="profile-nav col-lg-3">-->
-            <!--</aside>-->
+            <!--账户信息-->
             <aside class="profile-info col-lg-10">
                 <section class="panel">
                     <div class="bio-graph-heading">
-                     欢迎来到你的个人信息页面，你可以更改你的个人信息！
+                    您的账户只属于您！
                     </div>
                     <div class="panel-body bio-graph-info">
-                        <h1>个人信息</h1>
+                        <h1>账户信息</h1>
                         <div class="row">
                             <div class="bio-row">
                                 <p><span>用户名:</span><span th:text="${userinfo.username}"></span></p>
@@ -228,7 +221,72 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                    <a th:href="@{/toeditprofile}"><button type="button" class="btn btn-success">修改个人信息</button></a>
+                                    <a th:href="@{/toeditprofile}"><button type="button" class="btn btn-success">修改信息</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="bio-graph-heading">
+                        您的订单详情！
+                    </div>
+                    <div class="row">
+                        <span></span>
+                        <div class="col-lg-6">
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <div class="bio-chart">
+                                        <input class="knob" data-width="100" data-height="100" data-displayPrevious=true  data-thickness=".2" value="90" data-fgColor="#e06b7d" data-bgColor="#e8e8e8">
+                                    </div>
+                                    <div class="bio-desk">
+                                        <h4 class="red">Envato Website</h4>
+                                        <p>Started : 15 July</p>
+                                        <p>Deadline : 15 August</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <div class="bio-chart">
+                                        <input class="knob" data-width="100" data-height="100" data-displayPrevious=true  data-thickness=".2" value="63" data-fgColor="#4CC5CD" data-bgColor="#e8e8e8">
+                                    </div>
+                                    <div class="bio-desk">
+                                        <h4 class="terques">ThemeForest CMS </h4>
+                                        <p>Started : 15 July</p>
+                                        <p>Deadline : 15 August</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <div class="bio-chart">
+                                        <input class="knob" data-width="100" data-height="100" data-displayPrevious=true  data-thickness=".2" value="75" data-fgColor="#96be4b" data-bgColor="#e8e8e8">
+                                    </div>
+                                    <div class="bio-desk">
+                                        <h4 class="green">VectorLab Portfolio</h4>
+                                        <p>Started : 15 July</p>
+                                        <p>Deadline : 15 August</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <div class="bio-chart">
+                                        <input class="knob" data-width="100" data-height="100" data-displayPrevious=true  data-thickness=".2" value="50" data-fgColor="#cba4db" data-bgColor="#e8e8e8">
+                                    </div>
+                                    <div class="bio-desk">
+                                        <h4 class="purple">Adobe Muse Template</h4>
+                                        <p>Started : 15 July</p>
+                                        <p>Deadline : 15 August</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -240,7 +298,6 @@
         <!-- page end-->
     </section>
 </section>
-
 
 <!-- foot -->
 <div id="send">
@@ -324,5 +381,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    //knob
+    $(".knob").knob();
+
+</script>
 </body>
 </html>

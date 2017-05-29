@@ -35,4 +35,10 @@
     select ProInfoId, OrderId, ProId, ProInfoCreateTime, ProInfoMark
     from proinfo
   </select>
+
+  <select id="selectByOrderId" resultType="String">
+    select p.Img
+    from proinfo pf left  JOIN  prodution p on pf.proid=p.proid
+    WHERE OrderId=#{orderid}
+  </select>
 </mapper>

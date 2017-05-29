@@ -2,6 +2,7 @@ package cn.coolbhu.sfexpress.webcontroller;
 
 import cn.coolbhu.sfexpress.model.User;
 import cn.coolbhu.sfexpress.service.AdminService;
+import cn.coolbhu.sfexpress.service.OrderService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.UnauthorizedException;
@@ -26,6 +27,9 @@ public class AdminController extends BaseController {
 
     @Autowired
     private AdminService adminService;
+
+    @Autowired
+    private OrderService orderService;
 
 
     /**

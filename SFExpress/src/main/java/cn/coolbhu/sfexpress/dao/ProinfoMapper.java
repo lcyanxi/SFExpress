@@ -1,6 +1,8 @@
 package cn.coolbhu.sfexpress.dao;
 
 import cn.coolbhu.sfexpress.model.Proinfo;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 public interface ProinfoMapper {
@@ -13,4 +15,6 @@ public interface ProinfoMapper {
     List<Proinfo> selectAll();
 
     int updateByPrimaryKey(Proinfo record);
+
+    List<String> selectByOrderId(@Param("orderid") String orderid);
 }
