@@ -4,26 +4,23 @@
     <resultMap id="BaseResultMap" type="cn.coolbhu.sfexpress.model.Order">
         <id column="OrderId" jdbcType="CHAR" property="orderid"/>
         <result column="UserId" jdbcType="CHAR" property="userid"/>
+        <result column="AddId" jdbcType="CHAR" property="addid"/>
         <result column="OrderCreateTime" jdbcType="TIMESTAMP" property="ordercreatetime"/>
         <result column="TotalPrice" jdbcType="DOUBLE" property="totalprice"/>
         <result column="PayMark" jdbcType="INTEGER" property="paymark"/>
         <result column="OrderMark" jdbcType="INTEGER" property="ordermark"/>
-        <result column="AddId" jdbcType="CHAR" property="addid"/>
     </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from order
+    delete from orderinfo
     where OrderId = #{orderid,jdbcType=CHAR}
   </delete>
     <insert id="insert" parameterType="cn.coolbhu.sfexpress.model.Order">
-    insert into order (OrderId, UserId,AddId, OrderCreateTime,
-      TotalPrice, PayMark, OrderMark
-      )
-    values (#{orderid,jdbcType=CHAR}, #{userid,jdbcType=CHAR},#{addid,jdbcType=CHAR}, #{ordercreatetime,jdbcType=TIMESTAMP},
-      #{totalprice,jdbcType=DOUBLE}, #{paymark,jdbcType=INTEGER}, #{ordermark,jdbcType=INTEGER}
-      )
+    insert into orderinfo(OrderId, UserId,AddId, OrderCreateTime,TotalPrice, PayMark,OrderMark)
+    values(#{orderid,jdbcType=CHAR}, #{userid,jdbcType=CHAR},#{addid,jdbcType=CHAR}, #{ordercreatetime,jdbcType=TIMESTAMP},
+      #{totalprice,jdbcType=DOUBLE}, #{paymark,jdbcType=INTEGER}, #{ordermark,jdbcType=INTEGER})
   </insert>
     <update id="updateByPrimaryKey" parameterType="cn.coolbhu.sfexpress.model.Order">
-    update order
+    update orderinfo
     set UserId = #{userid,jdbcType=CHAR},
         AddId=#{addid,jdbcType=CHAR},
       OrderCreateTime = #{ordercreatetime,jdbcType=TIMESTAMP},
@@ -34,12 +31,12 @@
   </update>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select OrderId, UserId, AddId,OrderCreateTime, TotalPrice, PayMark, OrderMark
-    from order
+    from orderinfo
     where OrderId = #{orderid,jdbcType=CHAR}
   </select>
     <select id="selectAll" resultMap="BaseResultMap">
     select OrderId, UserId,AddId, OrderCreateTime, TotalPrice, PayMark, OrderMark
-    from order
+    from orderinfo
   </select>
 
     <select id="selectOrderInfo" resultType="OrderInfo">

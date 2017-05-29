@@ -10,9 +10,19 @@ import java.util.List;
 public interface OrderService {
 
     /**
+
      * 显示所有订单信息
      * @param userid
      * @return
      */
     List<OrderInfo> showOrderInfo(String userid);
+
+    /**
+     * @param addid
+     * @param cartids
+     * @param userid
+     * @return
+     */
+    int addOrderByAddIdAndCartIds(String addid, String[] cartids, String userid);
+
 }

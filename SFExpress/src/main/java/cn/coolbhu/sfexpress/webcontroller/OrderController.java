@@ -4,6 +4,7 @@ import cn.coolbhu.sfexpress.model.Address;
 import cn.coolbhu.sfexpress.model.User;
 import cn.coolbhu.sfexpress.service.AddressService;
 import cn.coolbhu.sfexpress.service.CartService;
+import cn.coolbhu.sfexpress.service.OrderService;
 import cn.coolbhu.sfexpress.vo.CartInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,9 @@ public class OrderController extends BaseController {
 
     @Autowired
     private AddressService addressService;
+
+    @Autowired
+    private OrderService orderService;
 
     @Autowired
     private CartService cartService;
@@ -58,5 +62,37 @@ public class OrderController extends BaseController {
         return "indent";
     }
 
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public String createOrder(Model model,
+                              @RequestParam(value = "addid") String addid,
+                              @RequestParam(value = "cartid") String[] cartids) {
 
+        //当前登录用户
+        User user = (User) session.getAttribute(Constant.USER_INFO);
+        model.addAttribute(Constant.USER_INFO, user);
+
+        //判断是否登录
+        if (user == null) {
+
+            model.addAttribute(Constant.STATUS, Constant.STATUS_CODE_NOT_LOGIN);
+            return "indent";
+        }
+
+        //添加订单
+        int result = orderService.addOrderByAddIdAndCartIds(addid, cartids, user.getUserid());
+
+        if (result > 0) {
+
+            model.addAttribute(Constant.STATUS, Constant.STATUS_CODE_SUCCESSED);
+            model.addAttribute(Constant.MESSAGE, "订单添加成功！");
+
+            return "order";
+        } else {
+
+            model.addAttribute(Constant.STATUS, Constant.STATUS_CODE_ERROR);
+            model.addAttribute(Constant.MESSAGE, "订单添加失败!");
+
+            return "indent";
+        }
+    }
 }
