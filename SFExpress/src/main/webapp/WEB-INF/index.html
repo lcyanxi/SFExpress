@@ -94,7 +94,7 @@
         <div class="hr">
 				<span>
 					<a th:if="${userinfo}!=null" class="user_name" th:text="'用户: '+${userinfo.phone}"
-                       th:href="@{/user/info}">已登录
+                       th:href="@{/user/profile}">已登录
 					</a>
                     <a th:if="${userinfo}==null" th:href="@{/user/login}">
                         嘿,欢迎来顺丰优选！请登录
@@ -599,7 +599,7 @@
         </div>
     </ul>
     <ul class="list-header">
-        <li><a href="#" class="lh-green">首页</a></li>
+        <li><a th:href="@{/}" href="#" class="lh-green">首页</a></li>
         <li><a href="#">优选生鲜</a></li>
         <li><a href="#">全球美食</a></li>
         <li><a href="#">优选厨房</a></li>
