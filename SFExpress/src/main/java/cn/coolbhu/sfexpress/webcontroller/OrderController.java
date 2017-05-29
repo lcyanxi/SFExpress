@@ -59,7 +59,7 @@ public class OrderController extends BaseController {
 
         //应付金额
         Double total = cartService.countTotalByCartInfos(cartInfos);
-        model.addAttribute(Constant.MODEL_KEY_CART_TOTAL, total);
+        model.addAttribute(Constant.MODEL_KEY_CART_TOTAL, String.format("%.2f", total));
 
         return "indent";
     }
@@ -89,7 +89,7 @@ public class OrderController extends BaseController {
             model.addAttribute(Constant.MESSAGE, "订单添加成功！");
 
             //应付金额
-            model.addAttribute(Constant.MODEL_KEY_CART_TOTAL, result.getTotalprice());
+            model.addAttribute(Constant.MODEL_KEY_CART_TOTAL, String.format("%.2f", result.getTotalprice()));
 
             model.addAttribute(Constant.MODEL_KEY_ORDER, result);
 

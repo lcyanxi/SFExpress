@@ -1,11 +1,14 @@
 package cn.coolbhu.sfexpress.vo;
 
+import org.apache.ibatis.type.Alias;
+
 import java.util.Date;
 import java.util.List;
 
 /**
  * Created by lcyanxi on 17-5-29.
  */
+@Alias("OrderInfo")
 public class OrderInfo {
     private String orderid;
     private Date createtime;
