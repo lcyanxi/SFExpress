@@ -54,10 +54,10 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for order
+-- Table structure for orderinfo
 -- ----------------------------
-DROP TABLE IF EXISTS `order`;
-CREATE TABLE `order` (
+DROP TABLE IF EXISTS `orderinfo`;
+CREATE TABLE `orderinfo` (
   `OrderId` char(10) NOT NULL,
   `UserId` char(10) NOT NULL,
   `AddId` CHAR (10) NOT NULL ,
@@ -67,6 +67,7 @@ CREATE TABLE `order` (
   `OrderMark` int(11) DEFAULT NULL,
   PRIMARY KEY (`OrderId`),
   KEY `UserId` (`UserId`),
+  KEY `AddId` (`AddId`),
   CONSTRAINT `order_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `user` (`UserId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `order_ibfk_2` FOREIGN KEY (`AddId`) REFERENCES `address` (`AddId`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -97,7 +98,7 @@ CREATE TABLE `proinfo` (
   `ProInfoMark` int(11) DEFAULT NULL,
   PRIMARY KEY (`ProInfoId`),
   KEY `OrderId` (`OrderId`),
-  CONSTRAINT `proinfo_ibfk_1` FOREIGN KEY (`OrderId`) REFERENCES `order` (`OrderId`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `proinfo_ibfk_1` FOREIGN KEY (`OrderId`) REFERENCES `orderinfo` (`OrderId`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------

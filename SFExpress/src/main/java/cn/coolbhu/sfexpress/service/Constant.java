@@ -21,6 +21,11 @@ public interface Constant {
     int MARK_CODE_OK = 1;
 
     /**
+     *
+     */
+    int MARK_CODE_NOT_OK = -1;
+
+    /**
      * 标记死亡
      */
     int SLEAD_ALIVE = 1;
