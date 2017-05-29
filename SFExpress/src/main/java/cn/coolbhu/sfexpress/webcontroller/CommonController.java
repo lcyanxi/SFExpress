@@ -1,13 +1,16 @@
 package cn.coolbhu.sfexpress.webcontroller;
 
 import cn.coolbhu.sfexpress.model.Cart;
+import cn.coolbhu.sfexpress.model.Prodution;
 import cn.coolbhu.sfexpress.model.User;
 import cn.coolbhu.sfexpress.service.CartService;
 import cn.coolbhu.sfexpress.service.ProductionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
@@ -66,8 +69,33 @@ public class CommonController extends BaseController {
     }
 
     @RequestMapping(value = "toeditprofile")
-    public String toEditProfile(Model model){
-        model.addAttribute(Constant.CART_NUM,session.getAttribute(Constant.CART_NUM));
+    public String toEditProfile(Model model) {
+        model.addAttribute(Constant.CART_NUM, session.getAttribute(Constant.CART_NUM));
         return "editprofile";
+    }
+
+    @RequestMapping(value = "pro/{proid}", method = RequestMethod.GET)
+    public String toProInfo(Model model,
+                            @PathVariable(value = "proid") String proid) {
+
+        //用户相关
+        User user = (User) session.getAttribute(Constant.USER_INFO);
+        if (user != null) {
+
+            //购物车数量
+            List<Cart> cartList = cartService.getCartByUserId(user.getUserid());
+            model.addAttribute(Constant.CART_NUM, cartList.size());
+
+            model.addAttribute(Constant.USER_INFO, user);
+        } else {
+
+            model.addAttribute(Constant.CART_NUM, 0);
+        }
+
+        //查找商品
+        Prodution prodution = productionService.getProductionByProId(proid);
+        model.addAttribute(Constant.MODEL_KEY_PRODUCTION, prodution);
+
+        return "list";
     }
 }

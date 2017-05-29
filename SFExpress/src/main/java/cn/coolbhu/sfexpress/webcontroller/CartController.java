@@ -1,5 +1,6 @@
 package cn.coolbhu.sfexpress.webcontroller;
 
+import cn.coolbhu.sfexpress.model.Cart;
 import cn.coolbhu.sfexpress.model.User;
 import cn.coolbhu.sfexpress.service.CartService;
 import cn.coolbhu.sfexpress.vo.CartInfo;
@@ -87,11 +88,16 @@ public class CartController extends BaseController {
         }
 
         //添加商品到购物车
-        int result = cartService.addCart(user.getUserid(), proid, num);
+        Cart result = cartService.addCart(user.getUserid(), proid, num);
 
-        session.setAttribute(Constant.CART_NUM,cartService.getCartInfoByUserId(user.getUserid()).size());
+        session.setAttribute(Constant.CART_NUM, cartService.getCartInfoByUserId(user.getUserid()).size());
 
-        map.put(Constant.STATUS, result);
+        map.put(Constant.STATUS, result != null ? 1 : -1);
+
+        if (result != null) {
+
+            map.put(Constant.MAP_KEY_CART_ID, result.getCartid());
+        }
 
         return map;
     }

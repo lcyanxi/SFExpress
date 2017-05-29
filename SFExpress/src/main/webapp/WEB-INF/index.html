@@ -789,7 +789,8 @@
                     </div>
                     </dt>
                     <dd>
-                        <p th:text="${production.proname}">佳沛 新西兰金奇艺果12个</p>
+                        <a th:href="@{'/pro/'+${production.proid}}" href="#"><p th:text="${production.proname}">佳沛 新西兰金奇艺果12个</p>
+                        </a>
                         <span>￥</span>
                         <span th:text="${production.price}">76</span>
                     </dd>

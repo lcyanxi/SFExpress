@@ -1,6 +1,7 @@
 package cn.coolbhu.sfexpress.webcontroller;
 
 import cn.coolbhu.sfexpress.model.Address;
+import cn.coolbhu.sfexpress.model.Cart;
 import cn.coolbhu.sfexpress.model.Order;
 import cn.coolbhu.sfexpress.model.User;
 import cn.coolbhu.sfexpress.service.AddressService;
@@ -88,6 +89,9 @@ public class OrderController extends BaseController {
             model.addAttribute(Constant.STATUS, Constant.STATUS_CODE_SUCCESSED);
             model.addAttribute(Constant.MESSAGE, "订单添加成功！");
 
+            //删除购物车
+            cartService.deleteChoose(cartids);
+
             //应付金额
             model.addAttribute(Constant.MODEL_KEY_CART_TOTAL, String.format("%.2f", result.getTotalprice()));
 
@@ -110,5 +114,39 @@ public class OrderController extends BaseController {
         orderService.payOrder(orderid);
 
         return "redirect:/user/profile";
+    }
+
+    @RequestMapping(value = "/fastbuy", method = RequestMethod.POST)
+    public String fastBuy(Model model,
+                          @RequestParam(value = "num") Integer num,
+                          @RequestParam(value = "proid") String proid) {
+
+        //当前登录用户
+        User user = (User) session.getAttribute(Constant.USER_INFO);
+        model.addAttribute(Constant.USER_INFO, user);
+
+        //判断是否登录
+        if (user == null) {
+
+            model.addAttribute(Constant.STATUS, Constant.STATUS_CODE_NOT_LOGIN);
+            return "redirect:/pro/" + proid;
+        }
+
+        //添加头购物车
+        Cart cart = cartService.addCart(user.getUserid(), proid, num);
+
+        //拿到地址信息
+        List<Address> addressList = addressService.getAddressByUserId(user.getUserid());
+        model.addAttribute(Constant.MODEL_KEY_USER_ADDRESSES, addressList);
+
+        //添加商品信息
+        List<CartInfo> cartInfos = cartService.getCartInfoByCartIds(new String[]{cart.getCartid()});
+        model.addAttribute(Constant.MODEL_KEY_CART_INFOS, cartInfos);
+
+        //应付金额
+        Double total = cartService.countTotalByCartInfos(cartInfos);
+        model.addAttribute(Constant.MODEL_KEY_CART_TOTAL, String.format("%.2f", total));
+
+        return "indent";
     }
 }
