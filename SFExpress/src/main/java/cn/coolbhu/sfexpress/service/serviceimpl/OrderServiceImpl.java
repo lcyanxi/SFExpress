@@ -1,6 +1,7 @@
 package cn.coolbhu.sfexpress.service.serviceimpl;
 
 import cn.coolbhu.sfexpress.dao.OrderMapper;
+import cn.coolbhu.sfexpress.dao.ProinfoMapper;
 import cn.coolbhu.sfexpress.model.Order;
 import cn.coolbhu.sfexpress.service.CartService;
 import cn.coolbhu.sfexpress.service.Constant;
@@ -8,6 +9,7 @@ import cn.coolbhu.sfexpress.service.OrderService;
 import cn.coolbhu.sfexpress.service.ProinfoService;
 import cn.coolbhu.sfexpress.util.RandomUtils;
 import cn.coolbhu.sfexpress.vo.CartInfo;
+import cn.coolbhu.sfexpress.vo.OrderInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,10 +26,30 @@ public class OrderServiceImpl implements OrderService {
     private OrderMapper orderMapper;
 
     @Autowired
+    private ProinfoMapper proinfoMapper;
+
+    @Autowired
     private ProinfoService proinfoService;
 
     @Autowired
     private CartService cartService;
+
+    @Override
+    public List<OrderInfo> showOrderInfo(String userid) {
+
+
+        List<OrderInfo> infoList = orderMapper.selectOrderInfo(userid);
+        for (OrderInfo info : infoList) {
+            String orderId = info.getOrderid();
+            List<String> listImg = proinfoMapper.selectByOrderId(orderId);
+
+            info.setNum(listImg.size());
+            info.setImg(listImg);
+
+        }
+        return infoList;
+
+    }
 
     @Override
     public Order addOrderByAddIdAndCartIds(String addid, String[] cartids, String userid) {
