@@ -17,5 +17,5 @@ public interface OrderMapper {
 
     int updateByPrimaryKey(Order record);
 
-    List<OrderInfo> selectOrderInfo(@Param("uerid") String userid);
+    List<OrderInfo> selectOrderInfo(@Param("userid") String userid);
 }

@@ -36,7 +36,7 @@
     from proinfo
   </select>
 
-  <select id="selectByOrderId" resultType="String">
+  <select id="selectByOrderId" resultType="ProImgInfo">
     select p.Img
     from proinfo pf left  JOIN  prodution p on pf.proid=p.proid
     WHERE OrderId=#{orderid}

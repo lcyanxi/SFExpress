@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>账户信息</title>
+    <title>个人中心</title>
     <!-- Bootstrap core CSS -->
     <link th:href="@{/css/bootstrap.min.css}" href="../css/bootstrap.min.css" rel="stylesheet">
     <link th:href="@{/css/bootstrap-reset.css}" href="../css/bootstrap-reset.css" rel="stylesheet">
@@ -164,7 +164,7 @@
 </div>
 
 <!-- list -->
-<div id="list" >
+<div id="list">
     <ul class="list-list">
         <li class="ll-one"><h1>个人中心</h1></li>
     </ul>
@@ -188,7 +188,7 @@
             <aside class="profile-info col-lg-10">
                 <section class="panel">
                     <div class="bio-graph-heading">
-                    您的账户只属于您！
+                        您的账户只属于您！
                     </div>
                     <div class="panel-body bio-graph-info">
                         <h1>账户信息</h1>
@@ -216,11 +216,14 @@
                                 <p><span>状态值： </span><span th:if="${userinfo.slead==1}">在线</span></p>
                             </div>
                             <div class="bio-row">
-                                <p><span>注册时间 </span><span  th:text="${#dates.format(userinfo.usercreatetime, 'yyyy-MM-dd')}"></span></p>
+                                <p><span>注册时间 </span><span
+                                        th:text="${#dates.format(userinfo.usercreatetime, 'yyyy-MM-dd')}"></span></p>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                    <a th:href="@{/toeditprofile}"><button type="button" class="btn btn-primary">修改信息</button></a>
+                                    <a th:href="@{/toeditprofile}">
+                                        <button type="button" class="btn btn-primary">修改信息</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -240,23 +243,28 @@
                                 <th>订单号</th>
                                 <th>数量</th>
                                 <th>创建时间</th>
-                                <th class="hidden-phone">收货人</th>
-                                <th class="hidden-phone">金额</th>
-                                <th class="hidden-phone">状态</th>
-                                <th class="hidden-phone">操作</th>
+                                <th>收货人</th>
+                                <th>金额</th>
+                                <th>状态</th>
+                                <th>操作</th>
                             </tr>
                             </thead>
                             <!--头部显示所包含的内容 结束-->
 
                             <!--显示每个订单的详细信息-->
                             <tbody id="tbody">
-                            <tr class="odd gradeX" th:each="orderInfo,iterStat:${oderlist}">
-                                <td th:each="imglist,iterStat:${orderInfo.img}">
-                                    <img th:src="${imglist.img}" width="15" height="15">
+                            <tr class="odd gradeX" th:each="orderInfo,iterStat:${orderlist}">
+
+
+                                <td>
+                                    <span th:each="proImgInfo,itemStat:${orderInfo.proImgInfos}">
+                                        <span><img th:src="'/img/'+${proImgInfo.img}+'.jpg'" width="50" height="50"></span>
+                                    </span>
                                 </td>
+
                                 <th th:text="${orderInfo.orderid}"></th>
                                 <th th:text="${orderInfo.num}"></th>
-                                <td th:text="${#dates.format(orderInfo.createtime, 'yyyy-MM-dd')}"></td>
+                                <td th:text="${#dates.format(orderInfo.ordercreatetime, 'yyyy-MM-dd')}"></td>
                                 <td th:text="${orderInfo.addname}"></td>
                                 <td th:text="${orderInfo.totalprice}"></td>
                                 <td>
@@ -265,11 +273,18 @@
                                 </td>
                                 <td>
 
-                                    <button class="btn btn-danger btn-sm">
+                                    <span th:if="${orderInfo.paymark==1}">
+                                        <button class="btn btn-primary btn-xs">
+                                        <i class="icon-pencil"></i>订单详情</button>
+                                    </span>
+                                    <span th:if="${orderInfo.paymark==-1}">
+                                        <button class="btn btn-danger btn-sm">
                                         <i class="icon-trash "></i>立即付款</button>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                     <button class="btn btn-primary btn-xs">
                                         <i class="icon-pencil"></i>订单详情</button>
+                                    </span>
+
                                 </td>
                             </tr>
                             </tbody>
