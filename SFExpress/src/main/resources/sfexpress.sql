@@ -60,13 +60,15 @@ DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
   `OrderId` char(10) NOT NULL,
   `UserId` char(10) NOT NULL,
+  `AddId` CHAR (10) NOT NULL ,
   `OrderCreateTime` datetime DEFAULT NULL,
   `TotalPrice` double DEFAULT NULL,
   `PayMark` int(11) DEFAULT NULL,
   `OrderMark` int(11) DEFAULT NULL,
   PRIMARY KEY (`OrderId`),
   KEY `UserId` (`UserId`),
-  CONSTRAINT `order_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `user` (`UserId`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `order_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `user` (`UserId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `order_ibfk_2` FOREIGN KEY (`AddId`) REFERENCES `address` (`AddId`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------

@@ -1,42 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.coolbhu.sfexpress.dao.OrderMapper">
-  <resultMap id="BaseResultMap" type="cn.coolbhu.sfexpress.model.Order">
-    <id column="OrderId" jdbcType="CHAR" property="orderid" />
-    <result column="UserId" jdbcType="CHAR" property="userid" />
-    <result column="OrderCreateTime" jdbcType="TIMESTAMP" property="ordercreatetime" />
-    <result column="TotalPrice" jdbcType="DOUBLE" property="totalprice" />
-    <result column="PayMark" jdbcType="INTEGER" property="paymark" />
-    <result column="OrderMark" jdbcType="INTEGER" property="ordermark" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <resultMap id="BaseResultMap" type="cn.coolbhu.sfexpress.model.Order">
+        <id column="OrderId" jdbcType="CHAR" property="orderid"/>
+        <result column="UserId" jdbcType="CHAR" property="userid"/>
+        <result column="OrderCreateTime" jdbcType="TIMESTAMP" property="ordercreatetime"/>
+        <result column="TotalPrice" jdbcType="DOUBLE" property="totalprice"/>
+        <result column="PayMark" jdbcType="INTEGER" property="paymark"/>
+        <result column="OrderMark" jdbcType="INTEGER" property="ordermark"/>
+        <result column="AddId" jdbcType="CHAR" property="addid"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from order
     where OrderId = #{orderid,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="cn.coolbhu.sfexpress.model.Order">
-    insert into order (OrderId, UserId, OrderCreateTime, 
+    <insert id="insert" parameterType="cn.coolbhu.sfexpress.model.Order">
+    insert into order (OrderId, UserId,AddId, OrderCreateTime,
       TotalPrice, PayMark, OrderMark
       )
-    values (#{orderid,jdbcType=CHAR}, #{userid,jdbcType=CHAR}, #{ordercreatetime,jdbcType=TIMESTAMP}, 
+    values (#{orderid,jdbcType=CHAR}, #{userid,jdbcType=CHAR},#{addid,jdbcType=CHAR}, #{ordercreatetime,jdbcType=TIMESTAMP},
       #{totalprice,jdbcType=DOUBLE}, #{paymark,jdbcType=INTEGER}, #{ordermark,jdbcType=INTEGER}
       )
   </insert>
-  <update id="updateByPrimaryKey" parameterType="cn.coolbhu.sfexpress.model.Order">
+    <update id="updateByPrimaryKey" parameterType="cn.coolbhu.sfexpress.model.Order">
     update order
     set UserId = #{userid,jdbcType=CHAR},
+        AddId=#{addid,jdbcType=CHAR},
       OrderCreateTime = #{ordercreatetime,jdbcType=TIMESTAMP},
       TotalPrice = #{totalprice,jdbcType=DOUBLE},
       PayMark = #{paymark,jdbcType=INTEGER},
       OrderMark = #{ordermark,jdbcType=INTEGER}
     where OrderId = #{orderid,jdbcType=CHAR}
   </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select OrderId, UserId, OrderCreateTime, TotalPrice, PayMark, OrderMark
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select OrderId, UserId, AddId,OrderCreateTime, TotalPrice, PayMark, OrderMark
     from order
     where OrderId = #{orderid,jdbcType=CHAR}
   </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select OrderId, UserId, OrderCreateTime, TotalPrice, PayMark, OrderMark
+    <select id="selectAll" resultMap="BaseResultMap">
+    select OrderId, UserId,AddId, OrderCreateTime, TotalPrice, PayMark, OrderMark
     from order
   </select>
 </mapper>
