@@ -97,4 +97,14 @@ public interface Constant {
      * order
      */
     String MODEL_KEY_ORDER = "order";
+
+    /**
+     * 商品
+     */
+    String MODEL_KEY_PRODUCTION = "production";
+
+    /**
+     * Cart Id
+     */
+    String MAP_KEY_CART_ID = "cartid";
 }
