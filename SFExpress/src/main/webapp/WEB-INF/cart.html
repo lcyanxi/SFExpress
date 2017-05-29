@@ -116,7 +116,7 @@
         <div class="hr">
 				<span>
 					<a th:if="${userinfo}!=null" class="user_name" th:text="'用户: '+${userinfo.phone}"
-                       th:href="@{/user/info}">已登录
+                       th:href="@{/user/profile}">已登录
 					</a>
                     <a th:if="${userinfo}==null" th:href="@{/user/login}">
                         嘿,欢迎来顺丰优选！请登录
