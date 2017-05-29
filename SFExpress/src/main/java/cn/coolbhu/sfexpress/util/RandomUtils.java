@@ -12,7 +12,7 @@ public class RandomUtils {
     /**
      *
      */
-    public static final SimpleDateFormat sdf = new SimpleDateFormat("HHmmssSSS");
+    public static final SimpleDateFormat sdf = new SimpleDateFormat("ddmmssSSS");
 
     public static final Random random = new Random();
 
@@ -20,7 +20,7 @@ public class RandomUtils {
 
         String preStr = sdf.format(new Date());
 
-        int subStr = Math.abs(random.nextInt()) % 10;
-        return preStr + subStr;
+        int subStr = Math.abs(random.nextInt()) % 9 + 1;
+        return subStr + preStr;
     }
 }

@@ -17,56 +17,56 @@ public class Order {
 
     private Integer ordermark;
 
-    public String getAddid() {
-        return addid;
-    }
-
-    public void setAddid(String addid) {
-        this.addid = addid;
-    }
-
     public String getOrderid() {
         return orderid;
-    }
-
-    public void setOrderid(String orderid) {
-        this.orderid = orderid == null ? null : orderid.trim();
     }
 
     public String getUserid() {
         return userid;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid == null ? null : userid.trim();
+    public String getAddid() {
+        return addid;
     }
 
     public Date getOrdercreatetime() {
         return ordercreatetime;
     }
 
-    public void setOrdercreatetime(Date ordercreatetime) {
-        this.ordercreatetime = ordercreatetime;
-    }
-
     public Double getTotalprice() {
         return totalprice;
-    }
-
-    public void setTotalprice(Double totalprice) {
-        this.totalprice = totalprice;
     }
 
     public Integer getPaymark() {
         return paymark;
     }
 
-    public void setPaymark(Integer paymark) {
-        this.paymark = paymark;
-    }
-
     public Integer getOrdermark() {
         return ordermark;
+    }
+
+    public void setOrderid(String orderid) {
+        this.orderid = orderid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public void setAddid(String addid) {
+        this.addid = addid;
+    }
+
+    public void setOrdercreatetime(Date ordercreatetime) {
+        this.ordercreatetime = ordercreatetime;
+    }
+
+    public void setTotalprice(Double totalprice) {
+        this.totalprice = totalprice;
+    }
+
+    public void setPaymark(Integer paymark) {
+        this.paymark = paymark;
     }
 
     public void setOrdermark(Integer ordermark) {
