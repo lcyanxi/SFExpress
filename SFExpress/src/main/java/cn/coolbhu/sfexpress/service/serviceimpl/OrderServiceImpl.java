@@ -52,11 +52,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public int addOrderByAddIdAndCartIds(String addid, String[] cartids, String userid) {
+    public Order addOrderByAddIdAndCartIds(String addid, String[] cartids, String userid) {
 
         //准备数据
         Order order = new Order();
 
+        //返回数据
         //初始化
         order.setOrderid(RandomUtils.randomId10());
         order.setOrdercreatetime(new Date());
@@ -85,6 +86,16 @@ public class OrderServiceImpl implements OrderService {
             }
         }
 
-        return result;
+        return order;
+    }
+
+    @Override
+    public int payOrder(String orderid) {
+
+        Order order = orderMapper.selectByPrimaryKey(orderid);
+
+        order.setPaymark(Constant.MARK_PAY_OK);
+
+        return orderMapper.updateByPrimaryKey(order);
     }
 }

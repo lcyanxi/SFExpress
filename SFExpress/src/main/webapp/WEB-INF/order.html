@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>确认订单</title>
+    <title>完成订单</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../css/style.css">
     <link rel="stylesheet" type="text/css" th:href="@{/css/indent.css}" href="../css/indent.css">
     <script type="text/javascript" th:src="@{/js/jquery.js}" src="../js/jquery.js"></script>
@@ -127,144 +127,46 @@
             <a href="#"><img src="../img/logo_word.jpg" alt=""/>
             </a>
         </div>
-        <img src="../img/step_02.jpg " alt=""/>
+        <!--<img src="../img/step_0.jpg " alt=""/>-->
     </div>
 </div>
 <!-- main -->
 <div id="indent-main">
-    <form th:action="@{/order/create}" action="" id="indent-create" method="post">
-        <h3 class="indentHd">填写并核对订单信息</h3>
-        <div id="userAddId">
-            <p class="indentTitle">收货人信息：</p>
-            <ul class="indentAll">
-                <li class="indentUser">
-                    <div class="label">
-                        <b>*</b>
-                        收货人:
-                    </div>
-                    <input type="text" placeholder="请填写收货人姓名" id="IU-name"/>
-                    <span class="iuErr">请填写收货人姓名</span>
-                </li>
-                <li class="indentAddress">
-                    <div class="label">
-                        <b>*</b>
-                        所在地区:
-                    </div>
-                    <select class="select" name="province" id="s1">
-                        <option></option>
-                    </select>
-                    <select class="select" name="city" id="s2">
-                        <option></option>
-                    </select>
-                    <select class="select" name="town" id="s3">
-                        <option></option>
-                    </select>
-                    <option value=""></option>
-                    </select>
-                </li>
-                <li class="fullAddress">
-                    <div class="label">
-                        <b>*</b>
-                        详细地址:
-                    </div>
-                    <div class="FA-field">
-                        <span class="sheng"></span>
-                        <span class="shi"></span>
-                        <span class="xian"></span>
-                        <input type="text" placeholder="请直接填写街道等详细地址" id="IU-address"/>
-                    </div>
-                    <span class="faErr">请您填写完整的地区信息</span>
-                </li>
-                <li class="indent-phone">
-                    <div class="label">
-                        <b>*</b>
-                        手机号码:
-                    </div>
-                    <input type="text" placeholder="11位手机号码" id="IU-phone"/>
-                    <span class="ipErr">请您填写手机号码或固定电话</span>
-                </li>
-            </ul>
-            <button type="button" id="save" onclick="saveaddress()">保存收货人信息</button>
-            <button type="button" id="close" onclick="closemodel()">关闭</button>
-        </div>
-        <!-- 订单信息 -->
-        <ul class="indentContent">
-            <li id="addparent">
-                <div class="userInfo">
-                    收货人信息:
-                    <a href="#" class="amend" id="amend">[修改]</a>
+    <form th:action="@{/order/payment}" action="" id="indent-create" method="post">
+        <h3 class="indentHd">完成订单</h3>
+        <li>
+            <div class="userInfo">
+                订单信息:
+            </div>
+            <a th:href="@{/cart/all}" href="cart.html" class="goto-cart">返回购物车</a>
+            <p>商品下单后尽快为您发货</p>
+            <!-- 购物车详情 -->
+            <div>
+                <div class="ci-title">
+                    <div class="ci-name">订单号</div>
+                    <div>总价</div>
+                    <div>是否支付</div>
+                    <div>订单状态</div>
                 </div>
-                <div class="userAddress" th:each="address,addressStat:${addresses}">
-                    <input type="radio" th:if="${addressStat.index==0}" checked="checked" th:value="${address.addid}"
-                           name="addid">
-                    <input type="radio" th:if="${addressStat.index!=0}" th:value="${address.addid}"
-                           name="addid">
-                    <span class="f-name" th:text="${address.addname}"></span>
-                    <span class="f-phone" th:text="${address.addphone}">13526547895</span>
-                    <span class="f-shi" th:text="${address.address}"></span>
+            </div>
+            <!-- 复制 -->
+            <div>
+                <div class="ci-title">
+                    <div class="ci-name" type="text" th:text="${order.orderid}"></div>
+                    <div th:text="${order.totalprice}"></div>
+                    <div th:if="${order.paymark>0}">已支付</div>
+                    <div th:if="${order.paymark<=0}">未支付</div>
+                    <div>已下单</div>
                 </div>
-            </li>
-            <li>
-                <div class="userPrice">
-                    支付及配送方式:
-                    <a href="#" class="amend">[修改]</a>
-                </div>
-                <p class="pay">在线支付</p>
-                <div class="UP-indent">
-                    <p>订单一</p>
-                    <div class="shunfeng">
-                        <div><span>顺丰速运</span>负责配送</div>
-                        <p>下单后尽快为您发货</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="userInfo">
-                    发票信息:
-                    <a href="#" class="amend">[修改]</a>
-                </div>
-                <div class="bill">
-                    暂不需要发票
-                </div>
-            </li>
-            <li>
-                <div class="userInfo">
-                    商品信息:
-                    <a href="#" class="amend">[修改]</a>
-                </div>
-                <a th:href="@{/cart/all}" href="cart.html" class="goto-cart">返回购物车</a>
-                <p>商品下单后尽快为您发货</p>
-                <!-- 购物车详情 -->
-                <div>
-                    <div class="ci-title">
-                        <input type="checkbox" value="" checked="checked" disabled="disabled">
-                        <div class="ci-name">商品名称</div>
-                        <div>单价</div>
-                        <div>返现</div>
-                        <div>库存状态</div>
-                        <div>数量</div>
-                        <div>小计</div>
-                    </div>
-                </div>
-                <!-- 复制 -->
-                <div th:each="cartinfo,cartinfoStat:${cartinfos}">
-                    <div class="ci-title">
-                        <input type="checkbox" name="cartid" th:value="${cartinfo.cartid}" checked="checked"
-                               readonly="readonly">
-                        <div class="ci-name" th:text="${cartinfo.proname}">商品名称</div>
-                        <div th:text="${cartinfo.price}">单价</div>
-                        <div>0.00</div>
-                        <div>有库存</div>
-                        <div th:text="${cartinfo.num}">0</div>
-                        <div th:text="${cartinfo.total}">0.00</div>
-                    </div>
-                </div>
-            </li>
-            <li class="last-li">
-                <div class="account">应付金额:<span id="gross" th:text="${total}"></span></div>
-                &nbsp;&nbsp;
-                <button type="submit" id="sumbit">提交订单</button>
-            </li>
+            </div>
+        </li>
+        <li class="last-li">
+            <div class="account">应付金额:<span id="gross" th:text="${total}"></span></div>
+            &nbsp;&nbsp;
+            <a th:href="@{'/order/payment/'+${order.orderid}}">
+                <button type="button" id="sumbit">去支付</button>
+            </a>
+        </li>
         </ul>
     </form>
 </div>
@@ -330,99 +232,5 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    function saveaddress() {
-
-
-        //Ajax 添加 新地址
-        $.ajax({
-            url: "/address/addaddress",
-            type: "POST",
-            async: false,
-            data: {
-                addname: $("#IU-name").val(),
-                addphone: $("#IU-phone").val(),
-                detailaddress: $("#IU-address").val(),
-                address: $("#s1").val() + " " + $("#s2").val() + " " + $("#s3").val()
-            },
-            timeout: 30000,
-            dataType: "json",
-            success: function (data) {
-
-                //如果发送成功 则开启定时
-                if (data.status > 0) {
-
-                    alert("添加新地址成功！");
-
-                    addAddress(data);
-
-                    $("#userAddId").hide();
-                    $(".zhezhao").hide();
-                } else if (data.status == -2) {
-
-                    alert("请先登录再添加新地址！");
-
-                    $("#userAddId").hide();
-                    $(".zhezhao").hide();
-                } else {
-
-                    alert("添加新地址失败！");
-                }
-            },
-            complete: function (XMLHttpREquest, status) {
-                //发送失败
-                if (status == "timeout") {
-                    alert("添加超时请重新添加！");
-                }
-            }
-        });
-    }
-
-    function closemodel() {
-
-        $("#userAddId").hide();
-        $(".zhezhao").hide();
-    }
-
-    var data = {
-        addid: "1234565",
-        addname: "sun",
-        addphone: "13166956701",
-        address: "lala"
-    }
-
-    function addAddress(data) {
-
-        var parent = document.getElementById("addparent");
-
-        var ch_div = document.createElement('div');
-
-        ch_div.setAttribute("class", "userAddress");
-
-        var ch_input = document.createElement('input');
-        ch_input.type = "radio";
-        ch_input.value = data.addid;
-        ch_input.name = "addid";
-
-        var ch_name = document.createElement('span');
-        ch_name.setAttribute("class", "f-name");
-        ch_name.innerHTML = data.addname;
-
-        var ch_phone = document.createElement('span');
-        ch_phone.setAttribute("class", "f-phone");
-        ch_phone.innerHTML = data.addphone;
-
-        var ch_address = document.createElement('span');
-        ch_address.setAttribute("class", 'f-shi');
-        ch_address.innerHTML = data.address;
-
-        ch_div.appendChild(ch_input);
-        ch_div.appendChild(ch_name);
-        ch_div.appendChild(ch_phone);
-        ch_div.appendChild(ch_address);
-
-        parent.appendChild(ch_div);
-    }
-</script>
 </body>
 </html>
