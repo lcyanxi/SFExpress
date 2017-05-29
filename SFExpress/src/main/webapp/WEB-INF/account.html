@@ -274,15 +274,15 @@
                                 <td>
 
                                     <span th:if="${orderInfo.paymark==1}">
-                                        <button class="btn btn-primary btn-xs">
-                                        <i class="icon-pencil"></i>订单详情</button>
+                                        <a><button class="btn btn-primary btn-xs">
+                                        <i class="icon-pencil"></i>订单详情</button></a>
                                     </span>
                                     <span th:if="${orderInfo.paymark==-1}">
-                                        <button class="btn btn-danger btn-sm">
-                                        <i class="icon-trash "></i>立即付款</button>
+                                       <a ><button class="btn btn-danger btn-sm">
+                                        <i class="icon-trash "></i>立即付款</button></a>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <button class="btn btn-primary btn-xs">
-                                        <i class="icon-pencil"></i>订单详情</button>
+                                    <a ><button class="btn btn-primary btn-xs">
+                                        <i class="icon-pencil"></i>订单详情</button></a>
                                     </span>
 
                                 </td>
