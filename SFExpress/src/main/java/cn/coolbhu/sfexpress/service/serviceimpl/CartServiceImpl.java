@@ -33,7 +33,7 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public int addCart(String userid, String proid, Integer num) {
+    public Cart addCart(String userid, String proid, Integer num) {
 
         //准备数据
         Cart cart = new Cart();
@@ -41,7 +41,7 @@ public class CartServiceImpl implements CartService {
 
         if (prodution == null) {
 
-            return Constant.STATUS_CODE_FAILED;
+            return null;
         }
 
         //填充数据
@@ -58,7 +58,15 @@ public class CartServiceImpl implements CartService {
         cart.setTotal(total);
 
         //添加到购物车
-        return cartMapper.insert(cart);
+        int reuslt = cartMapper.insert(cart);
+
+        if (reuslt > 0) {
+
+            return cart;
+        } else {
+
+            return null;
+        }
     }
 
     @Override

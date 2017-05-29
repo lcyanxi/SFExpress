@@ -22,7 +22,7 @@ public interface CartService {
      * @param num
      * @return
      */
-    int addCart(String userid, String proid, Integer num);
+    Cart addCart(String userid, String proid, Integer num);
 
     /**
      * @param userId

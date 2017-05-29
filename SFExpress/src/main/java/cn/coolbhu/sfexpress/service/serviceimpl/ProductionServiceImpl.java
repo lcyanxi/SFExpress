@@ -21,4 +21,9 @@ public class ProductionServiceImpl implements ProductionService {
     public List<Prodution> getAllProduction() {
         return produtionMapper.selectAll();
     }
+
+    @Override
+    public Prodution getProductionByProId(String proid) {
+        return produtionMapper.selectByPrimaryKey(proid);
+    }
 }

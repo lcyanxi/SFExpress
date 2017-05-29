@@ -13,4 +13,10 @@ public interface ProductionService {
      * @return
      */
     List<Prodution> getAllProduction();
+
+    /**
+     * @param proid
+     * @return
+     */
+    Prodution getProductionByProId(String proid);
 }
