@@ -7,6 +7,8 @@ public class Order {
 
     private String userid;
 
+    private String addid;
+
     private Date ordercreatetime;
 
     private Double totalprice;
@@ -14,6 +16,14 @@ public class Order {
     private Integer paymark;
 
     private Integer ordermark;
+
+    public String getAddid() {
+        return addid;
+    }
+
+    public void setAddid(String addid) {
+        this.addid = addid;
+    }
 
     public String getOrderid() {
         return orderid;
