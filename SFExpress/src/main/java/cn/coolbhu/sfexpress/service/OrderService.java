@@ -1,5 +1,7 @@
 package cn.coolbhu.sfexpress.service;
 
+
+import cn.coolbhu.sfexpress.model.Order;
 import cn.coolbhu.sfexpress.vo.OrderInfo;
 
 import java.util.List;
@@ -10,8 +12,8 @@ import java.util.List;
 public interface OrderService {
 
     /**
-
      * 显示所有订单信息
+     *
      * @param userid
      * @return
      */
@@ -23,6 +25,11 @@ public interface OrderService {
      * @param userid
      * @return
      */
-    int addOrderByAddIdAndCartIds(String addid, String[] cartids, String userid);
+    Order addOrderByAddIdAndCartIds(String addid, String[] cartids, String userid);
 
+    /**
+     * @param orderid
+     * @return
+     */
+    int payOrder(String orderid);
 }

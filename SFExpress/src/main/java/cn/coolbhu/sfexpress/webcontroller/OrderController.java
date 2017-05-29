@@ -1,6 +1,7 @@
 package cn.coolbhu.sfexpress.webcontroller;
 
 import cn.coolbhu.sfexpress.model.Address;
+import cn.coolbhu.sfexpress.model.Order;
 import cn.coolbhu.sfexpress.model.User;
 import cn.coolbhu.sfexpress.service.AddressService;
 import cn.coolbhu.sfexpress.service.CartService;
@@ -9,6 +10,7 @@ import cn.coolbhu.sfexpress.vo.CartInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -79,12 +81,17 @@ public class OrderController extends BaseController {
         }
 
         //添加订单
-        int result = orderService.addOrderByAddIdAndCartIds(addid, cartids, user.getUserid());
+        Order result = orderService.addOrderByAddIdAndCartIds(addid, cartids, user.getUserid());
 
-        if (result > 0) {
+        if (result != null) {
 
             model.addAttribute(Constant.STATUS, Constant.STATUS_CODE_SUCCESSED);
             model.addAttribute(Constant.MESSAGE, "订单添加成功！");
+
+            //应付金额
+            model.addAttribute(Constant.MODEL_KEY_CART_TOTAL, result.getTotalprice());
+
+            model.addAttribute(Constant.MODEL_KEY_ORDER, result);
 
             return "order";
         } else {
@@ -94,5 +101,14 @@ public class OrderController extends BaseController {
 
             return "indent";
         }
+    }
+
+    @RequestMapping(value = "/payment/{orderid}", method = RequestMethod.GET)
+    public String payment(@PathVariable(value = "orderid") String orderid) {
+
+        //更新
+        orderService.payOrder(orderid);
+
+        return "redirect:/user/profile";
     }
 }

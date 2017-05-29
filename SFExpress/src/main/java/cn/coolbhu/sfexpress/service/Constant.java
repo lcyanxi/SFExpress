@@ -34,4 +34,7 @@ public interface Constant {
      * 标记存货
      */
     int SLEAT_DEATH = -1;
+
+    int MARK_PAY_OK = 1;
+    int MARK_PAY_NOT_OK = -1;
 }
