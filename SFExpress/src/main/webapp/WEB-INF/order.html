@@ -153,7 +153,7 @@
             <div>
                 <div class="ci-title">
                     <div class="ci-name" type="text" th:text="${order.orderid}"></div>
-                    <div th:text="${order.totalprice}"></div>
+                    <div th:text="${total}"></div>
                     <div th:if="${order.paymark>0}">已支付</div>
                     <div th:if="${order.paymark<=0}">未支付</div>
                     <div>已下单</div>

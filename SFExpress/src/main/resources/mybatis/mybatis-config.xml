@@ -51,6 +51,7 @@
 
     <typeAliases>
         <package name="cn.coolbhu.sfexpress.model"/>
+        <package name="cn.coolbhu.sfexpress.vo"/>
         <!--配置别名-->
     </typeAliases>
 

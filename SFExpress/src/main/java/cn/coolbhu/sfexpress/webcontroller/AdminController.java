@@ -3,6 +3,7 @@ package cn.coolbhu.sfexpress.webcontroller;
 import cn.coolbhu.sfexpress.model.User;
 import cn.coolbhu.sfexpress.service.AdminService;
 import cn.coolbhu.sfexpress.service.OrderService;
+import cn.coolbhu.sfexpress.vo.OrderInfo;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.UnauthorizedException;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -141,12 +143,18 @@ public class AdminController extends BaseController {
     public String showUserInfo(Model model){
 
 
+        //显示个人信息
         User user=(User) session.getAttribute(Constant.USER_INFO);
 
         if (user==null){
             //重定向到 login
             return "redirect:/user/login";
         }
+
+        //显示订单信息
+        List<OrderInfo> orderInfos=orderService.showOrderInfo(user.getUserid());
+
+        System.out.println(orderInfos);
 
         int cartNum=(int)session.getAttribute(Constant.CART_NUM);
 
