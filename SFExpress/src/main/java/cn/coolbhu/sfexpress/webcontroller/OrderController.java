@@ -89,6 +89,9 @@ public class OrderController extends BaseController {
             model.addAttribute(Constant.STATUS, Constant.STATUS_CODE_SUCCESSED);
             model.addAttribute(Constant.MESSAGE, "订单添加成功！");
 
+            //删除购物车
+            cartService.deleteChoose(cartids);
+
             //应付金额
             model.addAttribute(Constant.MODEL_KEY_CART_TOTAL, String.format("%.2f", result.getTotalprice()));
 
