@@ -11,11 +11,11 @@ import java.util.List;
 @Alias("OrderInfo")
 public class OrderInfo {
     private String orderid;
-    private Date createtime;
+    private Date ordercreatetime;
     private String addname;
     private Double totalprice;
     private int paymark;
-    private List img;
+    private List<ProImgInfo> proImgInfos;
     private int num;
 
     public String getOrderid() {
@@ -26,12 +26,12 @@ public class OrderInfo {
         this.orderid = orderid;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getOrdercreatetime() {
+        return ordercreatetime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setOrdercreatetime(Date ordercreatetime) {
+        this.ordercreatetime = ordercreatetime;
     }
 
     public String getAddname() {
@@ -58,12 +58,12 @@ public class OrderInfo {
         this.paymark = paymark;
     }
 
-    public List getImg() {
-        return img;
+    public List<ProImgInfo> getProImgInfos() {
+        return proImgInfos;
     }
 
-    public void setImg(List img) {
-        this.img = img;
+    public void setProImgInfos(List<ProImgInfo> proImgInfos) {
+        this.proImgInfos = proImgInfos;
     }
 
     public int getNum() {
@@ -78,11 +78,11 @@ public class OrderInfo {
     public String toString() {
         return "OrderInfo{" +
                 "orderid='" + orderid + '\'' +
-                ", createtime=" + createtime +
+                ", ordercreatetime=" + ordercreatetime +
                 ", addname='" + addname + '\'' +
                 ", totalprice=" + totalprice +
                 ", paymark=" + paymark +
-                ", img=" + img +
+                ", img=" + proImgInfos +
                 ", num=" + num +
                 '}';
     }

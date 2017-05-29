@@ -10,6 +10,7 @@ import cn.coolbhu.sfexpress.service.ProinfoService;
 import cn.coolbhu.sfexpress.util.RandomUtils;
 import cn.coolbhu.sfexpress.vo.CartInfo;
 import cn.coolbhu.sfexpress.vo.OrderInfo;
+import cn.coolbhu.sfexpress.vo.ProImgInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,10 +42,10 @@ public class OrderServiceImpl implements OrderService {
         List<OrderInfo> infoList = orderMapper.selectOrderInfo(userid);
         for (OrderInfo info : infoList) {
             String orderId = info.getOrderid();
-            List<String> listImg = proinfoMapper.selectByOrderId(orderId);
+            List<ProImgInfo> proImgInfos = proinfoMapper.selectByOrderId(orderId);
 
-            info.setNum(listImg.size());
-            info.setImg(listImg);
+            info.setNum(proImgInfos.size());
+            info.setProImgInfos(proImgInfos);
 
         }
         return infoList;

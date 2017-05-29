@@ -41,7 +41,7 @@
 
     <select id="selectOrderInfo" resultType="OrderInfo">
         select o.OrderId,o.OrderCreateTime,o.TotalPrice,o.PayMark,a.AddName
-        from order o left  JOIN  address a on o.addid=a.addid
-        WHERE UserId=#{userid}
+        from orderinfo o left  JOIN  address a on o.addid=a.addid
+        WHERE  o.UserId=#{userid}
     </select>
 </mapper>
