@@ -264,7 +264,7 @@
 
                                 <th th:text="${orderInfo.orderid}"></th>
                                 <th th:text="${orderInfo.num}"></th>
-                                <td th:text="${#dates.format(orderInfo.ordercreatetime, 'yyyy-MM-dd')}"></td>
+                                <td th:text="${#dates.format(orderInfo.ordercreatetime, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                 <td th:text="${orderInfo.addname}"></td>
                                 <td th:text="${orderInfo.totalprice}"></td>
                                 <td>
@@ -273,16 +273,9 @@
                                 </td>
                                 <td>
 
-                                    <span th:if="${orderInfo.paymark==1}">
-                                        <button class="btn btn-primary btn-xs">
-                                        <i class="icon-pencil"></i>订单详情</button>
-                                    </span>
                                     <span th:if="${orderInfo.paymark==-1}">
-                                        <button class="btn btn-danger btn-sm">
-                                        <i class="icon-trash "></i>立即付款</button>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <button class="btn btn-primary btn-xs">
-                                        <i class="icon-pencil"></i>订单详情</button>
+                                       <a th:href="@{'/order/payment/'+${orderInfo.orderid}}" ><button class="btn btn-danger btn-sm">
+                                        <i class="icon-trash "></i>立即付款</button></a>
                                     </span>
 
                                 </td>

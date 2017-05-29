@@ -41,6 +41,7 @@ public class OrderServiceImpl implements OrderService {
 
         List<OrderInfo> infoList = orderMapper.selectOrderInfo(userid);
         for (OrderInfo info : infoList) {
+            info.setTotalprice(Double.parseDouble(String.format("%.2f", info.getTotalprice())));
             String orderId = info.getOrderid();
             List<ProImgInfo> proImgInfos = proinfoMapper.selectByOrderId(orderId);
 
