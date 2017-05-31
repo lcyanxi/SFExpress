@@ -33,7 +33,7 @@ public class ProductionTest {
             prodution.setProname("商品" + i);
             prodution.setPrice(Math.abs(RandomUtils.random.nextInt()%100000) / 100.0);
             prodution.setDetail("详情" + i);
-            prodution.setImg("friut" + i);
+            prodution.setImg("rou" + i);
             prodution.setPromark(1);
 
             //添加
