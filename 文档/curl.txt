@@ -1,0 +1,61 @@
+//去结算按钮伪代码
+//控制器方法 cartids 所选购物车商品id
+toPreareOrder(String[] cartids){
+
+  if (cartids==null) 返回没有选择购物车商品错误信息
+  return "redirect:/carrt/all"
+
+  //拿到已登录用户信息
+  session.getAttribute(User);
+
+  //拿到当前用户地址信息
+  addressSErvice.getAddressByUserId(User.getUserid())
+
+  //拿到购物车商品信息
+  cartService.getCartInfoByCartIds(cartids)
+
+  //算所有应付金额
+  cartService.countTotalByCartInfo(cartinfos)
+
+  //将拿到的信息添加到Model
+  model.addAttribtue(info)
+
+  //返回到准备订单页面
+  return "indent"
+}
+
+//保存地址 控制器
+saveAddress(String addname,String addphone,String address,String detail){
+
+    //拿到已登录用户信息
+    session.getAttribute(User)
+
+    //添加地址
+    result=addressService.addAddress(user.getUserid(),addname,address,detail,addphone)
+
+    //将结果返回
+    return result
+}
+
+//提交订单 控制器
+createOrder(String addid,String[] cartids){
+
+  //拿到当前登录用户信息
+  session.getAttribute(Usesr)
+
+  //添加订单
+  resutl=orderService.addOrderByAddIdAndCartIds(addid,cartids,user.getUserid())
+
+  //将添加订单结果返回
+  return result
+}
+
+//支付控制器
+payment(String orderid){
+
+  //尝试支付
+  result=orderService.payOrder(orderid)
+
+  //返回结果
+  return result
+}
