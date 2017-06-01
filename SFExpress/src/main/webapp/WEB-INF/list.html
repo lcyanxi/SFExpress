@@ -173,7 +173,7 @@
         <li class="ll-one"><h1>个人信息中心</h1></li>
     </ul>
     <ul class="list-header">
-        <li><a href="index.html" class="lh-green">首页</a></li>
+        <li><a href="index.html" class="lh-green" th:href="@{/index}">首页</a></li>
         <li><a href="#">优选生鲜</a></li>
         <li><a href="#">全球美食</a></li>
         <li><a href="#">优选厨房</a></li>
@@ -196,7 +196,7 @@
                 >
                 <a href="#">闲工夫</a>
                 >
-                <a href="#">闲工夫 澳洲黑椒牛排130g</a>
+                <a href="#" th:text="${production.proname}"></a>
             </p>
         </div>
         <!-- 放大镜页面 -->
@@ -208,7 +208,8 @@
                         <a href="#" class="op-prev"></a>
                         <div class="op-imgs">
                             <div class="op-box">
-                                <img src="../img/thumb_1800240143_1_1.jpg" alt=""/>
+                                <img src="../img/thumb_1800240143_1_1.jpg" th:src="@{'/img/'+${production.img}+'.jpg'}"
+                                     alt=""/>
                                 <img src="../img/thumb_1800240143_1_2.jpg" alt=""/>
                                 <img src="../img/thumb_1800240143_1_3.jpg" alt=""/>
                                 <img src="../img/thumb_1800240143_1_4.jpg" alt=""/>
@@ -431,7 +432,8 @@
                     </h2>
                     <b>&nbsp;</b>
                     <p style="text-align:center;margin:0;">
-                        <img src="../img/1472542916_1.jpg" alt="" style="margin: 0px; display: block;"/>
+                        <img th:src="@{'/img/'+${production.img}+'.jpg'}" src="../img/middle_1800240143_1_1.jpg" alt=""
+                             id="img_car"/>
                         <img src="../img/1472542916_2.jpg" alt="" style="margin: 0px; display: block;"/>
                         <img src="../img/1472542916_3.jpg" alt="" style="margin: 0px; display: block;"/>
                         <img src="../img/1472542916_4.jpg" alt="" style="margin: 0px; display: block;"/>
