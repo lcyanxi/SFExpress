@@ -98,4 +98,31 @@ public class CommonController extends BaseController {
 
         return "list";
     }
+
+
+    @RequestMapping(value = "detail", method = RequestMethod.GET)
+    public String toDetail(Model model) {
+
+        //将登录用户的信息拿到
+        User user = (User) session.getAttribute(Constant.USER_INFO);
+
+        if (user != null) {
+
+            //购物车数量
+            List<Cart> cartList = cartService.getCartByUserId(user.getUserid());
+            model.addAttribute(Constant.CART_NUM, cartList.size());
+
+            session.setAttribute(Constant.CART_NUM, cartList.size());
+
+            model.addAttribute(Constant.USER_INFO, user);
+        } else {
+
+            model.addAttribute(Constant.CART_NUM, 0);
+        }
+
+        //添加所有的商品
+        model.addAttribute(Constant.MODEL_KEY_PRODUCTIONS, productionService.getAllProduction());
+
+        return "details";
+    }
 }

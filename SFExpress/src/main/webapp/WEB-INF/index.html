@@ -162,11 +162,11 @@
         <div id="llo-list">
             <li>
                 <div class="lo">
-                    <h2><span class="ll-rou"></span>肉类海鲜</h2>
+                    <h2><a th:href="@{/detail}"><span class="ll-rou"></span>肉类海鲜</a></h2>
                     <p>
                         <a href="#">大闸蟹</a>
                         <!-- 商品列表页面 -->
-                        <a href="details.html">牛肉</a>
+                        <a href="details.html" th:href="@{/detail}">牛肉</a>
                         <a href="#">虾</a>
                         <a href="#">羊肉</a>
                     </p>
@@ -599,7 +599,7 @@
         </div>
     </ul>
     <ul class="list-header">
-        <li><a th:href="@{/}" href="#" class="lh-green">首页</a></li>
+        <li><a href="index.html" class="lh-green" th:href="@{/index}">首页</a></li>
         <li><a href="#">优选生鲜</a></li>
         <li><a href="#">全球美食</a></li>
         <li><a href="#">优选厨房</a></li>
@@ -780,19 +780,115 @@
         </dl>
         <ul class="friut-center">
 
-            <li th:each="production,itemStat:${productions}">
+            <li>
                 <dl>
                     <dt>
-                        <img th:src="'/img/'+${production.img}+'.jpg'" src="../img/friut1.jpg" alt=""/>
+                        <img src="../img/friut1.jpg" alt=""/>
                     <div class="shopping">
-                        <a href="javascript:void(0)" th:onclick="'addcart('+${production.proid}+')'"><i></i>加入购物车</a>
+                        <a href="javascript:void(0)"><i></i>加入购物车</a>
                     </div>
                     </dt>
                     <dd>
-                        <a th:href="@{'/pro/'+${production.proid}}" href="#"><p th:text="${production.proname}">佳沛 新西兰金奇艺果12个</p>
-                        </a>
-                        <span>￥</span>
-                        <span th:text="${production.price}">76</span>
+                        <p>泰国金枕冷冻榴莲400g</p>
+                        <span>￥59</span>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>
+                        <img src="../img/friut2.jpg" alt=""/>
+                    <div class="shopping">
+                        <a href="javascript:void(0)"><i></i>加入购物车</a>
+                    </div>
+                    </dt>
+                    <dd>
+                        <p>佳沛 新西兰金奇艺果12个</p>
+                        <span>￥76</span>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>
+                        <img src="../img/friut3.jpg" alt=""/>
+                    <div class="shopping">
+                        <a href="javascript:void(0)"><i></i>加入购物车</a>
+                    </div>
+                    </dt>
+                    <dd>
+                        <p>智利加力果6个1kg</p>
+                        <span>￥29.8</span>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>
+                        <img src="../img/friut4.jpg" alt=""/>
+                    <div class="shopping">
+                        <a href="javascript:void(0)"><i></i>加入购物车</a>
+                    </div>
+                    </dt>
+                    <dd>
+                        <p>墨西哥牛油果6个</p>
+                        <span>￥59</span>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>
+                        <img src="../img/friut5.jpg" alt=""/>
+                    <div class="shopping">
+                        <a href="javascript:void(0)"><i></i>加入购物车</a>
+                    </div>
+                    </dt>
+                    <dd>
+                        <p>璟欣 速冻马蹄300g</p>
+                        <span>￥7.8</span>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>
+                        <img src="../img/friut6.jpg" alt=""/>
+                    <div class="shopping">
+                        <a href="javascript:void(0)"><i></i>加入购物车</a>
+                    </div>
+                    </dt>
+                    <dd>
+                        <p>安佳 再制切达干酪250g</p>
+                        <span>￥26.8</span>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>
+                        <img src="../img/friut7.jpg" alt=""/>
+                    <div class="shopping">
+                        <a href="javascript:void(0)"><i></i>加入购物车</a>
+                    </div>
+                    </dt>
+                    <dd>
+                        <p>进口青苹果6个装900g</p>
+                        <span>￥39.9</span>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>
+                        <img src="../img/friut8.jpg" alt=""/>
+                    <div class="shopping">
+                        <a href="javascript:void(0)"><i></i>加入购物车</a>
+                    </div>
+                    </dt>
+                    <dd>
+                        <p>佳沛 27号金奇异果8个</p>
+                        <span>￥79.9</span>
                     </dd>
                 </dl>
             </li>
@@ -821,115 +917,20 @@
             <dd><img src="../img/rou0.jpg" alt=""/></dd>
         </dl>
         <ul class="friut-center">
-            <li>
+            <li th:each="production,itemStat:${productions}">
                 <dl>
                     <dt>
-                        <img src="../img/rou1.jpg" alt=""/>
+                        <a th:href="@{'/pro/'+${production.proid}}"><img th:src="'/img/'+${production.img}+'.jpg'"
+                                                                         src="../img/friut1.jpg" alt=""/></a>
                     <div class="shopping">
-                        <a href="javascript:void(0)"><i></i>加入购物车</a>
+                        <a href="javascript:void(0)" th:onclick="'addcart('+${production.proid}+')'"><i></i>加入购物车</a>
                     </div>
                     </dt>
                     <dd>
-                        <p>SunnyEstate T骨牛排320g</p>
-                        <span>￥95</span>
-                    </dd>
-                </dl>
-            </li>
-            <li>
-                <dl>
-                    <dt>
-                        <img src="../img/rou2.jpg" alt=""/>
-                    <div class="shopping">
-                        <a href="javascript:void(0)"><i></i>加入购物车</a>
-                    </div>
-                    </dt>
-                    <dd>
-                        <p>SunnyEstate小米龙排260g</p>
-                        <span>￥48</span>
-                    </dd>
-                </dl>
-            </li>
-            <li>
-                <dl>
-                    <dt>
-                        <img src="../img/rou3.jpg" alt=""/>
-                    <div class="shopping">
-                        <a href="javascript:void(0)"><i></i>加入购物车</a>
-                    </div>
-                    </dt>
-                    <dd>
-                        <p>精气神 山黑猪五花块400g</p>
-                        <span>￥24.8</span>
-                    </dd>
-                </dl>
-            </li>
-            <li>
-                <dl>
-                    <dt>
-                        <img src="../img/rou4.jpg" alt=""/>
-                    <div class="shopping">
-                        <a href="javascript:void(0)"><i></i>加入购物车</a>
-                    </div>
-                    </dt>
-                    <dd>
-                        <p>顶诺 家庭菲力牛排 10片</p>
-                        <span>￥139</span>
-                    </dd>
-                </dl>
-            </li>
-            <li>
-                <dl>
-                    <dt>
-                        <img src="../img/rou5.jpg" alt=""/>
-                    <div class="shopping">
-                        <a href="javascript:void(0)"><i></i>加入购物车</a>
-                    </div>
-                    </dt>
-                    <dd>
-                        <p>獐子岛 蒜蓉粉丝扇贝1kg</p>
-                        <span>￥79</span>
-                    </dd>
-                </dl>
-            </li>
-            <li>
-                <dl>
-                    <dt>
-                        <img src="../img/rou6.jpg" alt=""/>
-                    <div class="shopping">
-                        <a href="javascript:void(0)"><i></i>加入购物车</a>
-                    </div>
-                    </dt>
-                    <dd>
-                        <p>鲜元素 真鳕鱼腩200g</p>
-                        <span>￥20</span>
-                    </dd>
-                </dl>
-            </li>
-            <li>
-                <dl>
-                    <dt>
-                        <img src="../img/rou7.jpg" alt=""/>
-                    <div class="shopping">
-                        <a href="javascript:void(0)"><i></i>加入购物车</a>
-                    </div>
-                    </dt>
-                    <dd>
-                        <p>海买 北极甜虾120+2kg</p>
-                        <span>￥129</span>
-                    </dd>
-                </dl>
-            </li>
-            <li>
-                <dl>
-                    <dt>
-                        <img src="../img/rou8.jpg" alt=""/>
-                    <div class="shopping">
-                        <a href="javascript:void(0)"><i></i>加入购物车</a>
-                    </div>
-                    </dt>
-                    <dd>
-                        <p>帝锦 阳澄湖大闸蟹礼券</p>
-                        <span>￥458</span>
+                        <a th:href="@{'/pro/'+${production.proid}}" href="#"><p th:text="${production.proname}">牛肉</p>
+                        </a>
+                        <span>￥</span>
+                        <span th:text="${production.price}">76</span>
                     </dd>
                 </dl>
             </li>
