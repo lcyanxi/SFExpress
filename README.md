@@ -8,6 +8,7 @@
  4. 项目管理：maven
  5. 前端页面渲染：thymeleaf
  6. 权限：shiro
+ 7. 编辑器：IntelliJ IDEA
  
 ### 联系我
        845892601 
