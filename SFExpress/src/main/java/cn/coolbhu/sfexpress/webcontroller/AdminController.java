@@ -151,14 +151,11 @@ public class AdminController extends BaseController {
             return "redirect:/user/login";
         }
 
-        //显示订单信息
-        List<OrderInfo> orderInfos=orderService.showOrderInfo(user.getUserid());
 
-        System.out.println(orderInfos);
 
         int cartNum=(int)session.getAttribute(Constant.CART_NUM);
 
-        model.addAttribute(Constant.ODERINFO_LIST,orderInfos);
+
         model.addAttribute(Constant.USER_INFO,user);
         model.addAttribute(Constant.CART_NUM,cartNum);
 

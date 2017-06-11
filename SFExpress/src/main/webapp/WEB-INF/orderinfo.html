@@ -3,26 +3,19 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>账户信息</title>
+    <title>个人中心</title>
     <!-- Bootstrap core CSS -->
     <link th:href="@{/css/bootstrap.min.css}" href="../css/bootstrap.min.css" rel="stylesheet">
     <link th:href="@{/css/bootstrap-reset.css}" href="../css/bootstrap-reset.css" rel="stylesheet">
-
-
-    <!--external css-->
-    <link th:href="@{/assets/font-awesome/css/font-awesome.css}"
-          href="../assets/font-awesome/css/font-awesome.css"
-          rel="stylesheet"/>
-    <link th:href="@{/css/owl.carousel.css}" rel="stylesheet" href="../css/owl.carousel.css" type="text/css">
-
+    <!--<link th:href="@{/css/owl.carousel.css}" rel="stylesheet" href="../css/owl.carousel.css" type="text/css">-->
     <link th:href="@{/css/account/style.css}" href="../css/account/style.css" rel="stylesheet">
-    <link th:href="@{/css/style-responsive.css}" href="../css/style-responsive.css" rel="stylesheet"/>
+    <!--<link th:href="@{/css/style-responsive.css}" href="../css/style-responsive.css" rel="stylesheet"/>-->
 
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../css/style.css">
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" href="../css/main.css">
     <script type="text/javascript" th:src="@{/js/jquery.js}" src="../js/jquery.js"></script>
     <script type="text/javascript" th:src="@{/js/jquery.cookie.js}" src="../js/jquery.cookie.js"></script>
-    <script type="text/javascript" th:src="@{/js/index.js}" src="../js/index.js"></script>
+
 </head>
 <body>
 <!-- header -->
@@ -107,13 +100,13 @@
         </div>
         <div class="hr">
 				<span>
-					<a th:if="${session.userinfo}!=null" class="user_name" th:text="'用户: '+${session.userinfo.phone}"
-                       th:href="@{/user/info}">已登录
+					<a th:if="${userinfo}!=null" class="user_name" th:text="'用户: '+${userinfo.phone}"
+                       th:href="@{/user/profile}">已登录
 					</a>
-                    <a th:if="${session.userinfo}==null" th:href="@{/user/login}">
+                    <a th:if="${userinfo}==null" th:href="@{/user/login}">
                         嘿,欢迎来顺丰优选！请登录
                     </a>
-					<a th:if="${session.userinfo}!=null" th:href="@{/user/logout}" class="color_red">&nbsp;[退出]</a>
+					<a th:if="${userinfo}!=null" th:href="@{/user/logout}" class="color_red">&nbsp;[退出]</a>
 				</span>
             <ul class="hr-one">
                 <li><a th:href="@{/register}" href="register.html">免费注册</a></li>
@@ -170,11 +163,10 @@
     </div>
 </div>
 
-
 <!-- list -->
-<div id="list" >
+<div id="list">
     <ul class="list-list">
-        <li class="ll-one"><h1>个人信息中心</h1></li>
+        <li class="ll-one"><h1>订单信息</h1></li>
     </ul>
 
     <ul class="list-header list-header1">
@@ -188,79 +180,74 @@
     </ul>
 </div>
 
-
 <section id="main-content">
     <section class="wrapper">
         <!-- page start-->
         <div class="row">
-            <!--<aside class="profile-nav col-lg-3">-->
-            <!--</aside>-->
-
-            <!--右侧修改详细信息-->
             <aside class="profile-info col-lg-10">
-                <section class="panel">
+                <!--订单信息-->
+                <section>
                     <div class="bio-graph-heading">
-                        修改个人信息
+                        您的订单信息！
                     </div>
-                    <div class="panel-body bio-graph-info">
-                        <h1>修改基本信息</h1>
-                        <form class="form-horizontal" role="form" th:action="@{/user/updateprofile}"
-                              method="post" id="profile_edit">
-                            <div class="form-group">
-                                <label class="col-lg-2 control-label">姓名</label>
-                                <div class="col-lg-6 has-success">
-                                    <input type="text" class="form-control" name="username" id="username"
-                                           th:value="${session.userinfo.username}" placeholder="姓名">
-                                    <p class="help-block"></p>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-2 control-label">电话号码</label>
-                                <div class="col-lg-6 has-success">
-                                    <input type="text" class="form-control" name="phone" id="phone"
-                                           th:value="${session.userinfo.phone}" placeholder="电话号码">
-                                    <p class="help-block"></p>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-2 control-label">状态信息</label>
-                                <div class="col-lg-6 has-success">
-                                    <span th:if="${session.userinfo.slead}">在线</span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-2 control-label">邮箱</label>
-                                <div class="col-lg-6 has-success">
-                                    <input type="text" class="form-control" name="email" id="email"
-                                           th:value="${session.userinfo.email}" placeholder="邮箱">
-                                    <p class="help-block"></p>
-                                </div>
-                            </div>
+                    <div class="row">
+                        <table class="table table-striped border-top" id="sample_1">
+                            <!--头部显示所包含的内容-->
+                            <thead>
+                            <tr>
+                                <th>商品</th>
+                                <th>订单号</th>
+                                <th>数量</th>
+                                <th>创建时间</th>
+                                <th>收货人</th>
+                                <th>金额</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <!--头部显示所包含的内容 结束-->
 
-                            <div class="form-group">
-                                <label class="col-lg-2 control-label">注册时间</label>
-                                <div class="col-lg-6 has-success">
-                                   <span th:text="${#dates.format(session.userinfo.usercreatetime, 'yyyy-MM-dd')}"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-lg-offset-2 col-lg-10">
-                                    <button type="submit" class="btn btn-success">保存修改</button>
-                                    <button type="button" class="btn btn-default">取消</button>
-                                </div>
-                                <h4 class="help-block text-danger text-center" th:text="${message}"></h4>
-                            </div>
-                        </form>
+                            <!--显示每个订单的详细信息-->
+                            <tbody id="tbody">
+                            <tr class="odd gradeX" th:each="orderInfo,iterStat:${orderlist}">
+
+
+                                <td>
+                                    <span th:each="proImgInfo,itemStat:${orderInfo.proImgInfos}">
+                                        <span><img th:src="'/img/'+${proImgInfo.img}+'.jpg'" width="50" height="50"></span>
+                                    </span>
+                                </td>
+
+                                <th th:text="${orderInfo.orderid}"></th>
+                                <th th:text="${orderInfo.num}"></th>
+                                <td th:text="${#dates.format(orderInfo.ordercreatetime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                <td th:text="${orderInfo.addname}"></td>
+                                <td th:text="${orderInfo.totalprice}"></td>
+                                <td>
+                                    <span th:if="${orderInfo.paymark==1}">已付款</span>
+                                    <span th:if="${orderInfo.paymark==-1}">待付款</span>
+                                </td>
+                                <td>
+
+                                    <span th:if="${orderInfo.paymark==-1}">
+                                       <a th:href="@{'/order/payment/'+${orderInfo.orderid}}" ><button class="btn btn-danger btn-sm">
+                                        <i class="icon-trash "></i>立即付款</button></a>
+                                    </span>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                            <!--显示每个订单的详细信息 结束-->
+                        </table>
+
                     </div>
                 </section>
             </aside>
-            <!--右侧修改详细信息 结束-->
         </div>
 
         <!-- page end-->
     </section>
 </section>
-
 
 <!-- foot -->
 <div id="send">
@@ -344,5 +331,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

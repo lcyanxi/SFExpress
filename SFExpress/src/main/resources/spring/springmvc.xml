@@ -25,6 +25,7 @@
         <property name="prefix" value="/WEB-INF/"/>
         <property name="suffix" value=".html"/>
         <property name="templateMode" value="HTML"/>
+        <property name="characterEncoding" value="utf-8"/>
         <property name="cacheable" value="false"/>
     </bean>
 

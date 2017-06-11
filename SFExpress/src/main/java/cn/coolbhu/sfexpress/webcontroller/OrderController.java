@@ -8,6 +8,7 @@ import cn.coolbhu.sfexpress.service.AddressService;
 import cn.coolbhu.sfexpress.service.CartService;
 import cn.coolbhu.sfexpress.service.OrderService;
 import cn.coolbhu.sfexpress.vo.CartInfo;
+import cn.coolbhu.sfexpress.vo.OrderInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -113,7 +114,7 @@ public class OrderController extends BaseController {
         //更新
         orderService.payOrder(orderid);
 
-        return "redirect:/user/profile";
+        return "redirect:/order/showorderinfo";
     }
 
     @RequestMapping(value = "/fastbuy", method = RequestMethod.POST)
@@ -148,5 +149,26 @@ public class OrderController extends BaseController {
         model.addAttribute(Constant.MODEL_KEY_CART_TOTAL, String.format("%.2f", total));
 
         return "indent";
+    }
+
+    @RequestMapping(value = "showorderinfo" ,method = RequestMethod.GET)
+    public String showOrderInfo(Model model){
+
+        //显示个人信息
+        User user=(User) session.getAttribute(Constant.USER_INFO);
+
+        if (user==null){
+            //重定向到 login
+            return "redirect:/user/login";
+        }
+        //显示订单信息
+        List<OrderInfo> orderInfos=orderService.showOrderInfo(user.getUserid());
+
+        int cartNum=(int)session.getAttribute(Constant.CART_NUM);
+        model.addAttribute(Constant.ODERINFO_LIST,orderInfos);
+        model.addAttribute(Constant.USER_INFO,user);
+        model.addAttribute(Constant.CART_NUM,cartNum);
+
+        return "orderinfo";
     }
 }
