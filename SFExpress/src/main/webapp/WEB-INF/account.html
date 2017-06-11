@@ -111,7 +111,7 @@
             <ul class="hr-one">
                 <li><a th:href="@{/register}" href="register.html">免费注册</a></li>
                 <li><a th:href="@{/user/profile}" href="account.html">个人中心</a></li>
-                <li class="hro-a"><a href="#">我的优选</a></li>
+                <li class="hro-a"><a th:href="@{/order/showorderinfo}" href="#">订单中心</a></li>
                 <li class="hro-b"><a href="#">移动客户端</a></li>
                 <li class="hro-a"><a href="#">帮助中心</a></li>
                 <li class="hro-a"><a href="#">网站导航</a></li>
@@ -227,63 +227,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <!--订单信息-->
-                <section>
-                    <div class="bio-graph-heading">
-                        您的订单信息！
-                    </div>
-                    <div class="row">
-                        <table class="table table-striped border-top" id="sample_1">
-                            <!--头部显示所包含的内容-->
-                            <thead>
-                            <tr>
-                                <th>商品</th>
-                                <th>订单号</th>
-                                <th>数量</th>
-                                <th>创建时间</th>
-                                <th>收货人</th>
-                                <th>金额</th>
-                                <th>状态</th>
-                                <th>操作</th>
-                            </tr>
-                            </thead>
-                            <!--头部显示所包含的内容 结束-->
-
-                            <!--显示每个订单的详细信息-->
-                            <tbody id="tbody">
-                            <tr class="odd gradeX" th:each="orderInfo,iterStat:${orderlist}">
-
-
-                                <td>
-                                    <span th:each="proImgInfo,itemStat:${orderInfo.proImgInfos}">
-                                        <span><img th:src="'/img/'+${proImgInfo.img}+'.jpg'" width="50" height="50"></span>
-                                    </span>
-                                </td>
-
-                                <th th:text="${orderInfo.orderid}"></th>
-                                <th th:text="${orderInfo.num}"></th>
-                                <td th:text="${#dates.format(orderInfo.ordercreatetime, 'yyyy-MM-dd HH:mm:ss')}"></td>
-                                <td th:text="${orderInfo.addname}"></td>
-                                <td th:text="${orderInfo.totalprice}"></td>
-                                <td>
-                                    <span th:if="${orderInfo.paymark==1}">已付款</span>
-                                    <span th:if="${orderInfo.paymark==-1}">待付款</span>
-                                </td>
-                                <td>
-
-                                    <span th:if="${orderInfo.paymark==-1}">
-                                       <a th:href="@{'/order/payment/'+${orderInfo.orderid}}" ><button class="btn btn-danger btn-sm">
-                                        <i class="icon-trash "></i>立即付款</button></a>
-                                    </span>
-
-                                </td>
-                            </tr>
-                            </tbody>
-                            <!--显示每个订单的详细信息 结束-->
-                        </table>
-
                     </div>
                 </section>
             </aside>
