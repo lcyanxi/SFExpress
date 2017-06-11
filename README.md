@@ -7,7 +7,10 @@
  3. 数据库：mysql
  4. 项目管理：maven
  5. 前端页面渲染：thymeleaf
- 6 .权限：shiro
+ 6. 权限：shiro
+ 
+### 联系我
+       845892601 
  
 ## 效果展示
 
@@ -24,7 +27,3 @@
 <img align="left" width="400" height="200" src="https://github.com/lcyanxi/SFExpress/raw/master/img/Selection_012.png"/>
 <img align="left" width="400" height="200" src="https://github.com/lcyanxi/SFExpress/blob/master/img/Selection_013.png"/>
 <img align="left" width="400" height="200" src="https://github.com/lcyanxi/SFExpress/blob/master/img/Selection_014.png"/>
-
-
-
-### 有什么问题可以联系我845892601
